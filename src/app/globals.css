@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* ============================================
+   Kila Kitu Tech — Design System
+   ============================================ */
+
+:root {
+  --color-bg-primary: #0a0a0b;
+  --color-bg-secondary: #111113;
+  --color-bg-tertiary: #1a1a1e;
+  --color-accent: #d4a843;
+  --color-accent-hover: #e6bc5a;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #9ca3af;
+  --color-border: #2a2a2e;
+}
+
+/* Tailwind v4 theme extension — maps CSS vars to utility classes */
+@theme {
+  --color-gold: var(--color-accent);
+  --color-gold-hover: var(--color-accent-hover);
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-bg-tertiary: var(--color-bg-tertiary);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Custom Utility Classes
+   ============================================ */
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #d4a843 0%, #f0d78c 50%, #d4a843 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(17, 17, 19, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
