@@ -5,10 +5,9 @@ import { useState } from "react";
 type ProjectCategory =
   | "All"
   | "Global & Creative"
-  | "Enterprise & Legal"
+  | "Corporate & Legal"
   | "E-Commerce & Retail"
-  | "Faith & Community"
-  | "AdTech & Media";
+  | "Faith & Community";
 
 interface LiveProject {
   id: string;
@@ -19,7 +18,7 @@ interface LiveProject {
   headline: string;
   description: string;
   image: string;
-  status: "Live in Production" | "Deployed System";
+  status: "Live in Production";
   metrics: string;
   features: string[];
   tags: string[];
@@ -35,12 +34,12 @@ const liveProjects: LiveProject[] = [
     category: "Global & Creative",
     headline: "Global Platform for International Afrohouse Music Star (Voice of 'Mwaki')",
     description:
-      "Engineered the official international digital home for Kenyan Afrohouse sensation Sofiya Nzau. Built to handle global spikes in streaming traffic, tour date announcements, global press kits, and direct licensing inquiries.",
+      "Engineered the official international digital home for Kenyan Afrohouse sensation Sofiya Nzau. Built to handle global surges in streaming traffic, tour date announcements, global press kits, and direct licensing inquiries.",
     image: "/projects/sofiya-logo.png",
     status: "Live in Production",
-    metrics: "Global Audiences • Sub-second CDN",
+    metrics: "Worldwide Audiences • Fast Global CDN",
     features: [
-      "High-concurrency traffic resilience for worldwide viral releases",
+      "High-concurrency traffic resilience for international viral releases",
       "Interactive discography, lyrics, and Spotify/Apple Music integration",
       "International tour date tracker and press accreditation booking",
       "Dark-luxe editorial styling with Cormorant Garamond & Syne typography",
@@ -53,10 +52,10 @@ const liveProjects: LiveProject[] = [
     name: "Nzuki & Co. Advocates",
     liveUrl: "https://www.nzukilawassociates.co.ke/",
     domainDisplay: "nzukilawassociates.co.ke",
-    category: "Enterprise & Legal",
+    category: "Corporate & Legal",
     headline: "High-Trust Corporate Law Firm Platform at Hazina Towers, Nairobi",
     description:
-      "A sophisticated digital practice engine for one of Nairobi's premier commercial litigation and corporate governance law firms. Features interactive partner directories, practice area catalogs, and structured consultation intake.",
+      "A sophisticated digital practice engine for one of Nairobi's premier commercial litigation and corporate governance law firms. Features partner credentials, comprehensive practice area catalogs, and structured consultation intake.",
     image: "/projects/law-hero.png",
     status: "Live in Production",
     metrics: "Hazina Towers • SEO Schema Verified",
@@ -64,7 +63,7 @@ const liveProjects: LiveProject[] = [
       "Structured consultation booking and corporate retainer intake",
       "Full JSON-LD structured data with Truehost DNS and Google Verification",
       "Corporate commercial litigation and labour law practice portals",
-      "Optimized for high-net-worth corporate board access",
+      "Optimized for corporate executives and legal board access",
     ],
     tags: ["React", "DaisyUI", "Tailwind CSS", "SEO Schema", "Vite"],
     client: "Nzuki & Company Advocates",
@@ -91,98 +90,34 @@ const liveProjects: LiveProject[] = [
     client: "MyIbada Church Network",
   },
   {
-    id: "aic-valley",
-    name: "AIC Happy Valley Church",
-    liveUrl: "https://aic-happy-valley.web.app/",
-    domainDisplay: "aic-happy-valley.web.app",
-    category: "Faith & Community",
-    headline: "Progressive Web App & Digital Hub for Thika Congregation",
-    description:
-      "Mobile-first Progressive Web App (PWA) connecting thousands of congregation members at AIC Happy Valley. Provides instant sermon audio/video replays, ministry sign-ups, and automated tithe channels directly from mobile devices.",
-    image: "/projects/aic-mockup.png",
-    status: "Live in Production",
-    metrics: "Installed PWA • 1000+ Members",
-    features: [
-      "Installable mobile app without App Store fees or delays",
-      "Low-bandwidth live service video & audio stream player",
-      "Weekly bulletin announcements, giving links, and prayer requests",
-      "Thika local community SEO with schema markup",
-    ],
-    tags: ["React", "PWA", "Firebase", "Radix UI", "Tailwind CSS"],
-    client: "AIC Happy Valley, Thika",
-  },
-  {
     id: "meed",
     name: "Meed Collections",
     liveUrl: "https://www.meedcollections.store/",
     domainDisplay: "meedcollections.store",
     category: "E-Commerce & Retail",
-    headline: "Full-Stack E-Commerce Storefront with Next.js & Prisma",
+    headline: "Full-Stack Retail E-Commerce Storefront with Next.js & IntaSend",
     description:
-      "A fast, modern retail e-commerce platform built for high mobile conversions. Features real-time inventory management, automated shopping cart, customer accounts, and seamless checkout engineered for the Kenyan market.",
+      "A modern, high-converting retail e-commerce platform built for speed. Features real-time PostgreSQL product catalog, automated shopping bag drawer, IntaSend Kenyan payment integration, and fast mobile checkout.",
     image: "/projects/meed-banner2.png",
     status: "Live in Production",
-    metrics: "Full-Stack Next.js • Prisma ORM",
+    metrics: "Full-Stack Next.js • IntaSend Payments",
     features: [
       "Prisma ORM database backend with PostgreSQL product catalog",
       "Responsive mobile-first storefront engineered for fast 4G shopping",
       "Product categorization, dynamic filters, and shopping bag drawer",
-      "Integrated customer authentication and order tracking pipeline",
+      "Integrated IntaSend payment gateway for secure card & M-Pesa orders",
     ],
-    tags: ["Next.js", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+    tags: ["Next.js", "Prisma", "PostgreSQL", "IntaSend Payments", "Tailwind CSS"],
     client: "Meed Collections Retail",
-  },
-  {
-    id: "outlook",
-    name: "Outlook Signs Kenya",
-    liveUrl: "https://www.nzukilawassociates.co.ke/", // placeholder fallback
-    domainDisplay: "outlooksigns.co.ke",
-    category: "AdTech & Media",
-    headline: "Interactive 3D & GPS Directory for Kenya's Premier Billboard Network",
-    description:
-      "Advanced advertising directory indexing 50+ prime billboard locations across Nairobi, Thika, and major Kenyan transit corridors. Features interactive Leaflet maps, 3D WebGL signs, and instant quote generation.",
-    image: "/projects/outlook-hero.png",
-    status: "Live in Production",
-    metrics: "50+ Prime Billboard Sites • 3D WebGL",
-    features: [
-      "Interactive GPS billboard map with live availability filters",
-      "3D canvas modeling with Three.js and React Three Fiber",
-      "Direct corporate client portfolio (Optiven, Geminia, Mwalimu)",
-      "Instant inquiry pipeline directly to billboard sales team",
-    ],
-    tags: ["Next.js", "Three.js", "Leaflet Maps", "Turbopack"],
-    client: "Outlook Signs Kenya",
-  },
-  {
-    id: "pos",
-    name: "DukaPOS Operating System",
-    liveUrl: "https://myibada.co.ke/",
-    domainDisplay: "dukapos.local",
-    category: "E-Commerce & Retail",
-    headline: "Offline-First Mobile Retail POS with Native Daraja M-Pesa",
-    description:
-      "A zero-latency point-of-sale and stock control engine built specifically for Kenyan retail merchants, supermarkets, and distributors. Operates fully offline during power or network outages and auto-syncs upon reconnection.",
-    image: "/projects/pos-icon.png",
-    status: "Deployed System",
-    metrics: "Zero-Latency Checkout • Offline Sync",
-    features: [
-      "Camera & hardware barcode scanning for rapid checkout",
-      "Direct Daraja M-Pesa STK push with automated payment callbacks",
-      "Multi-store inventory reconciliation and stock replenishment alerts",
-      "Offline-first SQLite local persistence synced to Supabase cloud",
-    ],
-    tags: ["React Native", "Expo", "Supabase", "SQLite", "Daraja M-Pesa"],
-    client: "Retail Merchants & Wholesalers",
   },
 ];
 
 const categories: ProjectCategory[] = [
   "All",
   "Global & Creative",
-  "Enterprise & Legal",
+  "Corporate & Legal",
   "E-Commerce & Retail",
   "Faith & Community",
-  "AdTech & Media",
 ];
 
 export default function Portfolio() {
@@ -207,8 +142,8 @@ export default function Portfolio() {
             <span className="text-gradient-gold">Running Live on the Internet.</span>
           </h2>
           <p className="mt-3 text-[var(--color-text-secondary)] text-base md:text-lg max-w-2xl">
-            We don’t pitch theoretical designs. Click on any of the live websites below to inspect
-            the speed, engineering quality, and mobile responsiveness we ship for our clients.
+            We don’t pitch theoretical designs. Click on any of our live client platforms below
+            to inspect the speed, engineering quality, and mobile responsiveness we ship.
           </p>
         </div>
 
@@ -220,7 +155,7 @@ export default function Portfolio() {
           </span>
           <div className="text-xs">
             <span className="font-bold text-[var(--color-text-primary)]">Verified Production</span>
-            <span className="block text-emerald-400 font-semibold">100% Live Deployments</span>
+            <span className="block text-emerald-400 font-semibold">4 Flagship Live Sites</span>
           </div>
         </div>
       </div>
@@ -242,15 +177,15 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* Project Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Project Cards Grid - 2x2 Clean High-Impact Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
             className="group rounded-3xl overflow-hidden glass-card border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all duration-300 flex flex-col hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[var(--color-accent)]/5"
           >
             {/* Visual Header */}
-            <div className="relative h-56 w-full bg-[#141416] overflow-hidden border-b border-[var(--color-border)] flex items-center justify-center p-3">
+            <div className="relative h-64 w-full bg-[#141416] overflow-hidden border-b border-[var(--color-border)] flex items-center justify-center p-3">
               <img
                 src={project.image}
                 alt={project.name}
@@ -269,7 +204,7 @@ export default function Portfolio() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-black/90 backdrop-blur-md text-[var(--color-accent)] border border-[var(--color-accent)]/40 hover:bg-[var(--color-accent)] hover:text-black transition-all"
+                className="absolute bottom-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-black/90 backdrop-blur-md text-[var(--color-accent)] border border-[var(--color-accent)]/40 hover:bg-[var(--color-accent)] hover:text-black transition-all"
               >
                 <span>{project.domainDisplay}</span>
                 <span className="text-xs">↗</span>
@@ -277,7 +212,7 @@ export default function Portfolio() {
             </div>
 
             {/* Card Content */}
-            <div className="p-6 md:p-7 flex flex-col flex-1 justify-between">
+            <div className="p-7 md:p-8 flex flex-col flex-1 justify-between">
               <div>
                 {/* Category & Tag */}
                 <div className="flex items-center justify-between text-xs mb-3">
@@ -289,17 +224,17 @@ export default function Portfolio() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors leading-snug mb-2">
+                <h3 className="text-2xl font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors leading-snug mb-2">
                   {project.name}
                 </h3>
 
-                <p className="text-[var(--color-text-secondary)] text-xs md:text-sm leading-relaxed mb-4">
+                <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-5">
                   {project.headline}
                 </p>
 
                 {/* Key Capabilities */}
-                <ul className="space-y-1.5 mb-5 text-xs text-neutral-300">
-                  {project.features.slice(0, 2).map((feat, i) => (
+                <ul className="space-y-2 mb-6 text-xs text-neutral-300">
+                  {project.features.slice(0, 3).map((feat, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[var(--color-accent)] mt-0.5">✔</span>
                       <span>{feat}</span>
@@ -310,7 +245,7 @@ export default function Portfolio() {
 
               <div>
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-5 pt-4 border-t border-[var(--color-border)]">
+                <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-[var(--color-border)]">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -327,15 +262,15 @@ export default function Portfolio() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold text-center bg-[var(--color-accent)] text-black hover:bg-[var(--color-accent-hover)] transition-all flex items-center justify-center gap-1.5 shadow-md shadow-[var(--color-accent)]/10"
+                    className="flex-1 py-3 px-4 rounded-xl text-xs font-bold text-center bg-[var(--color-accent)] text-black hover:bg-[var(--color-accent-hover)] transition-all flex items-center justify-center gap-1.5 shadow-md shadow-[var(--color-accent)]/10 hover:scale-105"
                   >
-                    <span>Visit Live Site</span>
+                    <span>Visit Live Website</span>
                     <span className="text-xs">↗</span>
                   </a>
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="py-2.5 px-4 rounded-xl text-xs font-medium border border-[var(--color-border)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-bg-tertiary)] transition-all"
+                    className="py-3 px-5 rounded-xl text-xs font-semibold border border-[var(--color-border)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-bg-tertiary)] transition-all"
                   >
                     Blueprint
                   </button>

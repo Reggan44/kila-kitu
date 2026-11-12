@@ -26,13 +26,6 @@ export default function Hero() {
       img: "/projects/myibada-hero.jpg",
     },
     {
-      name: "AIC Happy Valley",
-      domain: "aic-happy-valley.web.app",
-      url: "https://aic-happy-valley.web.app/",
-      tag: "Congregation PWA & Portal",
-      img: "/projects/aic-mockup.png",
-    },
-    {
       name: "Meed Collections",
       domain: "meedcollections.store",
       url: "https://www.meedcollections.store/",
@@ -66,7 +59,7 @@ export default function Hero() {
         {/* Subheadline */}
         <p className="max-w-3xl text-base md:text-xl text-neutral-400 leading-relaxed font-normal">
           From high-converting web platforms and M-Pesa automated workflows to custom
-          retail POS and enterprise logistics — <strong className="text-white">Kila Kitu Tech</strong> engineers
+          e-commerce storefronts and corporate legal portals — <strong className="text-white">Kila Kitu Tech</strong> engineers
           the mission-critical software that powers modern Kenyan businesses.
         </p>
 
@@ -114,17 +107,17 @@ export default function Hero() {
           <div className="flex items-center justify-between max-w-5xl mx-auto mb-4 px-1">
             <div className="text-[11px] uppercase tracking-widest text-neutral-400 font-bold flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              Live Production Deployments
+              Live Client Deployments
             </div>
             <a
               href="#portfolio"
               className="text-xs text-[var(--color-accent)] hover:underline font-semibold"
             >
-              View All 6 Systems →
+              View All 4 Systems →
             </a>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3.5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {liveSites.map((p, idx) => (
               <a
                 key={idx}
@@ -133,7 +126,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#121215] p-2 hover:border-[var(--color-accent)] transition-all duration-300 text-left block hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-accent)]/10"
               >
-                <div className="h-20 w-full rounded-xl overflow-hidden bg-black/60 mb-2 relative flex items-center justify-center">
+                <div className="h-24 w-full rounded-xl overflow-hidden bg-black/60 mb-2 relative flex items-center justify-center">
                   <img
                     src={p.img}
                     alt={p.name}
