@@ -34,8 +34,8 @@ export default function Hero() {
     },
     {
       name: "Meed Collections",
-      domain: "meedcollestions.store",
-      url: "https://meedcollestions.store/",
+      domain: "meedcollections.store",
+      url: "https://www.meedcollections.store/",
       tag: "Next.js + Prisma E-Commerce",
       img: "/projects/meed-banner2.png",
     },

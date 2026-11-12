@@ -114,8 +114,8 @@ const liveProjects: LiveProject[] = [
   {
     id: "meed",
     name: "Meed Collections",
-    liveUrl: "https://meedcollestions.store/",
-    domainDisplay: "meedcollestions.store",
+    liveUrl: "https://www.meedcollections.store/",
+    domainDisplay: "meedcollections.store",
     category: "E-Commerce & Retail",
     headline: "Full-Stack E-Commerce Storefront with Next.js & Prisma",
     description:
