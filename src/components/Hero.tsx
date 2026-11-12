@@ -1,17 +1,44 @@
 "use client";
 
-export default function Hero() {
-  const whatsappUrl =
-    "https://wa.me/254700000000?text=" +
-    encodeURIComponent(
-      "Hi Kila Kitu Tech! I'm interested in building a digital system for my business."
-    );
+import { siteConfig } from "@/config/site";
 
-  const previewProjects = [
-    { name: "Outlook Signs OOH", tag: "Interactive 3D & Maps", img: "/projects/outlook-hero.png" },
-    { name: "LawDone Legal Hub", tag: "Client Portal & Intake", img: "/projects/law-hero.png" },
-    { name: "AIC Community Portal", tag: "Mobile App Suite", img: "/projects/aic-mockup.png" },
-    { name: "MyIbada Platform", tag: "M-Pesa Giving & Stream", img: "/projects/myibada-hero.jpg" },
+export default function Hero() {
+  const liveSites = [
+    {
+      name: "Sofiya Nzau",
+      domain: "sofiyanzau.com",
+      url: "https://www.sofiyanzau.com/",
+      tag: "Global Afrohouse Artist ('Mwaki')",
+      img: "/projects/sofiya-logo.png",
+    },
+    {
+      name: "Nzuki & Co. Advocates",
+      domain: "nzukilawassociates.co.ke",
+      url: "https://www.nzukilawassociates.co.ke/",
+      tag: "Nairobi Corporate Law Firm",
+      img: "/projects/law-hero.png",
+    },
+    {
+      name: "MyIbada",
+      domain: "myibada.co.ke",
+      url: "https://myibada.co.ke/",
+      tag: "Church Platform & M-Pesa Giving",
+      img: "/projects/myibada-hero.jpg",
+    },
+    {
+      name: "AIC Happy Valley",
+      domain: "aic-happy-valley.web.app",
+      url: "https://aic-happy-valley.web.app/",
+      tag: "Congregation PWA & Portal",
+      img: "/projects/aic-mockup.png",
+    },
+    {
+      name: "Meed Collections",
+      domain: "meedcollestions.store",
+      url: "https://meedcollestions.store/",
+      tag: "Next.js + Prisma E-Commerce",
+      img: "/projects/meed-banner2.png",
+    },
   ];
 
   return (
@@ -21,7 +48,7 @@ export default function Hero() {
         <div className="hero-gradient-orb absolute inset-0 opacity-40 pointer-events-none" />
       </div>
 
-      {/* Main Content */}
+      {/* Main Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center flex flex-col items-center gap-7">
         {/* Status Pill */}
         <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/10 px-5 py-2 text-xs md:text-sm text-[var(--color-accent)] backdrop-blur-md">
@@ -46,7 +73,7 @@ export default function Hero() {
         {/* Action CTAs */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">
           <a
-            href={whatsappUrl}
+            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'm interested in building a software system for my business.")}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[var(--color-accent-hover)] hover:scale-105 active:scale-95 shadow-xl shadow-[var(--color-accent)]/20"
@@ -63,7 +90,7 @@ export default function Hero() {
             }}
             className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/5 hover:scale-105 active:scale-95"
           >
-            Explore Live Systems ↓
+            Explore Live Client Sites ↓
           </a>
         </div>
 
@@ -82,33 +109,48 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Live Systems Snapshot Strip (The Wex/Ratified differentiator) */}
+        {/* Live Systems Snapshot Strip with Clickable Links */}
         <div className="w-full mt-10 pt-8 border-t border-white/5">
-          <div className="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mb-4">
-            Recent Production Deployments
+          <div className="flex items-center justify-between max-w-5xl mx-auto mb-4 px-1">
+            <div className="text-[11px] uppercase tracking-widest text-neutral-400 font-bold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Live Production Deployments
+            </div>
+            <a
+              href="#portfolio"
+              className="text-xs text-[var(--color-accent)] hover:underline font-semibold"
+            >
+              View All 6 Systems →
+            </a>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {previewProjects.map((p, idx) => (
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3.5 max-w-5xl mx-auto">
+            {liveSites.map((p, idx) => (
               <a
                 key={idx}
-                href="#portfolio"
-                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#121215] p-2 hover:border-[var(--color-accent)] transition-all duration-300 text-left block"
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#121215] p-2 hover:border-[var(--color-accent)] transition-all duration-300 text-left block hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-accent)]/10"
               >
-                <div className="h-24 w-full rounded-xl overflow-hidden bg-black/50 mb-2 relative">
+                <div className="h-20 w-full rounded-xl overflow-hidden bg-black/60 mb-2 relative flex items-center justify-center">
                   <img
                     src={p.img}
                     alt={p.name}
                     className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                  <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-black/70 flex items-center justify-center text-[10px] text-white/80 group-hover:text-[var(--color-accent)]">
+                    ↗
+                  </div>
                 </div>
                 <div className="px-1">
                   <div className="text-xs font-bold text-white group-hover:text-[var(--color-accent)] truncate">
                     {p.name}
                   </div>
-                  <div className="text-[10px] text-neutral-400 truncate">
-                    {p.tag}
+                  <div className="text-[10px] text-emerald-400 font-mono truncate">
+                    {p.domain}
                   </div>
                 </div>
               </a>

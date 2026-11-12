@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import Estimator from "@/components/Estimator";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
+        <Estimator />
         <About />
         <CTA />
         <Contact />

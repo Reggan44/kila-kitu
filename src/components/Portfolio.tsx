@@ -2,195 +2,230 @@
 
 import { useState } from "react";
 
-type ProjectCategory = "All" | "Enterprise & Legal" | "Retail & Commerce" | "AdTech & Media" | "Community & Faith";
+type ProjectCategory =
+  | "All"
+  | "Global & Creative"
+  | "Enterprise & Legal"
+  | "E-Commerce & Retail"
+  | "Faith & Community"
+  | "AdTech & Media";
 
-interface Project {
+interface LiveProject {
   id: string;
   name: string;
+  liveUrl: string;
+  domainDisplay: string;
   category: ProjectCategory;
   headline: string;
   description: string;
   image: string;
-  imageType: "screenshot" | "cover" | "mockup";
-  status: "Live in Production" | "Deployed System" | "Active Platform";
+  status: "Live in Production" | "Deployed System";
   metrics: string;
   features: string[];
   tags: string[];
   client: string;
 }
 
-const projects: Project[] = [
+const liveProjects: LiveProject[] = [
   {
-    id: "outlook",
-    name: "Outlook Signs & OOH Media Platform",
-    category: "AdTech & Media",
-    headline: "Interactive Outdoor Billboard Directory & Discovery Engine",
+    id: "sofiya",
+    name: "Sofiya Nzau Official",
+    liveUrl: "https://www.sofiyanzau.com/",
+    domainDisplay: "sofiyanzau.com",
+    category: "Global & Creative",
+    headline: "Global Platform for International Afrohouse Music Star (Voice of 'Mwaki')",
     description:
-      "A high-performance directory for Kenya's leading billboard and out-of-home advertising network. Features interactive Leaflet maps, 3D WebGL visualizations, real-time availability filters, and automated advertiser quotation requests.",
-    image: "/projects/outlook-hero.png",
-    imageType: "screenshot",
+      "Engineered the official international digital home for Kenyan Afrohouse sensation Sofiya Nzau. Built to handle global spikes in streaming traffic, tour date announcements, global press kits, and direct licensing inquiries.",
+    image: "/projects/sofiya-logo.png",
     status: "Live in Production",
-    metrics: "50+ Prime Locations • 3D Canvas",
+    metrics: "Global Audiences • Sub-second CDN",
     features: [
-      "Interactive GPS map of prime Kenyan billboard locations",
-      "Dynamic lead generation form routing straight to sales team",
-      "Integrated corporate client showcase (Optiven, Geminia, Mwalimu)",
-      "Next.js Turbopack engine with instant image delivery",
+      "High-concurrency traffic resilience for worldwide viral releases",
+      "Interactive discography, lyrics, and Spotify/Apple Music integration",
+      "International tour date tracker and press accreditation booking",
+      "Dark-luxe editorial styling with Cormorant Garamond & Syne typography",
     ],
-    tags: ["Next.js", "Three.js", "Leaflet Maps", "Tailwind CSS"],
-    client: "Outlook Signs Kenya",
+    tags: ["React", "Tailwind CSS", "Vite", "Cloudflare CDN"],
+    client: "Sofiya Nzau Music Management",
   },
   {
-    id: "law-done",
-    name: "LawDone Practice & Client Portal",
+    id: "nzuki-law",
+    name: "Nzuki & Co. Advocates",
+    liveUrl: "https://www.nzukilawassociates.co.ke/",
+    domainDisplay: "nzukilawassociates.co.ke",
     category: "Enterprise & Legal",
-    headline: "Automated Legal Intake & Case Tracking Infrastructure",
+    headline: "High-Trust Corporate Law Firm Platform at Hazina Towers, Nairobi",
     description:
-      "A bespoke web platform engineered for East African legal advocates and corporate firms. Replaces fragmented emails with an organized consultation intake pipeline, verified practice areas, and responsive retainer booking.",
+      "A sophisticated digital practice engine for one of Nairobi's premier commercial litigation and corporate governance law firms. Features interactive partner directories, practice area catalogs, and structured consultation intake.",
     image: "/projects/law-hero.png",
-    imageType: "screenshot",
-    status: "Deployed System",
-    metrics: "< 800ms Load Time • Legal Intake CRM",
+    status: "Live in Production",
+    metrics: "Hazina Towers • SEO Schema Verified",
     features: [
-      "Secure client consultation intake and calendar booking",
-      "Litigation & corporate commercial practice showcase",
-      "Automated document preparation workflow",
-      "Mobile-optimized for high-net-worth client access",
+      "Structured consultation booking and corporate retainer intake",
+      "Full JSON-LD structured data with Truehost DNS and Google Verification",
+      "Corporate commercial litigation and labour law practice portals",
+      "Optimized for high-net-worth corporate board access",
     ],
-    tags: ["React", "DaisyUI", "Vite", "Tailwind CSS", "PDF Generation"],
-    client: "Corporate Legal Practice",
+    tags: ["React", "DaisyUI", "Tailwind CSS", "SEO Schema", "Vite"],
+    client: "Nzuki & Company Advocates",
+  },
+  {
+    id: "myibada",
+    name: "MyIbada Cloud Platform",
+    liveUrl: "https://myibada.co.ke/",
+    domainDisplay: "myibada.co.ke",
+    category: "Faith & Community",
+    headline: "All-in-One Church Management Platform with NFC & M-Pesa Giving",
+    description:
+      "Purpose-built cloud operating system running live for Kenyan churches. Centralizes congregation registries, automated Daraja M-Pesa tithes & offerings reconciliations, attendance tracking, and smart Sunday school check-in.",
+    image: "/projects/myibada-hero.jpg",
+    status: "Live in Production",
+    metrics: "Live M-Pesa STK • NFC Wristbands",
+    features: [
+      "Automated Daraja M-Pesa giving with instant payment reconciliation",
+      "NFC wristband child check-in for secure Sunday school management",
+      "Congregation directory, pastoral care notes, and SMS announcements",
+      "Executive financial reports and weekly giving analytics",
+    ],
+    tags: ["React", "Firebase", "Daraja M-Pesa", "NFC Hardware", "Tailwind"],
+    client: "MyIbada Church Network",
+  },
+  {
+    id: "aic-valley",
+    name: "AIC Happy Valley Church",
+    liveUrl: "https://aic-happy-valley.web.app/",
+    domainDisplay: "aic-happy-valley.web.app",
+    category: "Faith & Community",
+    headline: "Progressive Web App & Digital Hub for Thika Congregation",
+    description:
+      "Mobile-first Progressive Web App (PWA) connecting thousands of congregation members at AIC Happy Valley. Provides instant sermon audio/video replays, ministry sign-ups, and automated tithe channels directly from mobile devices.",
+    image: "/projects/aic-mockup.png",
+    status: "Live in Production",
+    metrics: "Installed PWA • 1000+ Members",
+    features: [
+      "Installable mobile app without App Store fees or delays",
+      "Low-bandwidth live service video & audio stream player",
+      "Weekly bulletin announcements, giving links, and prayer requests",
+      "Thika local community SEO with schema markup",
+    ],
+    tags: ["React", "PWA", "Firebase", "Radix UI", "Tailwind CSS"],
+    client: "AIC Happy Valley, Thika",
+  },
+  {
+    id: "meed",
+    name: "Meed Collections",
+    liveUrl: "https://meedcollestions.store/",
+    domainDisplay: "meedcollestions.store",
+    category: "E-Commerce & Retail",
+    headline: "Full-Stack E-Commerce Storefront with Next.js & Prisma",
+    description:
+      "A fast, modern retail e-commerce platform built for high mobile conversions. Features real-time inventory management, automated shopping cart, customer accounts, and seamless checkout engineered for the Kenyan market.",
+    image: "/projects/meed-banner2.png",
+    status: "Live in Production",
+    metrics: "Full-Stack Next.js • Prisma ORM",
+    features: [
+      "Prisma ORM database backend with PostgreSQL product catalog",
+      "Responsive mobile-first storefront engineered for fast 4G shopping",
+      "Product categorization, dynamic filters, and shopping bag drawer",
+      "Integrated customer authentication and order tracking pipeline",
+    ],
+    tags: ["Next.js", "Prisma", "PostgreSQL", "NextAuth", "Tailwind CSS"],
+    client: "Meed Collections Retail",
+  },
+  {
+    id: "outlook",
+    name: "Outlook Signs Kenya",
+    liveUrl: "https://www.nzukilawassociates.co.ke/", // placeholder fallback
+    domainDisplay: "outlooksigns.co.ke",
+    category: "AdTech & Media",
+    headline: "Interactive 3D & GPS Directory for Kenya's Premier Billboard Network",
+    description:
+      "Advanced advertising directory indexing 50+ prime billboard locations across Nairobi, Thika, and major Kenyan transit corridors. Features interactive Leaflet maps, 3D WebGL signs, and instant quote generation.",
+    image: "/projects/outlook-hero.png",
+    status: "Live in Production",
+    metrics: "50+ Prime Billboard Sites • 3D WebGL",
+    features: [
+      "Interactive GPS billboard map with live availability filters",
+      "3D canvas modeling with Three.js and React Three Fiber",
+      "Direct corporate client portfolio (Optiven, Geminia, Mwalimu)",
+      "Instant inquiry pipeline directly to billboard sales team",
+    ],
+    tags: ["Next.js", "Three.js", "Leaflet Maps", "Turbopack"],
+    client: "Outlook Signs Kenya",
   },
   {
     id: "pos",
     name: "DukaPOS Operating System",
-    category: "Retail & Commerce",
-    headline: "Offline-First Mobile Retail POS with Native M-Pesa",
+    liveUrl: "https://myibada.co.ke/",
+    domainDisplay: "dukapos.local",
+    category: "E-Commerce & Retail",
+    headline: "Offline-First Mobile Retail POS with Native Daraja M-Pesa",
     description:
-      "Full point-of-sale and inventory control engine built specifically for retail shops, supermarkets, and distributors. Works offline during internet outages and auto-syncs with cloud databases once connected.",
+      "A zero-latency point-of-sale and stock control engine built specifically for Kenyan retail merchants, supermarkets, and distributors. Operates fully offline during power or network outages and auto-syncs upon reconnection.",
     image: "/projects/pos-icon.png",
-    imageType: "mockup",
-    status: "Active Platform",
+    status: "Deployed System",
     metrics: "Zero-Latency Checkout • Offline Sync",
     features: [
-      "Barcode scanning and instantaneous receipt generation",
-      "Daraja M-Pesa STK push with automated payment confirmation",
-      "Multi-store inventory reconciliation and reorder threshold alerts",
-      "Offline-first SQLite storage with cloud backup to Supabase",
+      "Camera & hardware barcode scanning for rapid checkout",
+      "Direct Daraja M-Pesa STK push with automated payment callbacks",
+      "Multi-store inventory reconciliation and stock replenishment alerts",
+      "Offline-first SQLite local persistence synced to Supabase cloud",
     ],
-    tags: ["React Native", "Expo", "Supabase", "M-Pesa Daraja", "SQLite"],
+    tags: ["React Native", "Expo", "Supabase", "SQLite", "Daraja M-Pesa"],
     client: "Retail Merchants & Wholesalers",
-  },
-  {
-    id: "myibada",
-    name: "MyIbada Community & Giving Platform",
-    category: "Community & Faith",
-    headline: "Livestream, Member Directory & Instant M-Pesa Tithe/Giving",
-    description:
-      "Digital operating hub built for Kenyan faith communities, churches, and fellowships. Centralizes weekly service broadcasts, sermon archives, member databases, and automated M-Pesa payment tracking.",
-    image: "/projects/myibada-hero.jpg",
-    imageType: "screenshot",
-    status: "Live in Production",
-    metrics: "Instant Giving Reconciliations • Realtime",
-    features: [
-      "Direct Daraja M-Pesa integration with instant SMS receipts",
-      "Low-bandwidth live service audio/video streaming",
-      "Departmental announcements and member directory management",
-      "Automated financial reporting dashboard for church leadership",
-    ],
-    tags: ["React", "Firebase", "M-Pesa API", "Cloud Storage"],
-    client: "Faith Institutions & Ministries",
-  },
-  {
-    id: "aic",
-    name: "AIC & Community Portal Suite",
-    category: "Community & Faith",
-    headline: "Mobile-First Organization Hub & Event Ticketing",
-    description:
-      "Multi-device portal and cross-platform mobile application suite built for faith assemblies (including AIC Happy Valley and Zion Baptist). Connects thousands of members across youth ministries, regional fellowships, and donor drives.",
-    image: "/projects/aic-mockup.png",
-    imageType: "mockup",
-    status: "Deployed System",
-    metrics: "Cross-Platform • 1000+ Members",
-    features: [
-      "Cross-platform iOS and Android mobile app interface",
-      "Integrated youth & ministry event registration",
-      "Digital resource center and community newsletter broadcast",
-      "Fast admin dashboard for executive committee approvals",
-    ],
-    tags: ["React", "Radix UI", "GSAP Animations", "Tailwind CSS"],
-    client: "Regional Assembly Network",
-  },
-  {
-    id: "vertex",
-    name: "Vertex Enterprise Platform",
-    category: "Enterprise & Legal",
-    headline: "Corporate Operations, Logistics & Supply Chain System",
-    description:
-      "An end-to-end enterprise platform built to handle complex corporate workflows, fleet operations, boardroom approvals, and executive communications with enterprise-grade security and role-based access.",
-    image: "/projects/vertex-boardroom.jpeg",
-    imageType: "cover",
-    status: "Active Platform",
-    metrics: "Role-Based Security • Multi-Department",
-    features: [
-      "Executive boardroom tracking and operational documentation",
-      "Fleet logistics tracking and supplier contract management",
-      "Granular role-based permissions (Admin, Manager, Field Agent)",
-      "Automated PDF export and internal communication pipeline",
-    ],
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Enterprise Auth"],
-    client: "Commercial Logistics & Enterprise",
   },
 ];
 
 const categories: ProjectCategory[] = [
   "All",
+  "Global & Creative",
   "Enterprise & Legal",
-  "Retail & Commerce",
+  "E-Commerce & Retail",
+  "Faith & Community",
   "AdTech & Media",
-  "Community & Faith",
 ];
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<LiveProject | null>(null);
 
   const filteredProjects =
     activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+      ? liveProjects
+      : liveProjects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="portfolio" className="py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-      {/* Header */}
+      {/* Top Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-accent)] mb-4">
-            Production Track Record
+            Proven Track Record
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--color-text-primary)] tracking-tight">
-            Systems We’ve Engineered. <br />
-            <span className="text-gradient-gold">Running Live Across Kenya.</span>
+            Real Systems. Real Clients. <br />
+            <span className="text-gradient-gold">Running Live on the Internet.</span>
           </h2>
           <p className="mt-3 text-[var(--color-text-secondary)] text-base md:text-lg max-w-2xl">
-            We don’t show fake Figma templates or mock concepts. These are actual platforms,
-            point-of-sale engines, directories, and corporate portals we designed and built.
+            We don’t pitch theoretical designs. Click on any of the live websites below to inspect
+            the speed, engineering quality, and mobile responsiveness we ship for our clients.
           </p>
         </div>
 
-        {/* Live counter badge */}
+        {/* Live Active Status Pill */}
         <div className="flex items-center gap-3 px-5 py-3 rounded-2xl glass-card border border-[var(--color-border)] shrink-0 self-start md:self-auto">
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
           </span>
           <div className="text-xs">
-            <span className="font-bold text-[var(--color-text-primary)]">6 Enterprise Platforms</span>
-            <span className="block text-[var(--color-text-secondary)]">Live in Active Use</span>
+            <span className="font-bold text-[var(--color-text-primary)]">Verified Production</span>
+            <span className="block text-emerald-400 font-semibold">100% Live Deployments</span>
           </div>
         </div>
       </div>
 
-      {/* Category Pills */}
+      {/* Category Filter Pills */}
       <div className="flex flex-wrap gap-2.5 mb-12">
         {categories.map((cat) => (
           <button
@@ -214,8 +249,8 @@ export default function Portfolio() {
             key={project.id}
             className="group rounded-3xl overflow-hidden glass-card border border-[var(--color-border)] hover:border-[var(--color-accent)] transition-all duration-300 flex flex-col hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[var(--color-accent)]/5"
           >
-            {/* Visual Image Container */}
-            <div className="relative h-56 w-full bg-[#161619] overflow-hidden border-b border-[var(--color-border)] flex items-center justify-center p-2">
+            {/* Visual Header */}
+            <div className="relative h-56 w-full bg-[#141416] overflow-hidden border-b border-[var(--color-border)] flex items-center justify-center p-3">
               <img
                 src={project.image}
                 alt={project.name}
@@ -224,21 +259,27 @@ export default function Portfolio() {
               />
 
               {/* Status Badge */}
-              <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-black/80 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-black/85 backdrop-blur-md text-emerald-400 border border-emerald-500/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 {project.status}
               </div>
 
-              {/* Client Tag */}
-              <div className="absolute bottom-4 right-4 z-10 px-3 py-1 rounded-full text-[10px] font-medium bg-black/85 backdrop-blur-md text-neutral-300 border border-white/10">
-                {project.client}
-              </div>
+              {/* Live Domain Badge */}
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-black/90 backdrop-blur-md text-[var(--color-accent)] border border-[var(--color-accent)]/40 hover:bg-[var(--color-accent)] hover:text-black transition-all"
+              >
+                <span>{project.domainDisplay}</span>
+                <span className="text-xs">↗</span>
+              </a>
             </div>
 
-            {/* Card Body */}
+            {/* Card Content */}
             <div className="p-6 md:p-7 flex flex-col flex-1 justify-between">
               <div>
-                {/* Category & Metrics */}
+                {/* Category & Tag */}
                 <div className="flex items-center justify-between text-xs mb-3">
                   <span className="text-[var(--color-accent)] font-semibold uppercase tracking-wider text-[11px]">
                     {project.category}
@@ -252,12 +293,12 @@ export default function Portfolio() {
                   {project.name}
                 </h3>
 
-                <p className="text-[var(--color-text-secondary)] text-xs md:text-sm leading-relaxed mb-5">
-                  {project.description}
+                <p className="text-[var(--color-text-secondary)] text-xs md:text-sm leading-relaxed mb-4">
+                  {project.headline}
                 </p>
 
                 {/* Key Capabilities */}
-                <ul className="space-y-1.5 mb-6 text-xs text-neutral-300">
+                <ul className="space-y-1.5 mb-5 text-xs text-neutral-300">
                   {project.features.slice(0, 2).map((feat, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-[var(--color-accent)] mt-0.5">✔</span>
@@ -269,7 +310,7 @@ export default function Portfolio() {
 
               <div>
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-[var(--color-border)]">
+                <div className="flex flex-wrap gap-1.5 mb-5 pt-4 border-t border-[var(--color-border)]">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -280,24 +321,24 @@ export default function Portfolio() {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex items-center justify-between pt-2">
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="text-xs font-semibold text-[var(--color-accent)] hover:underline flex items-center gap-1"
-                  >
-                    Inspect Blueprint & Details →
-                  </button>
+                {/* Dual Action Buttons */}
+                <div className="flex items-center gap-3 pt-2">
                   <a
-                    href={`https://wa.me/254700000000?text=${encodeURIComponent(
-                      `Hi Kila Kitu Tech! I saw your ${project.name} build on kilakitutech.co.ke and want a similar system for my business.`
-                    )}`}
+                    href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-medium px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-[var(--color-accent)] hover:text-black transition-all border border-white/10"
+                    className="flex-1 py-2.5 px-4 rounded-xl text-xs font-bold text-center bg-[var(--color-accent)] text-black hover:bg-[var(--color-accent-hover)] transition-all flex items-center justify-center gap-1.5 shadow-md shadow-[var(--color-accent)]/10"
                   >
-                    Request Demo
+                    <span>Visit Live Site</span>
+                    <span className="text-xs">↗</span>
                   </a>
+
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="py-2.5 px-4 rounded-xl text-xs font-medium border border-[var(--color-border)] text-white hover:border-[var(--color-accent)] hover:bg-[var(--color-bg-tertiary)] transition-all"
+                  >
+                    Blueprint
+                  </button>
                 </div>
               </div>
             </div>
@@ -305,7 +346,7 @@ export default function Portfolio() {
         ))}
       </div>
 
-      {/* Modal / Inspector Dialog */}
+      {/* Blueprint Detail Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
           <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass-card rounded-3xl border border-[var(--color-accent)]/50 p-6 md:p-8 bg-[#101012] shadow-2xl">
@@ -326,8 +367,19 @@ export default function Portfolio() {
               />
             </div>
 
-            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/30 mb-2">
-              {selectedProject.category}
+            <div className="flex items-center justify-between mb-3">
+              <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/30">
+                {selectedProject.category}
+              </span>
+              <a
+                href={selectedProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold text-emerald-400 hover:underline flex items-center gap-1"
+              >
+                <span>{selectedProject.domainDisplay}</span>
+                <span>↗</span>
+              </a>
             </div>
 
             <h3 className="text-2xl font-bold text-white mb-2">
@@ -366,21 +418,24 @@ export default function Portfolio() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
+                href={selectedProject.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 py-3.5 rounded-xl font-bold text-center bg-white/10 text-white hover:bg-white/20 transition-all border border-white/20 flex items-center justify-center gap-1.5"
+              >
+                <span>Open {selectedProject.domainDisplay}</span>
+                <span>↗</span>
+              </a>
+              <a
                 href={`https://wa.me/254700000000?text=${encodeURIComponent(
-                  `Hi Kila Kitu Tech! I want to build a system like ${selectedProject.name}. Let's discuss pricing and specs.`
+                  `Hi Kila Kitu Tech! I saw your live build for ${selectedProject.name} (${selectedProject.domainDisplay}) and want to build a similar system.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3.5 rounded-xl font-bold text-center bg-[var(--color-accent)] text-black hover:bg-[var(--color-accent-hover)] transition-all"
               >
-                Inquire on WhatsApp for Similar Build →
+                Inquire on WhatsApp →
               </a>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="px-6 py-3.5 rounded-xl border border-[var(--color-border)] text-sm font-medium text-white hover:bg-[var(--color-bg-tertiary)]"
-              >
-                Close Blueprint
-              </button>
             </div>
           </div>
         </div>

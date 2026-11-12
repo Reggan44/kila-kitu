@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 const navLinks = [
   { label: "Home", href: "#" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Live Systems", href: "#portfolio" },
+  { label: "Estimator", href: "#estimator" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -23,98 +25,96 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--color-bg-primary)]/90 backdrop-blur-lg shadow-lg shadow-black/20"
-          : "bg-transparent"
+          ? "bg-[#0a0a0b]/85 backdrop-blur-xl border-b border-[var(--color-border)] shadow-2xl py-3.5"
+          : "bg-transparent py-5"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link href="#" className="flex items-center gap-1 text-xl font-bold tracking-wider">
-          <span className="text-[var(--color-text-primary)]">KILA KITU</span>
-          <span className="text-[var(--color-accent)]">TECH</span>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="#" className="flex items-center gap-2 group">
+          <span className="text-xl md:text-2xl font-black tracking-tight text-white group-hover:opacity-90">
+            KILA KITU{" "}
+            <span className="text-gradient-gold">TECH</span>
+          </span>
+          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
         </Link>
 
-        {/* Desktop links */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="text-sm text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-accent)]"
-              >
-                {link.label}
-              </a>
-            </li>
+            <a
+              key={link.label}
+              href={link.href}
+              className="text-xs lg:text-sm font-medium text-neutral-300 hover:text-[var(--color-accent)] transition-colors duration-200"
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
+        </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href="https://wa.me/254700000000"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-2.5 text-sm font-semibold text-[var(--color-bg-primary)] transition-all duration-200 hover:bg-[var(--color-accent-hover)] hover:shadow-lg hover:shadow-[var(--color-accent)]/25 hover:scale-105"
-        >
-          Start a Project
-        </a>
+        {/* Right CTA Button */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'd like to book a scoping call for my system.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-full text-xs font-bold text-black bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-all duration-200 shadow-md shadow-[var(--color-accent)]/20 hover:scale-105"
+          >
+            Start a Project →
+          </a>
+        </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile Hamburger Button */}
         <button
-          onClick={() => setMobileOpen((prev) => !prev)}
-          className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden w-10 h-10 rounded-xl glass-card flex flex-col items-center justify-center gap-1.5 text-white"
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 rounded bg-[var(--color-text-primary)] transition-all duration-300 ${
-              mobileOpen ? "translate-y-2 rotate-45" : ""
+            className={`w-5 h-0.5 bg-white transition-all duration-300 ${
+              mobileOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 rounded bg-[var(--color-text-primary)] transition-all duration-300 ${
+            className={`w-5 h-0.5 bg-white transition-all duration-300 ${
               mobileOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 rounded bg-[var(--color-text-primary)] transition-all duration-300 ${
-              mobileOpen ? "-translate-y-2 -rotate-45" : ""
+            className={`w-5 h-0.5 bg-white transition-all duration-300 ${
+              mobileOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
         </button>
-      </nav>
-
-      {/* Mobile menu */}
-      <div
-        className={`overflow-hidden transition-all duration-300 md:hidden ${
-          mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]/95 backdrop-blur-lg px-6 pb-6 pt-4">
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-base text-[var(--color-text-secondary)] transition-colors duration-200 hover:text-[var(--color-accent)]"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <a
-            href="https://wa.me/254700000000"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 block w-full rounded-full bg-[var(--color-accent)] py-3 text-center text-sm font-semibold text-[var(--color-bg-primary)] transition-all duration-200 hover:bg-[var(--color-accent-hover)]"
-          >
-            Start a Project
-          </a>
-        </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div className="md:hidden glass-card border-b border-[var(--color-border)] px-6 py-6 mt-3 space-y-4 bg-[#0a0a0b]/95 backdrop-blur-2xl">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="block text-base font-semibold text-neutral-200 hover:text-[var(--color-accent)]"
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="pt-4 border-t border-[var(--color-border)]">
+            <a
+              href={siteConfig.whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 rounded-full text-center text-sm font-bold block bg-[var(--color-accent)] text-black"
+            >
+              Start a Project on WhatsApp →
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
