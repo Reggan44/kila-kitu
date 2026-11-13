@@ -36,42 +36,43 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-16">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-[#0a0a0b]" aria-hidden="true">
+      {/* Ambient Radial Gradient Background */}
+      <div className="absolute inset-0 bg-[#0B0F19]" aria-hidden="true">
         <div className="hero-gradient-orb absolute inset-0 opacity-40 pointer-events-none" />
       </div>
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center flex flex-col items-center gap-7">
-        {/* Status Pill */}
-        <div className="inline-flex items-center gap-2.5 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/10 px-5 py-2 text-xs md:text-sm text-[var(--color-accent)] backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>Digital Infrastructure & Systems Engineered for African Scale</span>
+        {/* Studio Positioning Pill */}
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-[#F59E0B]/40 bg-[#F59E0B]/10 px-5 py-2 text-xs md:text-sm text-[#F59E0B] backdrop-blur-md">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span className="font-semibold tracking-wide">
+            Digital Solutions Studio • One Roof. Zero Finger-Pointing.
+          </span>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl">
-          Everything Your Business Needs to{" "}
-          <span className="hero-gold-text">Run, Scale &amp; Dominate</span>{" "}
-          Online.
+        {/* Poster Main Headline */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-white max-w-5xl">
+          Outgrow the Manual. <br />
+          <span className="hero-gold-text">Build Systems That Scale.</span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="max-w-3xl text-base md:text-xl text-neutral-400 leading-relaxed font-normal">
-          From high-converting web platforms and M-Pesa automated workflows to custom
-          e-commerce storefronts and corporate legal portals — <strong className="text-white">Kila Kitu Tech</strong> engineers
-          the mission-critical software that powers modern Kenyan businesses.
+        {/* Outcome-Driven Subheadline */}
+        <p className="max-w-3xl text-base md:text-xl text-neutral-300 leading-relaxed font-normal">
+          Stop juggling five different freelancers for design, code, M-Pesa, and hosting.
+          <strong className="text-white"> Kila Kitu Tech</strong> engineers websites that bring qualified leads,
+          custom systems that plug revenue leaks, and automated workflows that eliminate paperwork.
         </p>
 
-        {/* Action CTAs */}
+        {/* Dual High-Conversion CTAs */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">
           <a
-            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'm interested in building a software system for my business.")}
+            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I want to discuss building a custom digital system for my business.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[var(--color-accent-hover)] hover:scale-105 active:scale-95 shadow-xl shadow-[var(--color-accent)]/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#F59E0B] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[#d97706] hover:scale-105 active:scale-95 shadow-xl shadow-[#F59E0B]/20"
           >
-            Start a Project on WhatsApp →
+            Chat on WhatsApp / Book Discovery Call →
           </a>
           <a
             href="#portfolio"
@@ -81,16 +82,16 @@ export default function Hero() {
                 .getElementById("portfolio")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-[var(--color-border)] hover:border-[var(--color-accent)] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/5 hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-neutral-700 hover:border-[#F59E0B] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/5 hover:scale-105 active:scale-95"
           >
-            Explore Live Client Sites ↓
+            Inspect Proven Track Record ↓
           </a>
         </div>
 
-        {/* Trust Badges */}
+        {/* Value Proposition Badges */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm text-neutral-400 pt-2">
           <span className="flex items-center gap-2">
-            <span className="text-[var(--color-accent)]">⚡</span> Sub-Second Turbopack Speed
+            <span className="text-[#F59E0B]">⚡</span> Sub-Second Turbopack Speed
           </span>
           <span className="text-neutral-700">•</span>
           <span className="flex items-center gap-2">
@@ -98,22 +99,26 @@ export default function Hero() {
           </span>
           <span className="text-neutral-700">•</span>
           <span className="flex items-center gap-2">
-            <span className="text-[var(--color-accent)]">💳</span> Daraja M-Pesa STK Automated
+            <span className="text-[#F59E0B]">💳</span> Daraja M-Pesa Native Integrations
+          </span>
+          <span className="text-neutral-700">•</span>
+          <span className="flex items-center gap-2">
+            <span className="text-cyan-400">🛡️</span> Zero Plugin Bloatware
           </span>
         </div>
 
-        {/* Live Systems Snapshot Strip with Clickable Links */}
+        {/* Live Client Sites Quick-Strip */}
         <div className="w-full mt-10 pt-8 border-t border-white/5">
           <div className="flex items-center justify-between max-w-5xl mx-auto mb-4 px-1">
             <div className="text-[11px] uppercase tracking-widest text-neutral-400 font-bold flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              Live Client Deployments
+              Live Client Deployments Running on the Internet
             </div>
             <a
               href="#portfolio"
-              className="text-xs text-[var(--color-accent)] hover:underline font-semibold"
+              className="text-xs text-[#F59E0B] hover:underline font-semibold"
             >
-              View All 4 Systems →
+              View Full Case Studies →
             </a>
           </div>
 
@@ -124,7 +129,7 @@ export default function Hero() {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#121215] p-2 hover:border-[var(--color-accent)] transition-all duration-300 text-left block hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--color-accent)]/10"
+                className="group relative rounded-2xl overflow-hidden border border-white/10 bg-[#111827] p-2 hover:border-[#F59E0B] transition-all duration-300 text-left block hover:-translate-y-1 hover:shadow-xl hover:shadow-[#F59E0B]/10"
               >
                 <div className="h-24 w-full rounded-xl overflow-hidden bg-black/60 mb-2 relative flex items-center justify-center">
                   <img
@@ -134,12 +139,12 @@ export default function Hero() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
-                  <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-black/70 flex items-center justify-center text-[10px] text-white/80 group-hover:text-[var(--color-accent)]">
+                  <div className="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-black/70 flex items-center justify-center text-[10px] text-white/80 group-hover:text-[#F59E0B]">
                     ↗
                   </div>
                 </div>
                 <div className="px-1">
-                  <div className="text-xs font-bold text-white group-hover:text-[var(--color-accent)] truncate">
+                  <div className="text-xs font-bold text-white group-hover:text-[#F59E0B] truncate">
                     {p.name}
                   </div>
                   <div className="text-[10px] text-emerald-400 font-mono truncate">
@@ -156,17 +161,17 @@ export default function Hero() {
         .hero-gradient-orb {
           background: radial-gradient(
               ellipse 80% 60% at 50% 30%,
-              rgba(212, 168, 67, 0.16) 0%,
+              rgba(245, 158, 11, 0.16) 0%,
               transparent 65%
             ),
             radial-gradient(
               ellipse 60% 80% at 20% 70%,
-              rgba(212, 168, 67, 0.08) 0%,
+              rgba(245, 158, 11, 0.08) 0%,
               transparent 55%
             ),
             radial-gradient(
               ellipse 50% 50% at 85% 40%,
-              rgba(212, 168, 67, 0.06) 0%,
+              rgba(245, 158, 11, 0.06) 0%,
               transparent 50%
             );
           animation: hero-gradient-shift 12s ease-in-out infinite alternate;
@@ -188,7 +193,7 @@ export default function Hero() {
         }
 
         .hero-gold-text {
-          background: linear-gradient(135deg, #d4a843 0%, #fae69e 50%, #d4a843 100%);
+          background: linear-gradient(135deg, #F59E0B 0%, #FDE68A 50%, #F59E0B 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;

@@ -1,3 +1,4 @@
+import IntroLoader from "@/components/IntroLoader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -11,7 +12,10 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] selection:bg-[var(--color-accent)] selection:text-black">
+    <div className="min-h-screen bg-[#0B0F19] text-[#F5F5F5] selection:bg-[#F59E0B] selection:text-black">
+      {/* Signature 2.5s Curtain Intro Loader */}
+      <IntroLoader />
+
       <Navbar />
       <main>
         <Hero />
