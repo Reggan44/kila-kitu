@@ -2,7 +2,7 @@ export default function CTA() {
   const whatsappUrl =
     "https://wa.me/254700000000?text=" +
     encodeURIComponent(
-      "Hi Kila Kitu Tech! I want to discuss a new software/web platform project for my business."
+      "Hi Kila Kitu Technologies! I want to discuss a new software/web platform project for my business."
     );
 
   return (

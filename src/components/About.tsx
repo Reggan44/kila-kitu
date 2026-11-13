@@ -44,7 +44,7 @@ export default function About() {
           <div className="space-y-4 text-neutral-300 text-base md:text-lg leading-relaxed">
             <p>
               We are not a "startup" testing experimental ideas with your business capital.
-              <strong className="text-white"> Kila Kitu Tech</strong> is a proven Digital Solutions Studio
+              <strong className="text-white"> Kila Kitu Technologies</strong> is a proven Digital Solutions Studio
               with a backlog of production platforms running live across Kenya and international markets.
             </p>
             <p>
@@ -86,7 +86,7 @@ export default function About() {
             The Difference in Quality
           </div>
           <h3 className="text-2xl md:text-3xl font-black text-white">
-            Traditional Agency vs. Kila Kitu Tech
+            Traditional Agency vs. Kila Kitu Technologies
           </h3>
         </div>
 

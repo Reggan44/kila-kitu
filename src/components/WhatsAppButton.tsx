@@ -4,7 +4,7 @@ export default function WhatsAppButton() {
   const whatsappUrl =
     "https://wa.me/254700000000?text=" +
     encodeURIComponent(
-      "Hi Kila Kitu Tech! I visited kilakitutech.co.ke and would like to inquire about building a project."
+      "Hi Kila Kitu Technologies! I visited kilakitutech.co.ke and would like to inquire about building a project."
     );
 
   return (
@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with Kila Kitu Tech on WhatsApp"
+        aria-label="Chat with Kila Kitu Technologies on WhatsApp"
         className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300"
       >
         <svg

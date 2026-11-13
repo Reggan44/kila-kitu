@@ -60,7 +60,7 @@ export default function Hero() {
         {/* Outcome-Driven Subheadline */}
         <p className="max-w-3xl text-base md:text-xl text-neutral-300 leading-relaxed font-normal">
           Stop juggling five different freelancers for design, code, M-Pesa, and hosting.
-          <strong className="text-white"> Kila Kitu Tech</strong> engineers websites that bring qualified leads,
+          <strong className="text-white"> Kila Kitu Technologies</strong> engineers websites that bring qualified leads,
           custom systems that plug revenue leaks, and automated workflows that eliminate paperwork.
         </p>
 

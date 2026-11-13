@@ -166,10 +166,10 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
               : "opacity-0 translate-y-4"
           }`}
         >
-          <div className="text-2xl md:text-3xl font-black tracking-tight text-white">
-            KILA KITU <span className="text-[#F59E0B]">TECH</span>
+          <div className="text-xl md:text-2xl font-black tracking-tight text-white">
+            KILA KITU <span className="text-[#F59E0B]">TECHNOLOGIES</span>
           </div>
-          <div className="text-xs uppercase tracking-[0.25em] text-neutral-400 font-semibold mt-1.5">
+          <div className="text-[11px] uppercase tracking-[0.25em] text-neutral-400 font-semibold mt-1.5">
             Everything Digital. Built to Scale.
           </div>
         </div>
@@ -185,3 +185,4 @@ export default function IntroLoader({ onComplete }: IntroLoaderProps) {
     </div>
   );
 }
+

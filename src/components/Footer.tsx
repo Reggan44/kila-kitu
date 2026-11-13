@@ -60,13 +60,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="#" className="inline-flex items-center gap-1 text-xl font-bold tracking-wider">
+            <Link href="#" className="inline-flex items-center gap-1.5 text-lg font-black tracking-wider">
               <span className="text-[var(--color-text-primary)]">KILA KITU</span>
-              <span className="text-[var(--color-accent)]">TECH</span>
+              <span className="text-[var(--color-accent)]">TECHNOLOGIES</span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
-              Building end-to-end digital infrastructure for African businesses.
-              From concept to deployment, we craft software that scales.
+              Digital Solutions Studio engineering high-converting web platforms, custom ERPs, and native M-Pesa business systems. One roof. Zero finger-pointing.
             </p>
             <a
               href="mailto:kilakitutechnologies@gmail.com"
@@ -145,7 +144,7 @@ export default function Footer() {
       <div className="border-t border-[var(--color-border)]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 sm:flex-row">
           <p className="text-xs text-[var(--color-text-secondary)]">
-            © 2026 Kila Kitu Tech Solutions. All rights reserved.
+            © 2026 Kila Kitu Technologies. All rights reserved.
           </p>
           <p className="text-xs text-[var(--color-text-secondary)]">
             Built with <span className="text-red-500">❤️</span> in Kenya

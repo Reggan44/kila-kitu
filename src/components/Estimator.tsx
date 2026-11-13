@@ -98,7 +98,7 @@ export default function Estimator() {
       .join(", ");
 
     const text =
-      `Hi Kila Kitu Tech! I used the Project Estimator on kilakitutech.co.ke:\n\n` +
+      `Hi Kila Kitu Technologies! I used the Project Estimator on kilakitutech.co.ke:\n\n` +
       `• Platform: ${currentPlatform.name}\n` +
       `• Add-on Modules: ${featNames || "None"}\n` +
       `• Timeline: ${timeline === "express" ? "Express (10-14 days)" : "Standard (3-4 weeks)"}\n` +

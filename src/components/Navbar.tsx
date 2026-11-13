@@ -34,9 +34,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="#" className="flex items-center gap-2 group">
-          <span className="text-xl md:text-2xl font-black tracking-tight text-white group-hover:opacity-90">
+          <span className="text-lg md:text-xl font-black tracking-tight text-white group-hover:opacity-90">
             KILA KITU{" "}
-            <span className="text-gradient-gold">TECH</span>
+            <span className="text-gradient-gold">TECHNOLOGIES</span>
           </span>
           <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
         </Link>

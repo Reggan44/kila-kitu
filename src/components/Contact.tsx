@@ -16,7 +16,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Pre-fill WhatsApp message for instant response or log
-    const waText = `Hi Kila Kitu Tech!%0A%0AMy Name: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0APhone: ${encodeURIComponent(formData.phone)}%0AProject Type: ${encodeURIComponent(formData.projectType)}%0ABudget: ${encodeURIComponent(formData.budget)}%0ABrief: ${encodeURIComponent(formData.message)}`;
+    const waText = `Hi Kila Kitu Technologies!%0A%0AMy Name: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0APhone: ${encodeURIComponent(formData.phone)}%0AProject Type: ${encodeURIComponent(formData.projectType)}%0ABudget: ${encodeURIComponent(formData.budget)}%0ABrief: ${encodeURIComponent(formData.message)}`;
     window.open(`https://wa.me/254700000000?text=${waText}`, "_blank");
     setSubmitted(true);
   };
@@ -80,7 +80,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="text-base font-semibold text-[var(--color-accent)] hover:underline"
                 >
-                  Chat with Kila Kitu Team
+                  Chat with Kila Kitu Technologies Team
                 </a>
                 <div className="text-sm text-[var(--color-text-secondary)]">Fastest response channel</div>
               </div>
