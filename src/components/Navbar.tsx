@@ -6,9 +6,8 @@ import { siteConfig } from "@/config/site";
 
 const navLinks = [
   { label: "Home", href: "#" },
-  { label: "Architecture", href: "#live-signal-card" },
-  { label: "Ecosystem", href: "#services" },
-  { label: "Case Studies", href: "#portfolio" },
+  { label: "Services", href: "#services" },
+  { label: "Live Systems", href: "#portfolio" },
   { label: "Estimator", href: "#estimator" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -28,52 +27,27 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#07090E]/90 backdrop-blur-xl border-b border-[#1A2333] shadow-2xl py-3.5"
+          ? "bg-[#0a0a0b]/85 backdrop-blur-xl border-b border-[var(--color-border)] shadow-2xl py-3.5"
           : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Monogram & Title */}
-        <Link href="#" className="flex items-center gap-3 group shrink-0">
-          <div className="w-11 h-8 rounded-lg bg-[#0B0F17] border border-[#1A2333] group-hover:border-[#F59E0B]/50 flex items-center justify-center px-1.5 transition">
-            <svg
-              className="w-full h-full"
-              viewBox="0 0 255 116"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M 10 12 L 32 12 L 32 52 L 68 12 L 96 12 L 54 57 L 98 104 L 68 104 L 32 64 L 32 104 L 10 104 Z"
-                fill="#E2E8F0"
-              />
-              <path
-                d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
-                fill="#F59E0B"
-              />
-              <path
-                d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
-                fill="#E2E8F0"
-              />
-              <circle cx="242" cy="18" r="5" fill="#FBBF24" />
-            </svg>
-          </div>
-          <div>
-            <span className="font-sans font-black text-sm sm:text-base tracking-[0.14em] text-white block leading-none uppercase">
-              KILA KITU <span className="text-[#F59E0B]">TECHNOLOGIES</span>
-            </span>
-            <span className="font-mono text-[10px] text-slate-400 tracking-wider block mt-1">
-              kilakitutech.co.ke
-            </span>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="#" className="flex items-center gap-2 group">
+          <span className="text-lg md:text-xl font-black tracking-tight text-white group-hover:opacity-90">
+            KILA KITU{" "}
+            <span className="text-gradient-gold">TECHNOLOGIES</span>
+          </span>
+          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-medium tracking-wide text-slate-300">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-white transition-colors duration-200"
+              className="text-xs lg:text-sm font-medium text-neutral-300 hover:text-[var(--color-accent)] transition-colors duration-200"
             >
               {link.label}
             </a>
@@ -81,24 +55,12 @@ export default function Navbar() {
         </nav>
 
         {/* Right CTA Button */}
-        <div className="hidden md:flex items-center gap-2.5">
-          <button
-            onClick={() => {
-              if (typeof window !== "undefined") {
-                window.dispatchEvent(new CustomEvent("kkt-replay-intro"));
-              }
-            }}
-            className="px-3.5 py-2 rounded-xl bg-[#0B0F17] hover:bg-[#0F1522] border border-[#1A2333] hover:border-[#F59E0B]/50 text-slate-300 hover:text-[#F59E0B] text-xs font-medium transition flex items-center gap-1.5 cursor-pointer"
-            title="Replay NVIDIA-style Intro"
-          >
-            <span className="text-[#F59E0B]">⟲</span>
-            <span>Replay Intro</span>
-          </button>
+        <div className="hidden md:flex items-center gap-4">
           <a
-            href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I'd like to book a scoping call for my system.")}
+            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'd like to book a scoping call for my system.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-xl text-xs font-bold text-[#07090E] bg-[#F59E0B] hover:bg-[#FBBF24] transition-all duration-200 shadow-md shadow-[#F59E0B]/20 hover:scale-105"
+            className="px-5 py-2.5 rounded-full text-xs font-bold text-black bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-all duration-200 shadow-md shadow-[var(--color-accent)]/20 hover:scale-105"
           >
             Start a Project →
           </a>
@@ -107,7 +69,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden w-10 h-10 rounded-xl glass-card flex flex-col items-center justify-center gap-1.5 text-white"
+          className="md:hidden w-10 h-10 rounded-xl glass-card flex flex-col items-center justify-center gap-1.5 text-white"
           aria-label="Toggle menu"
         >
           <span
@@ -130,34 +92,23 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden glass-card border-b border-[#1A2333] px-6 py-6 mt-3 space-y-4 bg-[#07090E]/95 backdrop-blur-2xl">
+        <div className="md:hidden glass-card border-b border-[var(--color-border)] px-6 py-6 mt-3 space-y-4 bg-[#0a0a0b]/95 backdrop-blur-2xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-sm font-semibold text-neutral-200 hover:text-[#F59E0B]"
+              className="block text-base font-semibold text-neutral-200 hover:text-[var(--color-accent)]"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-[#1A2333] space-y-2">
-            <button
-              onClick={() => {
-                setMobileOpen(false);
-                if (typeof window !== "undefined") {
-                  window.dispatchEvent(new CustomEvent("kkt-replay-intro"));
-                }
-              }}
-              className="w-full py-2.5 rounded-xl text-center text-xs font-semibold block bg-[#0B0F17] border border-[#1A2333] text-slate-300"
-            >
-              ⟲ Replay Intro
-            </button>
+          <div className="pt-4 border-t border-[var(--color-border)]">
             <a
               href={siteConfig.whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-xl text-center text-xs font-bold block bg-[#F59E0B] text-[#07090E]"
+              className="w-full py-3 rounded-full text-center text-sm font-bold block bg-[var(--color-accent)] text-black"
             >
               Start a Project on WhatsApp →
             </a>
