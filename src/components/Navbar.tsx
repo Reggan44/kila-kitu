@@ -5,17 +5,15 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Live Systems", href: "#portfolio" },
+  { label: "What We Build", href: "#services" },
+  { label: "Selected Work", href: "#work" },
   { label: "Estimator", href: "#estimator" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Studio", href: "#about" },
 ];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,49 +25,82 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0b]/85 backdrop-blur-xl border-b border-[var(--color-border)] shadow-2xl py-3.5"
-          : "bg-transparent py-5"
+          ? "bg-[#08090D]/90 backdrop-blur-xl border-b border-white/10 py-4 shadow-2xl"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        {/* Brand Logo */}
-        <Link href="#" className="flex items-center gap-2 group">
-          <span className="text-lg md:text-xl font-black tracking-tight text-white group-hover:opacity-90">
-            KILA KITU{" "}
-            <span className="text-gradient-gold">TECHNOLOGIES</span>
-          </span>
-          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+        {/* Brand Monogram & Name */}
+        <Link href="#" className="flex items-center gap-3.5 group">
+          <div className="w-10 h-8 rounded-lg bg-[#0E1118] border border-white/10 group-hover:border-[#F59E0B]/50 flex items-center justify-center px-1 transition duration-200">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 255 116"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M 10 12 L 32 12 L 32 52 L 68 12 L 96 12 L 54 57 L 98 104 L 68 104 L 32 64 L 32 104 L 10 104 Z"
+                fill="#E2E8F0"
+              />
+              <path
+                d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
+                fill="#F59E0B"
+              />
+              <path
+                d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
+                fill="#E2E8F0"
+              />
+              <circle cx="242" cy="18" r="5" fill="#FBBF24" />
+            </svg>
+          </div>
+          <div>
+            <span className="font-sans font-bold text-sm tracking-[0.16em] text-white block uppercase leading-none">
+              KILA KITU <span className="text-[#F59E0B]">TECHNOLOGIES</span>
+            </span>
+            <span className="font-mono text-[9px] text-neutral-400 tracking-wider block mt-1 uppercase">
+              NAIROBI &bull; STUDIO
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7">
+        {/* Center Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-neutral-300">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs lg:text-sm font-medium text-neutral-300 hover:text-[var(--color-accent)] transition-colors duration-200"
+              className="hover:text-white transition duration-200"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        {/* Right CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right Action: Direct Phone & Start Project CTA */}
+        <div className="hidden lg:flex items-center gap-6">
           <a
-            href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'd like to book a scoping call for my system.")}
+            href="tel:+254700000000"
+            className="flex items-center gap-2 text-xs font-mono text-neutral-300 hover:text-white transition"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>+254 700 000 000</span>
+          </a>
+
+          <a
+            href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I'd like to scope a project.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full text-xs font-bold text-black bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-all duration-200 shadow-md shadow-[var(--color-accent)]/20 hover:scale-105"
+            className="px-5 py-2.5 rounded-full text-xs font-bold tracking-wide text-[#08090D] bg-[#F59E0B] hover:bg-[#FBBF24] transition duration-200 shadow-lg shadow-[#F59E0B]/20 hover:scale-105 active:scale-95 uppercase"
           >
-            Start a Project →
+            Start a Project &rarr;
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden w-10 h-10 rounded-xl glass-card flex flex-col items-center justify-center gap-1.5 text-white"
+          className="md:hidden w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-1.5 text-white"
           aria-label="Toggle menu"
         >
           <span
@@ -92,25 +123,32 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden glass-card border-b border-[var(--color-border)] px-6 py-6 mt-3 space-y-4 bg-[#0a0a0b]/95 backdrop-blur-2xl">
+        <div className="md:hidden border-b border-white/10 px-6 py-6 mt-4 space-y-4 bg-[#08090D]/98 backdrop-blur-2xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-base font-semibold text-neutral-200 hover:text-[var(--color-accent)]"
+              className="block text-sm font-semibold text-neutral-200 hover:text-[#F59E0B] uppercase tracking-wider"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-[var(--color-border)]">
+          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+            <a
+              href="tel:+254700000000"
+              className="text-xs font-mono text-neutral-300 flex items-center gap-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span>+254 700 000 000</span>
+            </a>
             <a
               href={siteConfig.whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-full text-center text-sm font-bold block bg-[var(--color-accent)] text-black"
+              className="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block bg-[#F59E0B] text-[#08090D]"
             >
-              Start a Project on WhatsApp →
+              Start a Project on WhatsApp &rarr;
             </a>
           </div>
         </div>

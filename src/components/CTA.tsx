@@ -1,54 +1,51 @@
-export default function CTA() {
-  const whatsappUrl =
-    "https://wa.me/254700000000?text=" +
-    encodeURIComponent(
-      "Hi Kila Kitu Technologies! I want to discuss a new software/web platform project for my business."
-    );
+"use client";
 
+import { siteConfig } from "@/config/site";
+
+export default function CTA() {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border)] bg-gradient-to-br from-[#131316] via-[#1a1710] to-[#111113] p-10 md:p-16 text-center">
+    <section className="py-20 md:py-28 px-6 lg:px-10 max-w-7xl mx-auto">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#10141D] to-[#0A0D13] p-10 md:p-20 text-center studio-card">
         {/* Glow ambient background element */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[var(--color-accent)]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#F59E0B]/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-accent)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold tracking-widest uppercase bg-white/[0.04] border border-white/10 text-[#F59E0B]">
             Ready to Build?
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[var(--color-text-primary)] tracking-tight">
-            Let’s Engineer Your Next <br />
-            <span className="text-gradient-gold">Competitive Advantage.</span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight">
+            Let’s engineer your next <br />
+            <span className="editorial-italic text-[#F59E0B] font-normal">competitive advantage.</span>
           </h2>
 
-          <p className="text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed">
-            Stop losing customers to slow, clunky websites or manual pen-and-paper tracking.
-            Tell us what your business needs — we will build the exact system to scale it.
+          <p className="text-base sm:text-lg text-neutral-300 font-light leading-relaxed max-w-2xl mx-auto">
+            Stop losing qualified customers to sluggish websites or manual paperwork leaks.
+            Tell us what your business needs — we will engineer the exact system to scale it.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <a
-              href={whatsappUrl}
+              href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I'd like to book a scoping call for my system.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-black bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-all duration-300 shadow-lg shadow-[var(--color-accent)]/20 hover:scale-105"
+              className="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-[#08090D] bg-[#F59E0B] hover:bg-[#FBBF24] transition-all duration-300 shadow-xl shadow-[#F59E0B]/25 hover:scale-105"
             >
-              Start a Project on WhatsApp →
+              Start a Project on WhatsApp &rarr;
             </a>
             <a
               href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-medium text-[var(--color-text-primary)] border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:bg-[var(--color-bg-tertiary)] transition-all duration-300"
+              className="w-full sm:w-auto px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-wider text-white border border-white/10 hover:border-white/30 hover:bg-white/[0.05] transition-all duration-300"
             >
-              Send Project Brief
+              Send Project Brief &darr;
             </a>
           </div>
 
-          <div className="pt-6 text-xs text-[var(--color-text-secondary)]">
-            Direct WhatsApp discovery • Fast turnaround • Custom Kenyan pricing
+          <div className="pt-4 text-xs font-mono text-neutral-400">
+            Direct WhatsApp discovery &bull; Fast turnaround &bull; 90-day post-launch warranty
           </div>
         </div>
       </div>
     </section>
   );
 }
-

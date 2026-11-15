@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/config/site";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,169 +16,171 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Pre-fill WhatsApp message for instant response or log
     const waText = `Hi Kila Kitu Technologies!%0A%0AMy Name: ${encodeURIComponent(formData.name)}%0AEmail: ${encodeURIComponent(formData.email)}%0APhone: ${encodeURIComponent(formData.phone)}%0AProject Type: ${encodeURIComponent(formData.projectType)}%0ABudget: ${encodeURIComponent(formData.budget)}%0ABrief: ${encodeURIComponent(formData.message)}`;
     window.open(`https://wa.me/254700000000?text=${waText}`, "_blank");
     setSubmitted(true);
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="contact" className="py-24 md:py-32 px-6 lg:px-10 max-w-7xl mx-auto border-t border-white/10 bg-[#08090D]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        
         {/* Left: Contact Info */}
         <div className="space-y-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-accent)] mb-4">
-              Get in Touch
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#F59E0B] uppercase font-semibold mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
+              <span>Get in Touch</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[var(--color-text-primary)]">
+            
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
               Tell us about your <br />
-              <span className="text-gradient-gold">vision & timeline.</span>
+              <span className="editorial-italic text-[#F59E0B] font-normal">vision & timeline.</span>
             </h2>
-            <p className="mt-4 text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed">
-              We respond to all inquiries within 2 hours during business days.
-              For urgent consultations, hit us directly on WhatsApp.
+
+            <p className="mt-4 text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+              We respond to all inquiries within 2 hours during Nairobi business days.
+              For urgent scoping consultations, reach out directly on WhatsApp.
             </p>
           </div>
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] flex items-center justify-center text-xl text-[var(--color-accent)] shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-[#0E1118] border border-white/10 flex items-center justify-center text-lg text-[#F59E0B] shrink-0">
                 📍
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">Location</div>
-                <div className="text-base font-semibold text-[var(--color-text-primary)]">Nairobi, Kenya</div>
-                <div className="text-sm text-[var(--color-text-secondary)]">Serving East Africa & Worldwide</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">Studio Location</div>
+                <div className="text-base font-semibold text-white">Nairobi, Kenya</div>
+                <div className="text-xs text-neutral-400 font-light">Serving East Africa & Worldwide</div>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] flex items-center justify-center text-xl text-[var(--color-accent)] shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-[#0E1118] border border-white/10 flex items-center justify-center text-lg text-[#F59E0B] shrink-0">
                 ✉️
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">Official Email</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">Direct Email</div>
                 <a
-                  href="mailto:kilakitutechnologies@gmail.com"
-                  className="text-base font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-base font-semibold text-white hover:text-[#F59E0B] transition-colors"
                 >
-                  kilakitutechnologies@gmail.com
+                  {siteConfig.email}
                 </a>
-                <div className="text-sm text-[var(--color-text-secondary)]">Direct founder inbox</div>
+                <div className="text-xs text-neutral-400 font-light">Direct founder inbox</div>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[var(--color-bg-secondary)] border border-[var(--color-border)] flex items-center justify-center text-xl text-[var(--color-accent)] shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-[#0E1118] border border-white/10 flex items-center justify-center text-lg text-[#F59E0B] shrink-0">
                 💬
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-[var(--color-text-secondary)]">WhatsApp Quick Chat</div>
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">WhatsApp Fast-Track</div>
                 <a
-                  href="https://wa.me/254700000000"
+                  href={siteConfig.whatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-semibold text-[var(--color-accent)] hover:underline"
+                  className="text-base font-semibold text-[#F59E0B] hover:underline"
                 >
-                  Chat with Kila Kitu Technologies Team
+                  Chat with Kila Kitu Technologies Team &rarr;
                 </a>
-                <div className="text-sm text-[var(--color-text-secondary)]">Fastest response channel</div>
+                <div className="text-xs text-neutral-400 font-light">Fastest response channel in Kenya</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right: Interactive Form */}
-        <div className="glass-card p-8 md:p-10 border border-[var(--color-border)]">
+        <div className="studio-card p-8 sm:p-10 rounded-3xl">
           {submitted ? (
             <div className="text-center py-12 space-y-4">
               <div className="text-5xl">🚀</div>
-              <h3 className="text-2xl font-bold text-[var(--color-text-primary)]">Message Initiated!</h3>
-              <p className="text-[var(--color-text-secondary)]">
-                WhatsApp opened with your project brief. We look forward to building with you.
+              <h3 className="text-2xl font-bold text-white">Brief Generated!</h3>
+              <p className="text-neutral-400 text-sm font-light">
+                WhatsApp opened with your project requirements. We look forward to engineering with you.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
-                className="mt-4 px-6 py-2 rounded-full border border-[var(--color-border)] text-sm text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]"
+                className="mt-4 px-6 py-2.5 rounded-full border border-white/20 text-xs uppercase tracking-wider text-white hover:bg-white/10 transition"
               >
                 Send Another Note
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                  Your Name *
+                <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                  Your Full Name *
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Brian Ochieng"
+                  placeholder="e.g. Kelvin Mwangi"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/50 focus:outline-none focus:border-[var(--color-accent)] text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] text-sm"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
+                  <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
                     Email Address *
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="brian@company.co.ke"
+                    placeholder="name@company.co.ke"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/50 focus:outline-none focus:border-[var(--color-accent)] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] text-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                    Phone / WhatsApp *
+                  <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                    Phone / WhatsApp Number
                   </label>
                   <input
                     type="tel"
-                    required
                     placeholder="+254 7..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/50 focus:outline-none focus:border-[var(--color-accent)] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] text-sm"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                    System / Project Type
+                  <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                    Project Type
                   </label>
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0D1017] border border-white/10 text-white focus:outline-none focus:border-[#F59E0B] text-sm"
                   >
-                    <option>Custom Web Platform</option>
-                    <option>Retail POS & Inventory System</option>
-                    <option>E-Commerce + M-Pesa Integration</option>
-                    <option>Faith / Institutional Portal</option>
-                    <option>Legal / Enterprise Software</option>
-                    <option>IoT / Hardware Telemetry</option>
+                    <option>High-Speed Web Platform</option>
+                    <option>Full-Stack E-Commerce Store</option>
+                    <option>Custom Business ERP / POS</option>
+                    <option>M-Pesa Daraja Integration</option>
+                    <option>Church / Community Platform</option>
+                    <option>Custom Hardware / Firmware</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                    Estimated Budget (KES)
+                  <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                    Target Budget Range
                   </label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] focus:outline-none focus:border-[var(--color-accent)] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0D1017] border border-white/10 text-white focus:outline-none focus:border-[#F59E0B] text-sm"
                   >
-                    <option>KES 35,000 - 75,000</option>
-                    <option>KES 75,000 - 150,000</option>
+                    <option>KES 35,000 - 65,000</option>
+                    <option>KES 65,000 - 150,000</option>
                     <option>KES 150,000 - 350,000</option>
                     <option>KES 350,000+</option>
                   </select>
@@ -185,30 +188,30 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-xs uppercase tracking-wider text-[var(--color-text-secondary)] mb-2">
-                  Project Details / Requirements
+                <label className="block text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                  Project Brief & Current Pain Points
                 </label>
                 <textarea
                   rows={4}
                   required
-                  placeholder="Tell us what you're building, key features needed, and your target launch date..."
+                  placeholder="Tell us what you are building, what is currently manual or slow, and your target timeline..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[var(--color-bg-tertiary)] border border-[var(--color-border)] text-[var(--color-text-primary)] placeholder-[var(--color-text-secondary)]/50 focus:outline-none focus:border-[var(--color-accent)] text-sm resize-none"
-                ></textarea>
+                  className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] text-sm"
+                />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl font-semibold text-black bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] transition-all duration-300 shadow-md hover:shadow-[var(--color-accent)]/20"
+                className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider text-[#08090D] bg-[#F59E0B] hover:bg-[#FBBF24] transition duration-200 shadow-lg shadow-[#F59E0B]/20"
               >
-                Send Project Brief via WhatsApp →
+                Send Brief to WhatsApp &rarr;
               </button>
             </form>
           )}
         </div>
+
       </div>
     </section>
   );
 }
-

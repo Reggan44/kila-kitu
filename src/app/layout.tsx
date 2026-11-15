@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,9 +8,16 @@ const inter = Inter({
   display: "swap",
 });
 
-const sora = Sora({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -18,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kilakitutech.co.ke"),
   title: "Kila Kitu Technologies | Digital Solutions Studio — Nairobi, Kenya",
   description:
-    "Outgrow the manual. Build systems that scale. Kila Kitu Technologies is an established digital solutions studio engineering high-converting web platforms, custom ERPs, and automated M-Pesa business systems.",
+    "Everything engineered to scale. Kila Kitu Technologies is an established digital solutions studio in Nairobi engineering high-converting web platforms, custom ERPs, and automated M-Pesa business systems.",
   keywords: [
     "Kila Kitu Technologies",
     "Kila Kitu Tech",
@@ -97,14 +104,19 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jakarta.variable} ${playfair.variable} scroll-smooth`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${jakarta.className} bg-[#08090D] text-[#F3F4F6] antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

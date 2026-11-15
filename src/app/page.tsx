@@ -1,8 +1,8 @@
 import IntroLoader from "@/components/IntroLoader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import Services from "@/components/Services";
 import Estimator from "@/components/Estimator";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
@@ -12,15 +12,15 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-[#F5F5F5] selection:bg-[#F59E0B] selection:text-black">
-      {/* Signature 2.5s Curtain Intro Loader */}
+    <div className="min-h-screen bg-[#08090D] text-[#F3F4F6] selection:bg-[#F59E0B] selection:text-[#08090D]">
+      {/* 2.45s Isolated Architectural Intro Loader */}
       <IntroLoader />
 
       <Navbar />
       <main>
         <Hero />
-        <Services />
         <Portfolio />
+        <Services />
         <Estimator />
         <About />
         <CTA />
