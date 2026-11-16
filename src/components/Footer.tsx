@@ -2,16 +2,17 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 const services = [
+  "Custom PCB & Embedded Lab",
   "High-Speed Web Platforms",
-  "Custom Business ERPs",
-  "Safaricom Daraja M-Pesa",
-  "E-Commerce & Storefronts",
+  "Custom Business ERPs & POS",
+  "Safaricom Daraja M-Pesa & IoT",
 ];
 
 const quickLinks = [
+  { label: "Hardware Lab", href: "#hardware" },
   { label: "Selected Work", href: "#work" },
-  { label: "What We Build", href: "#services" },
-  { label: "Interactive Estimator", href: "#estimator" },
+  { label: "Capabilities", href: "#services" },
+  { label: "Technical Consultation", href: "#consultation" },
   { label: "Studio Philosophy", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

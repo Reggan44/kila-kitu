@@ -24,8 +24,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 max-w-3xl leading-relaxed font-light">
-            Stop juggling five different freelancers for design, code, M-Pesa, and hosting.
-            We engineer lightning-fast web platforms, custom ERPs, and automated systems under one roof.
+            Stop juggling five different freelancers for hardware, code, M-Pesa, and cloud hosting.
+            We engineer lightning-fast web platforms, custom ERPs, and embedded physical hardware under one roof.
             <span className="text-white font-medium"> Zero finger-pointing.</span>
           </p>
         </div>

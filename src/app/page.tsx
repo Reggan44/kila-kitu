@@ -2,8 +2,9 @@ import IntroLoader from "@/components/IntroLoader";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
+import HardwareLab from "@/components/HardwareLab";
 import Services from "@/components/Services";
-import Estimator from "@/components/Estimator";
+import Consultation from "@/components/Consultation";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
@@ -20,8 +21,9 @@ export default function Home() {
       <main>
         <Hero />
         <Portfolio />
+        <HardwareLab />
         <Services />
-        <Estimator />
+        <Consultation />
         <About />
         <CTA />
         <Contact />

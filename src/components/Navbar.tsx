@@ -5,9 +5,10 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 const navLinks = [
-  { label: "What We Build", href: "#services" },
+  { label: "Hardware Lab", href: "#hardware" },
   { label: "Selected Work", href: "#work" },
-  { label: "Estimator", href: "#estimator" },
+  { label: "Services", href: "#services" },
+  { label: "Consultation", href: "#consultation" },
   { label: "Studio", href: "#about" },
 ];
 
