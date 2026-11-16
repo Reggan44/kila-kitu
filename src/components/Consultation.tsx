@@ -69,69 +69,66 @@ export default function Consultation() {
   };
 
   return (
-    <section id="consultation" className="py-24 md:py-32 bg-black relative border-t border-white/10 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-white/[0.03] rounded-full blur-[130px] pointer-events-none" />
-
+    <section id="consultation" className="py-24 md:py-32 bg-white relative border-t border-black/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Positioning & 3-Step Process */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 font-mono text-xs uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-white" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-100 border border-black/10 text-neutral-800 font-mono text-xs uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-black" />
               ENGINEERING ADVISORY &bull; DIRECT ENGAGEMENT
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-black mb-6">
               Ready to engineer your next system?{" "}
-              <span className="editorial-italic text-neutral-200 font-normal block mt-2">
+              <span className="editorial-italic text-neutral-500 font-normal block mt-2">
                 Talk directly with our engineers.
               </span>
             </h2>
 
-            <p className="text-sm md:text-base text-neutral-400 leading-relaxed mb-8 font-light">
+            <p className="text-sm md:text-base text-neutral-600 leading-relaxed mb-8 font-light">
               Every system we deliver is engineered around your specific operational bottlenecks. We don’t push off-the-shelf templates or charge markups for outsourced contractors—you work with our Nairobi silicon and software leads from day one.
             </p>
 
             {/* 3-Step Engagement Protocol */}
-            <div className="space-y-6 border-t border-white/10 pt-8 mb-10">
+            <div className="space-y-6 border-t border-black/10 pt-8 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-neutral-100 border border-black/10 flex items-center justify-center font-mono text-xs font-bold text-black shrink-0">
                   01
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                  <h4 className="text-sm font-bold text-black uppercase tracking-wider">
                     Technical Scope & Feasibility
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed font-light">
                     We review your architectural requirements, data volumes, or hardware schematics under mutual NDA.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-neutral-100 border border-black/10 flex items-center justify-center font-mono text-xs font-bold text-black shrink-0">
                   02
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                  <h4 className="text-sm font-bold text-black uppercase tracking-wider">
                     Fixed-Scope Milestone Blueprint
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed font-light">
                     Transparent deliverables, bill-of-materials, staging dates, and test protocols. Zero ambiguous scope creep.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-neutral-100 border border-black/10 flex items-center justify-center font-mono text-xs font-bold text-black shrink-0">
                   03
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                  <h4 className="text-sm font-bold text-black uppercase tracking-wider">
                     Rapid Execution & Kenya Field Deployment
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
+                  <p className="text-xs text-neutral-600 mt-1 leading-relaxed font-light">
                     Direct access via WhatsApp/Slack. Real-time test telemetry, staging previews, and hands-on site handover.
                   </p>
                 </div>
@@ -139,8 +136,8 @@ export default function Consultation() {
             </div>
 
             {/* Quick Contact Links */}
-            <div className="p-5 rounded-xl border border-white/10 bg-[#0A0A0C] space-y-3">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest block">
+            <div className="p-5 rounded-xl border border-black/10 bg-neutral-50 space-y-3 shadow-sm">
+              <span className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest block font-semibold">
                 DIRECT INQUIRY CHANNELS
               </span>
               <div className="flex flex-col sm:flex-row gap-3">
@@ -148,14 +145,14 @@ export default function Consultation() {
                   href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'd like to schedule an engineering consultation.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2.5 rounded-lg bg-white text-black font-mono text-xs font-bold flex items-center justify-center gap-2 hover:bg-neutral-200 transition"
+                  className="flex-1 px-4 py-2.5 rounded-lg bg-black text-white font-mono text-xs font-bold flex items-center justify-center gap-2 hover:bg-neutral-800 transition shadow-sm"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                   WhatsApp Direct
                 </a>
                 <a
                   href={`mailto:${siteConfig.email}?subject=Technical%20Consultation%20Inquiry`}
-                  className="flex-1 px-4 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 font-mono text-xs font-bold flex items-center justify-center gap-2 transition"
+                  className="flex-1 px-4 py-2.5 rounded-lg bg-white hover:bg-neutral-100 border border-black/10 text-neutral-800 font-mono text-xs font-bold flex items-center justify-center gap-2 transition"
                 >
                   Email Studio Desk
                 </a>
@@ -165,15 +162,15 @@ export default function Consultation() {
 
           {/* Right Column: Interactive Scope Brief Card */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-white/10 bg-[#0A0A0C] p-6 sm:p-10 shadow-2xl relative">
+            <div className="rounded-2xl border border-black/10 bg-neutral-50 p-6 sm:p-10 shadow-sm relative">
               <div className="mb-8">
-                <span className="font-mono text-xs text-neutral-400 uppercase tracking-wider block">
+                <span className="font-mono text-xs text-neutral-500 uppercase tracking-wider block font-semibold">
                   SYSTEM SCOPE BUILDER
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-black tracking-tight mt-1">
                   Draft Your Project Requirements
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-400 mt-1 font-light">
+                <p className="text-xs sm:text-sm text-neutral-600 mt-1 font-light">
                   Select your required architectural pillars to generate an instant technical briefing for our team.
                 </p>
               </div>
@@ -181,7 +178,7 @@ export default function Consultation() {
               <form onSubmit={handleConsultationSubmit} className="space-y-6">
                 {/* 1. Select Capabilities */}
                 <div>
-                  <label className="block font-mono text-xs uppercase tracking-wider text-neutral-300 mb-3">
+                  <label className="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-3 font-semibold">
                     1. Select Core Capabilities Needed:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -194,16 +191,16 @@ export default function Consultation() {
                           onClick={() => toggleCapability(cap)}
                           className={`p-3 rounded-xl border text-left transition-all duration-200 flex items-center justify-between text-xs font-semibold ${
                             isSelected
-                              ? "bg-white text-black border-white shadow-sm shadow-white/10"
-                              : "bg-white/[0.02] border-white/10 text-neutral-400 hover:border-white/20 hover:text-white"
+                              ? "bg-black text-white border-black shadow-sm"
+                              : "bg-white border-black/10 text-neutral-600 hover:border-black/30 hover:text-black"
                           }`}
                         >
                           <span>{cap}</span>
                           <span
                             className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${
                               isSelected
-                                ? "bg-black text-white font-bold"
-                                : "border border-white/20 text-transparent"
+                                ? "bg-white text-black font-bold"
+                                : "border border-neutral-300 text-transparent"
                             }`}
                           >
                             &check;
@@ -216,7 +213,7 @@ export default function Consultation() {
 
                 {/* 2. Project Stage */}
                 <div>
-                  <label className="block font-mono text-xs uppercase tracking-wider text-neutral-300 mb-3">
+                  <label className="block font-mono text-xs uppercase tracking-wider text-neutral-700 mb-3 font-semibold">
                     2. Current Project Lifecycle Stage:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -229,14 +226,14 @@ export default function Consultation() {
                           onClick={() => setSelectedStage(stage.id)}
                           className={`p-3 rounded-xl border text-left transition duration-200 ${
                             isSelected
-                              ? "bg-white/10 border-white text-white ring-1 ring-white/40"
-                              : "bg-white/[0.02] border-white/10 text-neutral-400 hover:border-white/20"
+                              ? "bg-white border-black text-black ring-1 ring-black/40 shadow-sm"
+                              : "bg-white border-black/10 text-neutral-500 hover:border-black/20"
                           }`}
                         >
-                          <span className="font-bold text-xs block text-white">
+                          <span className="font-bold text-xs block text-black">
                             {stage.label}
                           </span>
-                          <span className="text-[11px] text-neutral-400 mt-1 block leading-snug font-light">
+                          <span className="text-[11px] text-neutral-500 mt-1 block leading-snug font-light">
                             {stage.desc}
                           </span>
                         </button>
@@ -248,7 +245,7 @@ export default function Consultation() {
                 {/* 3. Contact Details */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   <div>
-                    <label className="block font-mono text-xs uppercase text-neutral-400 mb-2">
+                    <label className="block font-mono text-xs uppercase text-neutral-600 mb-2">
                       Your Name *
                     </label>
                     <input
@@ -257,11 +254,11 @@ export default function Consultation() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. David Mwangi"
-                      className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black transition"
                     />
                   </div>
                   <div>
-                    <label className="block font-mono text-xs uppercase text-neutral-400 mb-2">
+                    <label className="block font-mono text-xs uppercase text-neutral-600 mb-2">
                       WhatsApp / Phone *
                     </label>
                     <input
@@ -270,13 +267,13 @@ export default function Consultation() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="+254 7..."
-                      className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black transition"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block font-mono text-xs uppercase text-neutral-400 mb-2">
+                  <label className="block font-mono text-xs uppercase text-neutral-600 mb-2">
                     Company / Organization (Optional)
                   </label>
                   <input
@@ -284,12 +281,12 @@ export default function Consultation() {
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     placeholder="e.g. Apex Logistics Ltd"
-                    className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block font-mono text-xs uppercase text-neutral-400 mb-2">
+                  <label className="block font-mono text-xs uppercase text-neutral-600 mb-2">
                     System Requirements & Scope Notes
                   </label>
                   <textarea
@@ -297,7 +294,7 @@ export default function Consultation() {
                     value={projectBrief}
                     onChange={(e) => setProjectBrief(e.target.value)}
                     placeholder="Briefly describe what you're aiming to build, key timelines, or technical specifications..."
-                    className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-sm text-black placeholder-neutral-400 focus:outline-none focus:border-black transition resize-none"
                   />
                 </div>
 
@@ -305,18 +302,18 @@ export default function Consultation() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl font-sans font-bold text-sm tracking-wider uppercase text-black bg-white hover:bg-neutral-200 transition duration-200 shadow-xl shadow-white/10 flex items-center justify-center gap-2 group cursor-pointer"
+                    className="w-full py-4 rounded-xl font-sans font-bold text-sm tracking-wider uppercase text-white bg-black hover:bg-neutral-800 transition duration-200 shadow-xl shadow-black/10 flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <span>Submit Scope & Open WhatsApp Channel</span>
                     <span className="group-hover:translate-x-1 transition duration-200">&rarr;</span>
                   </button>
-                  <p className="font-mono text-[10px] text-center text-neutral-400 mt-3 uppercase tracking-wider">
+                  <p className="font-mono text-[10px] text-center text-neutral-500 mt-3 uppercase tracking-wider">
                     DIRECT DISPATCH TO OUR NAIROBI ENGINEERING LEAD &bull; NO SPAM GUARANTEE
                   </p>
                 </div>
 
                 {submitted && (
-                  <div className="p-3 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-mono text-center">
+                  <div className="p-3 rounded-lg bg-neutral-100 border border-black/10 text-black text-xs font-mono text-center">
                     Brief dispatched! If WhatsApp didn't open automatically, reach us directly at +254 700 000 000.
                   </div>
                 )}

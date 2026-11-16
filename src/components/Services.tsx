@@ -59,22 +59,22 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-black relative border-t border-white/10">
+    <section id="services" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-300 uppercase font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>What We Build</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
               Engineering disciplines. <br />
-              <span className="editorial-italic text-neutral-200 font-normal">Zero bloated fluff.</span>
+              <span className="editorial-italic text-neutral-500 font-normal">Zero bloated fluff.</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-neutral-400 max-w-md font-light leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-600 max-w-md font-light leading-relaxed">
             Most agencies sell hours and templates. We sell engineered outcomes that automate manual work, capture online revenue, and don't break under load.
           </p>
         </div>
@@ -84,35 +84,35 @@ export default function Services() {
           {pillars.map((p) => (
             <div
               key={p.num}
-              className="studio-card rounded-3xl p-6 sm:p-10 flex flex-col justify-between border border-white/10 hover:border-white/30 group"
+              className="studio-card rounded-3xl p-6 sm:p-10 flex flex-col justify-between border border-black/10 bg-white hover:border-black/30 shadow-sm hover:shadow-xl group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold tracking-wider text-neutral-500 uppercase">
+                  <span className="text-xs font-mono font-bold tracking-wider text-neutral-400 uppercase">
                     Pillar // {p.num}
                   </span>
-                  <span className="px-3 py-1 rounded-full text-xs font-mono text-neutral-300 bg-white/[0.04] border border-white/10 uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono text-neutral-700 bg-neutral-100 border border-black/10 uppercase tracking-wider">
                     {p.tag}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-2 leading-snug group-hover:text-neutral-200 transition-colors">
+                <h3 className="text-2xl font-bold text-black mb-2 leading-snug group-hover:text-neutral-700 transition-colors">
                   {p.title}
                 </h3>
 
-                <p className="text-xs font-mono text-neutral-400 mb-4">
+                <p className="text-xs font-mono text-neutral-500 mb-4">
                   {p.tagline}
                 </p>
 
-                <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light mb-6">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-light mb-6">
                   {p.description}
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/5 space-y-2">
+              <div className="pt-4 border-t border-black/5 space-y-2">
                 {p.points.map((pt, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-neutral-300 font-light">
-                    <span className="text-white mt-0.5">&bull;</span>
+                  <div key={i} className="flex items-start gap-2 text-xs text-neutral-700 font-light">
+                    <span className="text-black mt-0.5 font-bold">&bull;</span>
                     <span>{pt}</span>
                   </div>
                 ))}

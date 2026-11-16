@@ -127,36 +127,36 @@ export default function Portfolio() {
   const [activeProject, setActiveProject] = useState<ShowcaseProject | null>(null);
 
   return (
-    <section id="work" className="py-24 md:py-32 bg-black relative border-t border-white/10">
+    <section id="work" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-300 uppercase font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>Proven Track Record</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              Built for real <span className="editorial-italic text-neutral-200 font-normal">businesses.</span>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
+              Built for real <span className="editorial-italic text-neutral-500 font-normal">businesses.</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-neutral-400 max-w-md font-light leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-600 max-w-md font-light leading-relaxed">
             We don't showcase generic Figma mockups. Every platform below is engineered, tested, and actively generating revenue on the internet right now.
           </p>
         </div>
 
-        {/* 2x2 Wex-Style Large Flagship Cards */}
+        {/* 2x2 Large Flagship Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((p) => (
             <div
               key={p.id}
-              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-white/10 hover:border-white/30"
+              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-black/10 bg-white hover:border-black/30 shadow-sm hover:shadow-xl"
             >
               {/* Card Header */}
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.05] border border-white/10 text-white">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-neutral-100 border border-black/10 text-neutral-800">
                     {p.category}
                   </span>
                   
@@ -164,47 +164,47 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-white transition group/link"
+                    className="flex items-center gap-1.5 text-xs font-mono text-neutral-600 hover:text-black transition group/link"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                    <span className="underline decoration-white/30 underline-offset-4">{p.domain}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                    <span className="underline decoration-black/30 underline-offset-4">{p.domain}</span>
                     <span className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&rarr;</span>
                   </a>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-neutral-200 transition-colors duration-200">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mb-2 group-hover:text-neutral-700 transition-colors duration-200">
                   {p.name}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed mb-6">
                   {p.headline}
                 </p>
               </div>
 
               {/* Large Image Preview with Browser Chrome Bar */}
-              <div className="rounded-2xl overflow-hidden bg-black border border-white/10 mb-6 relative group-hover:border-white/20 transition duration-300">
+              <div className="rounded-2xl overflow-hidden bg-neutral-900 border border-black/10 mb-6 relative group-hover:border-black/20 transition duration-300">
                 {/* Browser Mockup Chrome Header */}
-                <div className="h-8 bg-[#0D0D10] px-3.5 flex items-center justify-between border-b border-white/5">
+                <div className="h-8 bg-neutral-100 px-3.5 flex items-center justify-between border-b border-black/10">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
                   </div>
-                  <div className="text-[10px] font-mono text-neutral-400 truncate max-w-[200px]">
+                  <div className="text-[10px] font-mono text-neutral-600 truncate max-w-[200px]">
                     https://{p.domain}
                   </div>
-                  <div className="text-[10px] text-neutral-500 font-mono">200 OK</div>
+                  <div className="text-[10px] text-neutral-400 font-mono">200 OK</div>
                 </div>
 
                 {/* Platform Screenshot Container */}
-                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-black">
+                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-neutral-900">
                   <img
                     src={p.image}
                     alt={p.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
                 </div>
               </div>
 
@@ -214,17 +214,17 @@ export default function Portfolio() {
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/5 text-[11px] font-mono text-neutral-300"
+                      className="px-2.5 py-1 rounded-md bg-neutral-100 border border-black/5 text-[11px] font-mono text-neutral-700"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="flex items-center gap-3 pt-4 border-t border-black/10">
                   <button
                     onClick={() => setActiveProject(p)}
-                    className="flex-1 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-semibold text-xs tracking-wide transition text-center uppercase cursor-pointer"
+                    className="flex-1 py-3 rounded-xl bg-neutral-100 hover:bg-neutral-200 border border-black/10 text-black font-semibold text-xs tracking-wide transition text-center uppercase cursor-pointer"
                   >
                     View System Blueprint &rarr;
                   </button>
@@ -233,7 +233,7 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-xl bg-white hover:bg-neutral-200 text-black font-bold text-xs tracking-wide transition shadow-md shadow-white/10 flex items-center gap-1.5 uppercase"
+                    className="px-5 py-3 rounded-xl bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wide transition shadow-md shadow-black/10 flex items-center gap-1.5 uppercase"
                   >
                     <span>Visit Live Site</span>
                     <span>&rarr;</span>
@@ -247,22 +247,22 @@ export default function Portfolio() {
 
       </div>
 
-      {/* Wex-Style Deep Architectural Case Study Modal */}
+      {/* Deep Architectural Case Study Modal */}
       {activeProject && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setActiveProject(null)}
         >
           <div
-            className="bg-[#0A0A0C] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl text-left"
+            className="bg-white border border-black/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setActiveProject(null)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 border border-white/10 text-neutral-300 hover:text-white hover:bg-white/10 flex items-center justify-center transition cursor-pointer"
+              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-neutral-100 border border-black/10 text-neutral-600 hover:text-black hover:bg-neutral-200 flex items-center justify-center transition cursor-pointer"
               aria-label="Close modal"
             >
               ✕
@@ -270,42 +270,42 @@ export default function Portfolio() {
 
             {/* Modal Header */}
             <div className="mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.05] border border-white/10 text-white">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-neutral-100 border border-black/10 text-neutral-800">
                 {activeProject.category}
               </span>
-              <h3 className="text-2xl sm:text-4xl font-extrabold text-white mt-3">
+              <h3 className="text-2xl sm:text-4xl font-extrabold text-black mt-3">
                 {activeProject.name}
               </h3>
-              <p className="text-sm text-neutral-400 mt-1 font-mono">
-                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-white underline">{activeProject.domain}</a>
+              <p className="text-sm text-neutral-500 mt-1 font-mono">
+                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-black underline">{activeProject.domain}</a>
               </p>
             </div>
 
             {/* Problem / Solution / Outcome Cards */}
             <div className="space-y-4 mb-6">
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-wider mb-1">
+              <div className="p-4 rounded-2xl bg-neutral-50 border border-black/10">
+                <div className="text-xs font-mono font-bold text-neutral-600 uppercase tracking-wider mb-1">
                   1. The Business Challenge
                 </div>
-                <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                <p className="text-sm text-neutral-700 leading-relaxed font-light">
                   {activeProject.problem}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-neutral-300 uppercase tracking-wider mb-1">
+              <div className="p-4 rounded-2xl bg-neutral-50 border border-black/10">
+                <div className="text-xs font-mono font-bold text-neutral-700 uppercase tracking-wider mb-1">
                   2. Engineered Solution & Architecture
                 </div>
-                <p className="text-sm text-neutral-300 leading-relaxed font-light">
+                <p className="text-sm text-neutral-700 leading-relaxed font-light">
                   {activeProject.solution}
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-1">
+              <div className="p-4 rounded-2xl bg-neutral-50 border border-black/10">
+                <div className="text-xs font-mono font-bold text-black uppercase tracking-wider mb-1">
                   3. Measurable Result
                 </div>
-                <p className="text-sm text-white font-medium leading-relaxed">
+                <p className="text-sm text-black font-medium leading-relaxed">
                   {activeProject.outcome}
                 </p>
               </div>
@@ -313,13 +313,13 @@ export default function Portfolio() {
 
             {/* Key Features */}
             <div className="mb-8">
-              <h4 className="text-xs font-mono uppercase tracking-wider font-bold text-white mb-3">
+              <h4 className="text-xs font-mono uppercase tracking-wider font-bold text-black mb-3">
                 Key Engineered Capabilities
               </h4>
               <ul className="space-y-2">
                 {activeProject.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300 font-light">
-                    <span className="text-white font-bold">&check;</span>
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 font-light">
+                    <span className="text-black font-bold">&check;</span>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -327,12 +327,12 @@ export default function Portfolio() {
             </div>
 
             {/* Modal Footer Actions */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/10">
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-black/10">
               <a
                 href={activeProject.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-white/10 hover:bg-white/20 text-white transition border border-white/20"
+                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-neutral-100 hover:bg-neutral-200 text-black transition border border-black/10"
               >
                 Visit {activeProject.domain} &rarr;
               </a>
@@ -342,7 +342,7 @@ export default function Portfolio() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-white hover:bg-neutral-200 text-black transition shadow-lg shadow-white/10"
+                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-black hover:bg-neutral-800 text-white transition shadow-lg shadow-black/10"
               >
                 Scope Similar Project on WhatsApp &rarr;
               </a>

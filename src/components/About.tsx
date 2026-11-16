@@ -30,33 +30,33 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-black relative border-t border-white/10">
+    <section id="about" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-300 uppercase font-semibold mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-black" />
               <span>Studio Philosophy</span>
             </div>
             
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight mb-6">
-              An established team. Finally opening our <span className="editorial-italic text-neutral-200 font-normal">public doors.</span>
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight mb-6">
+              An established team. Finally opening our <span className="editorial-italic text-neutral-500 font-normal">public doors.</span>
             </h2>
 
-            <div className="space-y-4 text-neutral-400 text-base md:text-lg leading-relaxed font-light">
+            <div className="space-y-4 text-neutral-700 text-base md:text-lg leading-relaxed font-light">
               <p>
                 We are not a "startup" experimenting with your business capital.
-                <strong className="text-white font-semibold"> Kila Kitu Technologies</strong> is a proven Digital Solutions Studio
+                <strong className="text-black font-semibold"> Kila Kitu Technologies</strong> is a proven Digital Solutions Studio
                 with high-concurrency production platforms running live across Kenya and global markets.
               </p>
               <p>
                 Kenyan business owners are exhausted by hiring one freelancer for graphic design, another for web,
                 a third for M-Pesa integration, and an aloof hosting company. When something breaks, everyone points fingers.
               </p>
-              <p className="text-white font-medium">
-                Our core promise is simple: <span className="text-white underline underline-offset-4 decoration-white/30">One roof. Zero finger-pointing.</span> We
+              <p className="text-black font-medium">
+                Our core promise is simple: <span className="text-black underline underline-offset-4 decoration-black/30">One roof. Zero finger-pointing.</span> We
                 engineer, launch, secure, and maintain your entire technical infrastructure from start to scale.
               </p>
             </div>
@@ -67,15 +67,15 @@ export default function About() {
             {stats.map((s, idx) => (
               <div
                 key={idx}
-                className="studio-card rounded-2xl p-6 sm:p-8 border border-white/10 text-center flex flex-col justify-center"
+                className="studio-card rounded-2xl p-6 sm:p-8 border border-black/10 bg-white text-center flex flex-col justify-center shadow-sm"
               >
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-1">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-black tracking-tight mb-1">
                   {s.value}
                 </div>
-                <div className="text-xs sm:text-sm font-bold text-neutral-300 uppercase tracking-wider mb-2">
+                <div className="text-xs sm:text-sm font-bold text-neutral-800 uppercase tracking-wider mb-2">
                   {s.label}
                 </div>
-                <div className="text-[11px] font-mono text-neutral-400 font-light leading-snug">
+                <div className="text-[11px] font-mono text-neutral-500 font-light leading-snug">
                   {s.detail}
                 </div>
               </div>
@@ -84,31 +84,31 @@ export default function About() {
         </div>
 
         {/* Traditional Agency vs Kila Kitu Technologies Table */}
-        <div className="rounded-3xl border border-white/10 overflow-hidden bg-[#0A0A0C]">
-          <div className="p-6 sm:p-8 border-b border-white/10 bg-white/[0.02]">
-            <div className="text-xs font-mono uppercase font-bold text-neutral-400 tracking-wider mb-2">
+        <div className="rounded-3xl border border-black/10 overflow-hidden bg-white shadow-sm">
+          <div className="p-6 sm:p-8 border-b border-black/10 bg-neutral-50">
+            <div className="text-xs font-mono uppercase font-bold text-neutral-500 tracking-wider mb-2">
               The Accountability Difference
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-bold text-black tracking-tight">
               Why Businesses Switch to Kila Kitu Technologies
             </h3>
           </div>
 
-          <div className="divide-y divide-white/5">
+          <div className="divide-y divide-black/5">
             {comparisons.map((c, i) => (
               <div
                 key={i}
-                className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-center hover:bg-white/[0.02] transition"
+                className="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-4 items-center hover:bg-neutral-50/50 transition"
               >
-                <div className="md:col-span-3 text-sm font-mono font-semibold uppercase tracking-wider text-neutral-300">
+                <div className="md:col-span-3 text-sm font-mono font-semibold uppercase tracking-wider text-neutral-800">
                   {c.factor}
                 </div>
-                <div className="md:col-span-4 text-xs sm:text-sm text-neutral-400 font-light flex items-start gap-2">
-                  <span className="text-neutral-500 mt-0.5">✕</span>
+                <div className="md:col-span-4 text-xs sm:text-sm text-neutral-500 font-light flex items-start gap-2">
+                  <span className="text-neutral-400 mt-0.5">✕</span>
                   <span>{c.traditional}</span>
                 </div>
-                <div className="md:col-span-5 text-xs sm:text-sm text-white font-medium flex items-start gap-2 bg-white/[0.03] p-3 rounded-xl border border-white/10">
-                  <span className="text-white mt-0.5 font-bold">✔</span>
+                <div className="md:col-span-5 text-xs sm:text-sm text-black font-medium flex items-start gap-2 bg-neutral-100 p-3 rounded-xl border border-black/10">
+                  <span className="text-black mt-0.5 font-bold">✔</span>
                   <span>{c.kilakitu}</span>
                 </div>
               </div>

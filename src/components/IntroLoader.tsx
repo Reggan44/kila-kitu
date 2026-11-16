@@ -7,7 +7,6 @@ export default function IntroLoader() {
   const [unmounted, setUnmounted] = useState(false);
 
   useEffect(() => {
-    // Check if user already saw the intro in this session
     const hasSeen =
       typeof window !== "undefined" &&
       sessionStorage.getItem("kkt_intro_seen");
@@ -52,12 +51,12 @@ export default function IntroLoader() {
     <>
       <style jsx global>{`
         .kkt-arch-grid {
-          background-color: #000000;
+          background-color: #ffffff;
           background-image:
-            linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
           background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
         }
         #kkt-intro-loader {
@@ -89,24 +88,24 @@ export default function IntroLoader() {
         >
           <path
             d="M 10 12 L 32 12 L 32 52 L 68 12 L 96 12 L 54 57 L 98 104 L 68 104 L 32 64 L 32 104 L 10 104 Z"
-            fill="#FFFFFF"
+            fill="#09090B"
           />
           <path
             d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
-            fill="#A1A1AA"
+            fill="#71717A"
           />
           <path
             d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
-            fill="#FFFFFF"
+            fill="#09090B"
           />
-          <circle cx="242" cy="18" r="4.5" fill="#FFFFFF" />
+          <circle cx="242" cy="18" r="4.5" fill="#09090B" />
         </svg>
 
         <div
           style={{
             marginTop: "20px",
-            color: "#FFFFFF",
-            fontWeight: 700,
+            color: "#09090B",
+            fontWeight: 800,
             letterSpacing: "0.26em",
             fontFamily: "system-ui, -apple-system, sans-serif",
             textTransform: "uppercase",
