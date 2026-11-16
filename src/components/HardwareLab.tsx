@@ -100,32 +100,32 @@ export default function HardwareLab() {
   const [activeHotspot, setActiveHotspot] = useState<PinoutHotspot>(hotspots[0]);
 
   return (
-    <section id="hardware" className="py-24 md:py-32 bg-[#08090D] relative border-t border-white/10 overflow-hidden">
+    <section id="hardware" className="py-24 md:py-32 bg-black relative border-t border-white/10 overflow-hidden">
       {/* Background architectural glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#F59E0B]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-white/[0.03] rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-[#F59E0B] font-mono text-xs uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 font-mono text-xs uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               PHYSICAL HARDWARE &bull; EMBEDDED R&D LAB
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-white max-w-3xl">
               Where silicon meets software.{" "}
-              <span className="editorial-italic text-[#F59E0B] font-normal block sm:inline">
+              <span className="editorial-italic text-neutral-200 font-normal block sm:inline">
                 Built and tested in Nairobi.
               </span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-neutral-400 max-w-md leading-relaxed">
+          <p className="text-sm md:text-base text-neutral-400 max-w-md leading-relaxed font-light">
             We don’t just write code that lives in browsers. We design custom multi-layer PCBs, flash real-time firmware, and assemble production-grade IoT telemetry hardware for Kenya’s toughest physical environments.
           </p>
         </div>
 
         {/* 1. Top Split-Banner: Live Production & QA Reel Video */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0E1118] p-1.5 mb-16 shadow-2xl group">
+        <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0C] p-1.5 mb-16 shadow-2xl group">
           <div className="relative rounded-xl overflow-hidden aspect-[16/9] md:aspect-[21/9] max-h-[460px] w-full bg-black">
             <video
               src="/hardware/batch-qa-loop.mp4"
@@ -135,22 +135,22 @@ export default function HardwareLab() {
               playsInline
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08090D] via-transparent to-black/30 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 pointer-events-none" />
 
             {/* Video overlay badges */}
             <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/30 font-mono text-[11px] text-emerald-400 flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="px-3 py-1 rounded-full bg-black/85 backdrop-blur-md border border-white/20 font-mono text-[11px] text-white flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
                 LIVE BENCH QA // MULTI-UNIT TELEMETRY
               </span>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-mono text-[11px] text-neutral-300">
-                ACTIVE GREEN STATUS LEDS &bull; SMA RF TERMINALS
+              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 font-mono text-[11px] text-neutral-400">
+                ACTIVE STATUS LEDS &bull; SMA RF TERMINALS
               </span>
             </div>
 
             <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-[#F59E0B] mb-1">
+                <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 mb-1">
                   BATCH VALIDATION RUN
                 </p>
                 <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
@@ -171,7 +171,7 @@ export default function HardwareLab() {
         <div className="mb-20">
           <div className="mb-6 flex items-center justify-between">
             <div>
-              <span className="font-mono text-xs text-[#F59E0B] tracking-widest uppercase block">
+              <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase block">
                 INTERACTIVE HARDWARE SPECIFICATION
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
@@ -185,8 +185,8 @@ export default function HardwareLab() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Board viewer with interactive hotspots */}
-            <div className="lg:col-span-8 relative rounded-2xl overflow-hidden border border-white/10 bg-[#0E1118] p-2 flex items-center justify-center group">
-              <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden bg-black/80">
+            <div className="lg:col-span-8 relative rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0C] p-2 flex items-center justify-center group">
+              <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden bg-black">
                 <Image
                   src="/hardware/telemetry-hub-main.jpg"
                   alt="Kila Kitu Technologies Telemetry Hub PCB"
@@ -196,7 +196,7 @@ export default function HardwareLab() {
                   priority
                 />
 
-                {/* Subtle vignette and grid texture */}
+                {/* Subtle vignette */}
                 <div className="absolute inset-0 bg-radial-vignette pointer-events-none opacity-40" />
 
                 {/* Hotspot Markers */}
@@ -214,23 +214,23 @@ export default function HardwareLab() {
                       <span
                         className={`absolute -inset-2 rounded-full transition-opacity duration-300 ${
                           isActive
-                            ? "bg-[#F59E0B]/40 animate-ping opacity-100"
-                            : "bg-white/20 opacity-0 group-hover/pin:opacity-100"
+                            ? "bg-white/30 animate-ping opacity-100"
+                            : "bg-white/15 opacity-0 group-hover/pin:opacity-100"
                         }`}
                       />
                       {/* Hotspot Core Button */}
                       <span
                         className={`relative w-8 h-8 rounded-full flex items-center justify-center font-mono text-xs font-bold transition-all duration-300 shadow-xl ${
                           isActive
-                            ? "bg-[#F59E0B] text-[#08090D] scale-110 shadow-[#F59E0B]/50 ring-4 ring-[#F59E0B]/30"
-                            : "bg-black/80 backdrop-blur-md text-white border border-white/30 hover:border-[#F59E0B] hover:text-[#F59E0B]"
+                            ? "bg-white text-black scale-110 shadow-white/40 ring-4 ring-white/30"
+                            : "bg-black/90 backdrop-blur-md text-white border border-white/30 hover:border-white hover:text-white"
                         }`}
                       >
                         +
                       </span>
 
                       {/* Tooltip on hover */}
-                      <span className="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-0.5 rounded bg-black/90 backdrop-blur-md border border-white/10 font-mono text-[10px] text-white whitespace-nowrap opacity-0 group-hover/pin:opacity-100 pointer-events-none transition duration-200">
+                      <span className="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-0.5 rounded bg-black/90 backdrop-blur-md border border-white/15 font-mono text-[10px] text-white whitespace-nowrap opacity-0 group-hover/pin:opacity-100 pointer-events-none transition duration-200">
                         {h.tag}
                       </span>
                     </button>
@@ -245,12 +245,12 @@ export default function HardwareLab() {
             </div>
 
             {/* Spec inspector side panel */}
-            <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-[#0E1118]/80 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#F59E0B]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-[#0A0A0C]/90 backdrop-blur-sm p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.04] rounded-full blur-3xl pointer-events-none" />
 
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-2.5 py-1 rounded bg-[#F59E0B]/10 border border-[#F59E0B]/20 font-mono text-[10px] font-semibold tracking-wider text-[#F59E0B] uppercase">
+                  <span className="px-2.5 py-1 rounded bg-white/10 border border-white/20 font-mono text-[10px] font-semibold tracking-wider text-white uppercase">
                     {activeHotspot.tag}
                   </span>
                   <span className="font-mono text-xs text-neutral-400">PINOUT SPECS</span>
@@ -260,7 +260,7 @@ export default function HardwareLab() {
                   {activeHotspot.headline}
                 </h4>
 
-                <p className="text-sm text-neutral-300 leading-relaxed mb-6">
+                <p className="text-sm text-neutral-300 leading-relaxed mb-6 font-light">
                   {activeHotspot.description}
                 </p>
 
@@ -270,8 +270,8 @@ export default function HardwareLab() {
                     ENGINEERING ATTRIBUTES
                   </span>
                   {activeHotspot.specs.map((spec, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs text-neutral-200">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] mt-1.5 shrink-0" />
+                    <div key={i} className="flex items-start gap-2.5 text-xs text-neutral-300">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-1.5 shrink-0" />
                       <span>{spec}</span>
                     </div>
                   ))}
@@ -281,7 +281,7 @@ export default function HardwareLab() {
               <div className="mt-8 pt-6 border-t border-white/10">
                 <a
                   href="#consultation"
-                  className="w-full block text-center px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#F59E0B]/50 text-xs font-bold text-white tracking-wider uppercase transition duration-200"
+                  className="w-full block text-center px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 hover:border-white/40 text-xs font-bold text-white tracking-wider uppercase transition duration-200"
                 >
                   Discuss Custom Hardware Architecture &rarr;
                 </a>
@@ -293,7 +293,7 @@ export default function HardwareLab() {
         {/* 3. Bottom 4-Card Hardware Capabilities Grid */}
         <div className="mb-12">
           <div className="mb-8">
-            <span className="font-mono text-xs text-[#F59E0B] tracking-widest uppercase block">
+            <span className="font-mono text-xs text-neutral-400 tracking-widest uppercase block">
               PORTFOLIO OF SILICON ARTIFACTS
             </span>
             <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mt-1">
@@ -305,11 +305,11 @@ export default function HardwareLab() {
             {hardwareProjects.map((proj, idx) => (
               <div
                 key={idx}
-                className="studio-card rounded-2xl overflow-hidden border border-white/10 bg-[#0E1118] p-5 flex flex-col justify-between group transition-all duration-300 hover:border-[#F59E0B]/40 hover:-translate-y-1"
+                className="studio-card rounded-2xl overflow-hidden border border-white/10 bg-[#0A0A0C] p-5 flex flex-col justify-between group transition-all duration-300 hover:border-white/30 hover:-translate-y-1"
               >
                 <div>
                   {/* Image container */}
-                  <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-black/60 mb-5 border border-white/5">
+                  <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-black mb-5 border border-white/5">
                     <Image
                       src={proj.image}
                       alt={proj.title}
@@ -326,10 +326,10 @@ export default function HardwareLab() {
                     </div>
                   </div>
 
-                  <h4 className="text-xl font-bold text-white tracking-tight mb-2 group-hover:text-[#F59E0B] transition duration-200">
+                  <h4 className="text-xl font-bold text-white tracking-tight mb-2 group-hover:text-neutral-200 transition duration-200">
                     {proj.title}
                   </h4>
-                  <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  <p className="text-sm text-neutral-400 leading-relaxed mb-4 font-light">
                     {proj.description}
                   </p>
                 </div>
@@ -351,21 +351,21 @@ export default function HardwareLab() {
         </div>
 
         {/* Bottom Banner callout */}
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0E1118] via-[#121620] to-[#0E1118] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#0A0A0C] via-[#121216] to-[#0A0A0C] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center md:text-left">
-            <span className="font-mono text-xs text-[#F59E0B] uppercase tracking-wider block mb-1">
+            <span className="font-mono text-xs text-neutral-400 uppercase tracking-wider block mb-1">
               FULL-STACK CONTINUITY
             </span>
             <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Need custom hardware, firmware, and cloud dashboards synced under one roof?
             </h4>
-            <p className="text-sm text-neutral-400 mt-2">
+            <p className="text-sm text-neutral-400 mt-2 font-light">
               Eliminate the vendor finger-pointing between your electronics fabricator and software dev agency.
             </p>
           </div>
           <a
             href="#consultation"
-            className="px-6 py-3.5 rounded-full text-xs font-bold tracking-wider text-[#08090D] bg-[#F59E0B] hover:bg-[#FBBF24] transition duration-200 uppercase whitespace-nowrap shadow-lg shadow-[#F59E0B]/20"
+            className="px-6 py-3.5 rounded-full text-xs font-bold tracking-wider text-black bg-white hover:bg-neutral-200 transition duration-200 uppercase whitespace-nowrap shadow-lg shadow-white/10"
           >
             Commission Hardware R&D &rarr;
           </a>

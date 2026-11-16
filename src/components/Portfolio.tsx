@@ -11,9 +11,6 @@ interface ShowcaseProject {
   category: string;
   headline: string;
   description: string;
-  accentColor: string;
-  badgeBg: string;
-  badgeText: string;
   metrics: string;
   image: string;
   tags: string[];
@@ -33,9 +30,6 @@ const projects: ShowcaseProject[] = [
     headline: "Worldwide Edge Platform for Afrohouse Music Sensation",
     description:
       "When the global hit 'Mwaki' exploded across international dance charts with hundreds of millions of streams, Sofiya Nzau's management needed a bulletproof digital home. We engineered a high-concurrency headless platform deployed across Cloudflare Edge CDN with zero downtime during viral drops.",
-    accentColor: "border-[#F59E0B]/40 hover:border-[#F59E0B]",
-    badgeBg: "bg-[#F59E0B]/10",
-    badgeText: "text-[#F59E0B]",
     metrics: "Global Reach • Cloudflare Edge CDN • Zero Downtime",
     image: "/projects/sofiya-logo.png",
     tags: ["Next.js", "Tailwind CSS", "Cloudflare CDN", "Spotify API", "Press Kit Portal"],
@@ -61,9 +55,6 @@ const projects: ShowcaseProject[] = [
     headline: "High-Trust Corporate Practice Platform at Hazina Towers, Nairobi",
     description:
       "An authoritative digital presence for a prestigious commercial litigation and corporate governance law firm in the heart of Nairobi. Engineered with institutional precision, verified Schema.org legal metadata, and structured corporate retainer intake.",
-    accentColor: "border-sky-500/30 hover:border-sky-400",
-    badgeBg: "bg-sky-500/10",
-    badgeText: "text-sky-400",
     metrics: "Hazina Towers • JSON-LD Schema • Google Business Verified",
     image: "/projects/law-hero.png",
     tags: ["React", "Tailwind CSS", "Legal Schema", "Corporate Intake", "Vite"],
@@ -89,9 +80,6 @@ const projects: ShowcaseProject[] = [
     headline: "All-in-One Church Management with NFC Attendance & Daraja M-Pesa",
     description:
       "A complete cloud operating system built for Kenyan congregations. Replaces chaotic manual registers with instant NFC wristband attendance for Sunday school and automates 100% of tithes and offerings via Safaricom Daraja STK Push.",
-    accentColor: "border-emerald-500/30 hover:border-emerald-400",
-    badgeBg: "bg-emerald-500/10",
-    badgeText: "text-emerald-400",
     metrics: "NFC Check-in • Daraja STK Push • Instant SMS Receipts",
     image: "/projects/myibada-hero.jpg",
     tags: ["Cloud ERP", "M-Pesa Daraja API", "NFC Hardware", "SMS Gateway", "PostgreSQL"],
@@ -117,9 +105,6 @@ const projects: ShowcaseProject[] = [
     headline: "Luxury Apparel E-Commerce with Native Kenyan Payments",
     description:
       "A lightning-fast, modern e-commerce storefront engineered with Next.js, Prisma ORM, and PostgreSQL. Integrated directly with IntaSend and M-Pesa to give fashion shoppers a sub-second checkout experience with instant order dispatch alerts.",
-    accentColor: "border-purple-500/30 hover:border-purple-400",
-    badgeBg: "bg-purple-500/10",
-    badgeText: "text-purple-400",
     metrics: "Next.js + Prisma • IntaSend & M-Pesa • Sub-Second Checkout",
     image: "/projects/meed-banner2.png",
     tags: ["Next.js", "Prisma ORM", "PostgreSQL", "IntaSend API", "M-Pesa STK"],
@@ -142,18 +127,18 @@ export default function Portfolio() {
   const [activeProject, setActiveProject] = useState<ShowcaseProject | null>(null);
 
   return (
-    <section id="work" className="py-24 md:py-32 bg-[#08090D] relative border-t border-white/10">
+    <section id="work" className="py-24 md:py-32 bg-black relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#F59E0B] uppercase font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-300 uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
               <span>Proven Track Record</span>
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              Built for real <span className="editorial-italic text-[#F59E0B] font-normal">businesses.</span>
+              Built for real <span className="editorial-italic text-neutral-200 font-normal">businesses.</span>
             </h2>
           </div>
           <p className="text-sm md:text-base text-neutral-400 max-w-md font-light leading-relaxed">
@@ -166,14 +151,12 @@ export default function Portfolio() {
           {projects.map((p) => (
             <div
               key={p.id}
-              className={`studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border ${p.accentColor}`}
+              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-white/10 hover:border-white/30"
             >
               {/* Card Header */}
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider ${p.badgeBg} ${p.badgeText}`}
-                  >
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.05] border border-white/10 text-white">
                     {p.category}
                   </span>
                   
@@ -181,31 +164,31 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-emerald-300 transition group/link"
+                    className="flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-white transition group/link"
                   >
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="underline decoration-emerald-400/40 underline-offset-4">{p.domain}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    <span className="underline decoration-white/30 underline-offset-4">{p.domain}</span>
                     <span className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&rarr;</span>
                   </a>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-[#F59E0B] transition-colors duration-200">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2 group-hover:text-neutral-200 transition-colors duration-200">
                   {p.name}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed mb-6">
+                <p className="text-sm sm:text-base text-neutral-400 font-light leading-relaxed mb-6">
                   {p.headline}
                 </p>
               </div>
 
               {/* Large Image Preview with Browser Chrome Bar */}
-              <div className="rounded-2xl overflow-hidden bg-black/80 border border-white/10 mb-6 relative group-hover:border-white/20 transition duration-300">
+              <div className="rounded-2xl overflow-hidden bg-black border border-white/10 mb-6 relative group-hover:border-white/20 transition duration-300">
                 {/* Browser Mockup Chrome Header */}
-                <div className="h-8 bg-[#0D1017] px-3.5 flex items-center justify-between border-b border-white/5">
+                <div className="h-8 bg-[#0D0D10] px-3.5 flex items-center justify-between border-b border-white/5">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-600" />
                   </div>
                   <div className="text-[10px] font-mono text-neutral-400 truncate max-w-[200px]">
                     https://{p.domain}
@@ -214,14 +197,14 @@ export default function Portfolio() {
                 </div>
 
                 {/* Platform Screenshot Container */}
-                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-[#0A0D14]">
+                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-black">
                   <img
                     src={p.image}
                     alt={p.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08090D] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 </div>
               </div>
 
@@ -250,7 +233,7 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-xl bg-[#F59E0B] hover:bg-[#FBBF24] text-[#08090D] font-bold text-xs tracking-wide transition shadow-md shadow-[#F59E0B]/20 flex items-center gap-1.5 uppercase"
+                    className="px-5 py-3 rounded-xl bg-white hover:bg-neutral-200 text-black font-bold text-xs tracking-wide transition shadow-md shadow-white/10 flex items-center gap-1.5 uppercase"
                   >
                     <span>Visit Live Site</span>
                     <span>&rarr;</span>
@@ -269,11 +252,11 @@ export default function Portfolio() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-xl animate-in fade-in duration-200"
           onClick={() => setActiveProject(null)}
         >
           <div
-            className="bg-[#0D1017] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl text-left"
+            className="bg-[#0A0A0C] border border-white/15 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -287,23 +270,21 @@ export default function Portfolio() {
 
             {/* Modal Header */}
             <div className="mb-6">
-              <span
-                className={`px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider ${activeProject.badgeBg} ${activeProject.badgeText}`}
-              >
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/[0.05] border border-white/10 text-white">
                 {activeProject.category}
               </span>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-white mt-3">
                 {activeProject.name}
               </h3>
               <p className="text-sm text-neutral-400 mt-1 font-mono">
-                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-emerald-400 underline">{activeProject.domain}</a>
+                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-white underline">{activeProject.domain}</a>
               </p>
             </div>
 
             {/* Problem / Solution / Outcome Cards */}
             <div className="space-y-4 mb-6">
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">
+                <div className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-wider mb-1">
                   1. The Business Challenge
                 </div>
                 <p className="text-sm text-neutral-300 leading-relaxed font-light">
@@ -312,7 +293,7 @@ export default function Portfolio() {
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider mb-1">
+                <div className="text-xs font-mono font-bold text-neutral-300 uppercase tracking-wider mb-1">
                   2. Engineered Solution & Architecture
                 </div>
                 <p className="text-sm text-neutral-300 leading-relaxed font-light">
@@ -321,7 +302,7 @@ export default function Portfolio() {
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
-                <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">
+                <div className="text-xs font-mono font-bold text-white uppercase tracking-wider mb-1">
                   3. Measurable Result
                 </div>
                 <p className="text-sm text-white font-medium leading-relaxed">
@@ -332,13 +313,13 @@ export default function Portfolio() {
 
             {/* Key Features */}
             <div className="mb-8">
-              <h4 className="text-xs font-mono uppercase tracking-wider font-bold text-[#F59E0B] mb-3">
+              <h4 className="text-xs font-mono uppercase tracking-wider font-bold text-white mb-3">
                 Key Engineered Capabilities
               </h4>
               <ul className="space-y-2">
                 {activeProject.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-300 font-light">
-                    <span className="text-emerald-400 font-bold">&check;</span>
+                    <span className="text-white font-bold">&check;</span>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -361,7 +342,7 @@ export default function Portfolio() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-[#F59E0B] hover:bg-[#FBBF24] text-[#08090D] transition shadow-lg shadow-[#F59E0B]/20"
+                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-white hover:bg-neutral-200 text-black transition shadow-lg shadow-white/10"
               >
                 Scope Similar Project on WhatsApp &rarr;
               </a>

@@ -4,26 +4,26 @@ import { siteConfig } from "@/config/site";
 
 export default function Hero() {
   return (
-    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#08090D] hero-glow">
+    <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-black hero-glow">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Top Studio Badge */}
         <div className="flex items-center justify-start mb-6">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             <span className="font-mono text-[11px] font-medium tracking-widest text-neutral-300 uppercase">
               NAIROBI, KENYA &bull; DIGITAL &bull; HARDWARE &bull; SOFTWARE
             </span>
           </div>
         </div>
 
-        {/* Primary Headline with Wex-Style Editorial Italic Accent */}
+        {/* Primary Headline with Editorial Italic Accent */}
         <div className="max-w-5xl space-y-6">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[82px] font-black tracking-tight text-white leading-[1.05]">
-            Everything engineered to <span className="editorial-italic text-[#F59E0B] font-normal">scale.</span>
+            Everything engineered to <span className="editorial-italic text-neutral-200 font-normal">scale.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-neutral-300 max-w-3xl leading-relaxed font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-400 max-w-3xl leading-relaxed font-light">
             Stop juggling five different freelancers for hardware, code, M-Pesa, and cloud hosting.
             We engineer lightning-fast web platforms, custom ERPs, and embedded physical hardware under one roof.
             <span className="text-white font-medium"> Zero finger-pointing.</span>
@@ -36,17 +36,17 @@ export default function Hero() {
             href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I want to discuss a system for my business.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-full bg-[#F59E0B] hover:bg-[#FBBF24] text-[#08090D] font-bold text-sm tracking-wide transition shadow-xl shadow-[#F59E0B]/25 hover:scale-105 active:scale-95 text-center uppercase"
+            className="px-8 py-4 rounded-full bg-white hover:bg-neutral-200 text-black font-bold text-sm tracking-wide transition shadow-xl shadow-white/10 hover:scale-105 active:scale-95 text-center uppercase"
           >
             Start a Project &rarr;
           </a>
 
           <a
             href="#work"
-            className="px-8 py-4 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 text-white font-semibold text-sm tracking-wide transition text-center flex items-center justify-center gap-2"
+            className="px-8 py-4 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/15 hover:border-white/30 text-white font-semibold text-sm tracking-wide transition text-center flex items-center justify-center gap-2"
           >
             <span>See Live Deployments</span>
-            <span className="text-[#F59E0B]">&darr;</span>
+            <span className="text-neutral-400">&darr;</span>
           </a>
         </div>
 
@@ -59,7 +59,7 @@ export default function Hero() {
             </div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-black text-[#F59E0B]">Sub-Second</div>
+            <div className="text-2xl md:text-3xl font-black text-white">Sub-Second</div>
             <div className="text-xs text-neutral-400 font-mono uppercase tracking-wider mt-1">
               Global Edge CDN Latency
             </div>
@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
           </div>
           <div>
-            <div className="text-2xl md:text-3xl font-black text-emerald-400">90-Day SLA</div>
+            <div className="text-2xl md:text-3xl font-black text-neutral-200">90-Day SLA</div>
             <div className="text-xs text-neutral-400 font-mono uppercase tracking-wider mt-1">
               Post-Launch Engineering Warranty
             </div>

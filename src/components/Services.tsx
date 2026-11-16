@@ -44,74 +44,75 @@ export default function Services() {
     },
     {
       num: "04",
-      title: "Cloud Infrastructure & SLA",
+      title: "Hardware, IoT & Cloud SLA",
       tagline: "One roof. Zero finger-pointing.",
       description:
-        "We manage your .co.ke domains, cloud databases, SSL certificates, and server uptime under one contract. Direct founder WhatsApp line for fast turnaround and a 90-day post-launch warranty.",
+        "We design physical telemetry boards, manage your .co.ke domains, cloud databases, and server uptime under one contract. Direct founder WhatsApp line for fast turnaround and a 90-day post-launch warranty.",
       points: [
+        "Custom PCB schematics & firmware engineering",
         ".co.ke domain & Truehost DNS architecture",
         "99.9% uptime monitoring & automated database backups",
-        "Direct founder WhatsApp line for priority updates",
         "Comprehensive 90-day post-launch SLA warranty",
       ],
-      tag: "Studio SLA & Cloud",
+      tag: "Embedded & Cloud",
     },
   ];
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-[#08090D] relative border-t border-white/10">
+    <section id="services" className="py-24 md:py-32 bg-black relative border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#F59E0B] uppercase font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B]" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-300 uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
               <span>What We Build</span>
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-              One roof. Zero <span className="editorial-italic text-[#F59E0B] font-normal">finger-pointing.</span>
+              Engineering disciplines. <br />
+              <span className="editorial-italic text-neutral-200 font-normal">Zero bloated fluff.</span>
             </h2>
           </div>
           <p className="text-sm md:text-base text-neutral-400 max-w-md font-light leading-relaxed">
-            Stop losing weeks coordinating between a graphics designer, a freelance developer, and an M-Pesa vendor. We engineer the complete ecosystem.
+            Most agencies sell hours and templates. We sell engineered outcomes that automate manual work, capture online revenue, and don't break under load.
           </p>
         </div>
 
         {/* 4 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {pillars.map((p) => (
             <div
               key={p.num}
-              className="studio-card rounded-3xl p-7 flex flex-col justify-between group"
+              className="studio-card rounded-3xl p-6 sm:p-10 flex flex-col justify-between border border-white/10 hover:border-white/30 group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-mono text-xl font-bold text-neutral-500 group-hover:text-[#F59E0B] transition-colors">
-                    {p.num}
+                  <span className="text-xs font-mono font-bold tracking-wider text-neutral-500 uppercase">
+                    Pillar // {p.num}
                   </span>
-                  <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/5 text-[10px] font-mono uppercase tracking-wider text-neutral-300">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono text-neutral-300 bg-white/[0.04] border border-white/10 uppercase tracking-wider">
                     {p.tag}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-[#F59E0B] transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-2 leading-snug group-hover:text-neutral-200 transition-colors">
                   {p.title}
                 </h3>
 
-                <p className="text-xs font-mono text-emerald-400 mb-4">
+                <p className="text-xs font-mono text-neutral-400 mb-4">
                   {p.tagline}
                 </p>
 
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light mb-6">
+                <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-light mb-6">
                   {p.description}
                 </p>
               </div>
 
               <div className="pt-4 border-t border-white/5 space-y-2">
                 {p.points.map((pt, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-neutral-400 font-light">
-                    <span className="text-[#F59E0B] mt-0.5">&bull;</span>
+                  <div key={i} className="flex items-start gap-2 text-xs text-neutral-300 font-light">
+                    <span className="text-white mt-0.5">&bull;</span>
                     <span>{pt}</span>
                   </div>
                 ))}

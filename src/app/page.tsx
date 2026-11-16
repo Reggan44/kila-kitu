@@ -13,7 +13,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#08090D] text-[#F3F4F6] selection:bg-[#F59E0B] selection:text-[#08090D]">
+    <div className="min-h-screen bg-black text-[#EDEDED] selection:bg-white selection:text-black">
       {/* 2.45s Isolated Architectural Intro Loader */}
       <IntroLoader />
 

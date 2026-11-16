@@ -69,69 +69,69 @@ export default function Consultation() {
   };
 
   return (
-    <section id="consultation" className="py-24 md:py-32 bg-[#08090D] relative border-t border-white/10 overflow-hidden">
+    <section id="consultation" className="py-24 md:py-32 bg-black relative border-t border-white/10 overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-[#F59E0B]/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-[600px] h-[300px] bg-white/[0.03] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Positioning & 3-Step Process */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-[#F59E0B] font-mono text-xs uppercase tracking-wider mb-4">
-              <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-neutral-300 font-mono text-xs uppercase tracking-wider mb-4">
+              <span className="w-2 h-2 rounded-full bg-white" />
               ENGINEERING ADVISORY &bull; DIRECT ENGAGEMENT
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold tracking-tight text-white mb-6">
               Ready to engineer your next system?{" "}
-              <span className="editorial-italic text-[#F59E0B] font-normal block mt-2">
+              <span className="editorial-italic text-neutral-200 font-normal block mt-2">
                 Talk directly with our engineers.
               </span>
             </h2>
 
-            <p className="text-sm md:text-base text-neutral-400 leading-relaxed mb-8">
+            <p className="text-sm md:text-base text-neutral-400 leading-relaxed mb-8 font-light">
               Every system we deliver is engineered around your specific operational bottlenecks. We don’t push off-the-shelf templates or charge markups for outsourced contractors—you work with our Nairobi silicon and software leads from day one.
             </p>
 
             {/* 3-Step Engagement Protocol */}
             <div className="space-y-6 border-t border-white/10 pt-8 mb-10">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0E1118] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-[#F59E0B] shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
                   01
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                     Technical Scope & Feasibility
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
                     We review your architectural requirements, data volumes, or hardware schematics under mutual NDA.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0E1118] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-[#F59E0B] shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
                   02
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                     Fixed-Scope Milestone Blueprint
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
                     Transparent deliverables, bill-of-materials, staging dates, and test protocols. Zero ambiguous scope creep.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-lg bg-[#0E1118] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-[#F59E0B] shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0D0D10] border border-white/10 flex items-center justify-center font-mono text-xs font-bold text-white shrink-0">
                   03
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wider">
                     Rapid Execution & Kenya Field Deployment
                   </h4>
-                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-neutral-400 mt-1 leading-relaxed font-light">
                     Direct access via WhatsApp/Slack. Real-time test telemetry, staging previews, and hands-on site handover.
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export default function Consultation() {
             </div>
 
             {/* Quick Contact Links */}
-            <div className="p-5 rounded-xl border border-white/10 bg-[#0E1118]/80 backdrop-blur-sm space-y-3">
+            <div className="p-5 rounded-xl border border-white/10 bg-[#0A0A0C] space-y-3">
               <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest block">
                 DIRECT INQUIRY CHANNELS
               </span>
@@ -148,9 +148,9 @@ export default function Consultation() {
                   href={siteConfig.whatsappUrl("Hi Kila Kitu Tech! I'd like to schedule an engineering consultation.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold flex items-center justify-center gap-2 transition"
+                  className="flex-1 px-4 py-2.5 rounded-lg bg-white text-black font-mono text-xs font-bold flex items-center justify-center gap-2 hover:bg-neutral-200 transition"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
                   WhatsApp Direct
                 </a>
                 <a
@@ -165,15 +165,15 @@ export default function Consultation() {
 
           {/* Right Column: Interactive Scope Brief Card */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-white/10 bg-[#0E1118] p-6 sm:p-10 shadow-2xl relative">
+            <div className="rounded-2xl border border-white/10 bg-[#0A0A0C] p-6 sm:p-10 shadow-2xl relative">
               <div className="mb-8">
-                <span className="font-mono text-xs text-[#F59E0B] uppercase tracking-wider block">
+                <span className="font-mono text-xs text-neutral-400 uppercase tracking-wider block">
                   SYSTEM SCOPE BUILDER
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
                   Draft Your Project Requirements
                 </h3>
-                <p className="text-xs sm:text-sm text-neutral-400 mt-1">
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1 font-light">
                   Select your required architectural pillars to generate an instant technical briefing for our team.
                 </p>
               </div>
@@ -194,15 +194,15 @@ export default function Consultation() {
                           onClick={() => toggleCapability(cap)}
                           className={`p-3 rounded-xl border text-left transition-all duration-200 flex items-center justify-between text-xs font-semibold ${
                             isSelected
-                              ? "bg-[#F59E0B]/10 border-[#F59E0B] text-white shadow-sm shadow-[#F59E0B]/20"
-                              : "bg-white/[0.02] border-white/10 text-neutral-400 hover:border-white/20 hover:text-neutral-200"
+                              ? "bg-white text-black border-white shadow-sm shadow-white/10"
+                              : "bg-white/[0.02] border-white/10 text-neutral-400 hover:border-white/20 hover:text-white"
                           }`}
                         >
                           <span>{cap}</span>
                           <span
                             className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${
                               isSelected
-                                ? "bg-[#F59E0B] text-[#08090D] font-bold"
+                                ? "bg-black text-white font-bold"
                                 : "border border-white/20 text-transparent"
                             }`}
                           >
@@ -229,14 +229,14 @@ export default function Consultation() {
                           onClick={() => setSelectedStage(stage.id)}
                           className={`p-3 rounded-xl border text-left transition duration-200 ${
                             isSelected
-                              ? "bg-white/10 border-[#F59E0B] text-white ring-1 ring-[#F59E0B]"
+                              ? "bg-white/10 border-white text-white ring-1 ring-white/40"
                               : "bg-white/[0.02] border-white/10 text-neutral-400 hover:border-white/20"
                           }`}
                         >
                           <span className="font-bold text-xs block text-white">
                             {stage.label}
                           </span>
-                          <span className="text-[11px] text-neutral-400 mt-1 block leading-snug">
+                          <span className="text-[11px] text-neutral-400 mt-1 block leading-snug font-light">
                             {stage.desc}
                           </span>
                         </button>
@@ -257,7 +257,7 @@ export default function Consultation() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. David Mwangi"
-                      className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] transition"
+                      className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
                     />
                   </div>
                   <div>
@@ -270,7 +270,7 @@ export default function Consultation() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="+254 7..."
-                      className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] transition"
+                      className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
                     />
                   </div>
                 </div>
@@ -284,7 +284,7 @@ export default function Consultation() {
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                     placeholder="e.g. Apex Logistics Ltd"
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] transition"
+                    className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition"
                   />
                 </div>
 
@@ -297,7 +297,7 @@ export default function Consultation() {
                     value={projectBrief}
                     onChange={(e) => setProjectBrief(e.target.value)}
                     placeholder="Briefly describe what you're aiming to build, key timelines, or technical specifications..."
-                    className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-[#F59E0B] transition resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-black border border-white/10 text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-white transition resize-none"
                   />
                 </div>
 
@@ -305,7 +305,7 @@ export default function Consultation() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-xl font-sans font-bold text-sm tracking-wider uppercase text-[#08090D] bg-[#F59E0B] hover:bg-[#FBBF24] transition duration-200 shadow-xl shadow-[#F59E0B]/20 flex items-center justify-center gap-2 group"
+                    className="w-full py-4 rounded-xl font-sans font-bold text-sm tracking-wider uppercase text-black bg-white hover:bg-neutral-200 transition duration-200 shadow-xl shadow-white/10 flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <span>Submit Scope & Open WhatsApp Channel</span>
                     <span className="group-hover:translate-x-1 transition duration-200">&rarr;</span>
@@ -316,7 +316,7 @@ export default function Consultation() {
                 </div>
 
                 {submitted && (
-                  <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono text-center">
+                  <div className="p-3 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-mono text-center">
                     Brief dispatched! If WhatsApp didn't open automatically, reach us directly at +254 700 000 000.
                   </div>
                 )}

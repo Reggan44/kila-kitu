@@ -52,12 +52,12 @@ export default function IntroLoader() {
     <>
       <style jsx global>{`
         .kkt-arch-grid {
-          background-color: #07090e;
+          background-color: #000000;
           background-image:
-            linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-            linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+            linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+            linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
           background-size: 40px 40px, 40px 40px, 200px 200px, 200px 200px;
         }
         #kkt-intro-loader {
@@ -89,28 +89,28 @@ export default function IntroLoader() {
         >
           <path
             d="M 10 12 L 32 12 L 32 52 L 68 12 L 96 12 L 54 57 L 98 104 L 68 104 L 32 64 L 32 104 L 10 104 Z"
-            fill="#E2E8F0"
+            fill="#FFFFFF"
           />
           <path
             d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
-            fill="#F59E0B"
+            fill="#A1A1AA"
           />
           <path
             d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
-            fill="#E2E8F0"
+            fill="#FFFFFF"
           />
-          <circle cx="242" cy="18" r="4.5" fill="#FBBF24" />
+          <circle cx="242" cy="18" r="4.5" fill="#FFFFFF" />
         </svg>
 
         <div
           style={{
             marginTop: "20px",
-            color: "#fff",
+            color: "#FFFFFF",
             fontWeight: 700,
             letterSpacing: "0.26em",
             fontFamily: "system-ui, -apple-system, sans-serif",
             textTransform: "uppercase",
-            fontSize: "15px",
+            fontSize: "14px",
           }}
         >
           KILA KITU TECHNOLOGIES
@@ -119,8 +119,8 @@ export default function IntroLoader() {
         <div
           style={{
             marginTop: "10px",
-            color: "#94a3b8",
-            fontSize: "11px",
+            color: "#71717A",
+            fontSize: "10px",
             letterSpacing: "0.32em",
             fontFamily: "monospace",
           }}
