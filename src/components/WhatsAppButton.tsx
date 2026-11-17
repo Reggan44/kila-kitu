@@ -13,9 +13,9 @@ export default function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white hover:bg-neutral-50 border border-black/15 text-black shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
+        className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white hover:bg-neutral-50 border border-black/15 hover:border-[#0284C7]/50 text-black shadow-xl transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-pulse shrink-0" />
         <span className="text-xs font-semibold text-black tracking-wide">
           Chat with us
         </span>

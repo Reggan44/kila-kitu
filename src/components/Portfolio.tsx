@@ -128,17 +128,17 @@ export default function Portfolio() {
 
   return (
     <section id="work" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#0284C7] uppercase font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7]" />
               <span>Proven Track Record</span>
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
-              Built for real <span className="editorial-italic text-neutral-500 font-normal">businesses.</span>
+              Built for real <span className="editorial-italic text-[#0284C7] font-normal">businesses.</span>
             </h2>
           </div>
           <p className="text-sm md:text-base text-neutral-600 max-w-md font-light leading-relaxed">
@@ -151,12 +151,12 @@ export default function Portfolio() {
           {projects.map((p) => (
             <div
               key={p.id}
-              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-black/10 bg-white hover:border-black/30 shadow-sm hover:shadow-xl"
+              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-black/10 bg-white hover:border-[#0284C7]/40 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Card Header */}
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-neutral-100 border border-black/10 text-neutral-800">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-50 text-sky-700 border border-sky-200/80">
                     {p.category}
                   </span>
                   
@@ -164,15 +164,15 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-neutral-600 hover:text-black transition group/link"
+                    className="flex items-center gap-1.5 text-xs font-mono text-[#0066CC] hover:text-[#0071E3] transition group/link"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
-                    <span className="underline decoration-black/30 underline-offset-4">{p.domain}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-pulse" />
+                    <span className="underline decoration-[#0066CC]/30 underline-offset-4">{p.domain}</span>
                     <span className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&rarr;</span>
                   </a>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mb-2 group-hover:text-neutral-700 transition-colors duration-200">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mb-2 group-hover:text-[#0284C7] transition-colors duration-200">
                   {p.name}
                 </h3>
                 
@@ -233,7 +233,7 @@ export default function Portfolio() {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-xl bg-black hover:bg-neutral-800 text-white font-bold text-xs tracking-wide transition shadow-md shadow-black/10 flex items-center gap-1.5 uppercase"
+                    className="px-5 py-3 rounded-xl bg-black hover:bg-[#0284C7] text-white font-bold text-xs tracking-wide transition shadow-md shadow-black/10 flex items-center gap-1.5 uppercase cursor-pointer"
                   >
                     <span>Visit Live Site</span>
                     <span>&rarr;</span>
@@ -247,12 +247,12 @@ export default function Portfolio() {
 
       </div>
 
-      {/* Deep Architectural Case Study Modal */}
+      {/* Case Study Modal */}
       {activeProject && (
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setActiveProject(null)}
         >
           <div
@@ -270,14 +270,14 @@ export default function Portfolio() {
 
             {/* Modal Header */}
             <div className="mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-neutral-100 border border-black/10 text-neutral-800">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-50 text-sky-700 border border-sky-200/80">
                 {activeProject.category}
               </span>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-black mt-3">
                 {activeProject.name}
               </h3>
               <p className="text-sm text-neutral-500 mt-1 font-mono">
-                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-black underline">{activeProject.domain}</a>
+                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-[#0066CC] underline">{activeProject.domain}</a>
               </p>
             </div>
 
@@ -301,8 +301,8 @@ export default function Portfolio() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-neutral-50 border border-black/10">
-                <div className="text-xs font-mono font-bold text-black uppercase tracking-wider mb-1">
+              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-200">
+                <div className="text-xs font-mono font-bold text-[#0284C7] uppercase tracking-wider mb-1">
                   3. Measurable Result
                 </div>
                 <p className="text-sm text-black font-medium leading-relaxed">
@@ -319,7 +319,7 @@ export default function Portfolio() {
               <ul className="space-y-2">
                 {activeProject.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 font-light">
-                    <span className="text-black font-bold">&check;</span>
+                    <span className="text-[#0284C7] font-bold">&check;</span>
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -342,7 +342,7 @@ export default function Portfolio() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-black hover:bg-neutral-800 text-white transition shadow-lg shadow-black/10"
+                className="flex-1 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-center bg-black hover:bg-[#0284C7] text-white transition shadow-lg shadow-black/10"
               >
                 Scope Similar Project on WhatsApp &rarr;
               </a>

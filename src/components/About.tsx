@@ -31,18 +31,18 @@ export default function About() {
 
   return (
     <section id="about" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
         
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#0284C7] uppercase font-semibold mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7]" />
               <span>Studio Philosophy</span>
             </div>
             
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight mb-6">
-              An established team. Finally opening our <span className="editorial-italic text-neutral-500 font-normal">public doors.</span>
+              An established team. Finally opening our <span className="editorial-italic text-[#0284C7] font-normal">public doors.</span>
             </h2>
 
             <div className="space-y-4 text-neutral-700 text-base md:text-lg leading-relaxed font-light">
@@ -56,7 +56,7 @@ export default function About() {
                 a third for M-Pesa integration, and an aloof hosting company. When something breaks, everyone points fingers.
               </p>
               <p className="text-black font-medium">
-                Our core promise is simple: <span className="text-black underline underline-offset-4 decoration-black/30">One roof. Zero finger-pointing.</span> We
+                Our core promise is simple: <span className="text-[#0284C7] underline underline-offset-4 decoration-[#0284C7]/30">One roof. Zero finger-pointing.</span> We
                 engineer, launch, secure, and maintain your entire technical infrastructure from start to scale.
               </p>
             </div>
@@ -86,7 +86,7 @@ export default function About() {
         {/* Traditional Agency vs Kila Kitu Technologies Table */}
         <div className="rounded-3xl border border-black/10 overflow-hidden bg-white shadow-sm">
           <div className="p-6 sm:p-8 border-b border-black/10 bg-neutral-50">
-            <div className="text-xs font-mono uppercase font-bold text-neutral-500 tracking-wider mb-2">
+            <div className="text-xs font-mono uppercase font-bold text-[#0284C7] tracking-wider mb-2">
               The Accountability Difference
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-black tracking-tight">
@@ -107,8 +107,8 @@ export default function About() {
                   <span className="text-neutral-400 mt-0.5">✕</span>
                   <span>{c.traditional}</span>
                 </div>
-                <div className="md:col-span-5 text-xs sm:text-sm text-black font-medium flex items-start gap-2 bg-neutral-100 p-3 rounded-xl border border-black/10">
-                  <span className="text-black mt-0.5 font-bold">✔</span>
+                <div className="md:col-span-5 text-xs sm:text-sm text-black font-medium flex items-start gap-2 bg-sky-50/50 p-3 rounded-xl border border-sky-200/80">
+                  <span className="text-[#0284C7] mt-0.5 font-bold">✔</span>
                   <span>{c.kilakitu}</span>
                 </div>
               </div>

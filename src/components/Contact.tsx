@@ -22,20 +22,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 lg:px-10 max-w-7xl mx-auto border-t border-black/10 bg-white">
+    <section id="contact" className="py-24 md:py-32 px-5 sm:px-6 lg:px-10 max-w-7xl mx-auto border-t border-black/10 bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         
         {/* Left: Contact Info */}
         <div className="space-y-8">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-neutral-600 uppercase font-semibold mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-black" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#0284C7] uppercase font-semibold mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7]" />
               <span>Get in Touch</span>
             </div>
             
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
               Tell us about your <br />
-              <span className="editorial-italic text-neutral-500 font-normal">vision & timeline.</span>
+              <span className="editorial-italic text-[#0284C7] font-normal">vision & timeline.</span>
             </h2>
 
             <p className="mt-4 text-neutral-600 text-base md:text-lg font-light leading-relaxed">
@@ -46,7 +46,7 @@ export default function Contact() {
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-neutral-100 border border-black/10 flex items-center justify-center text-lg text-black shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200/80 flex items-center justify-center text-lg text-[#0284C7] shrink-0">
                 📍
               </div>
               <div>
@@ -57,14 +57,14 @@ export default function Contact() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-neutral-100 border border-black/10 flex items-center justify-center text-lg text-black shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200/80 flex items-center justify-center text-lg text-[#0284C7] shrink-0">
                 ✉️
               </div>
               <div>
                 <div className="text-xs font-mono uppercase tracking-wider text-neutral-500">Direct Email</div>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-base font-semibold text-black hover:underline transition-colors"
+                  className="text-base font-semibold text-[#0066CC] hover:underline transition-colors"
                 >
                   {siteConfig.email}
                 </a>
@@ -73,7 +73,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-neutral-100 border border-black/10 flex items-center justify-center text-lg text-black shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200/80 flex items-center justify-center text-lg text-[#0284C7] shrink-0">
                 💬
               </div>
               <div>
@@ -82,7 +82,7 @@ export default function Contact() {
                   href={siteConfig.whatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base font-semibold text-black hover:underline"
+                  className="text-base font-semibold text-[#0066CC] hover:underline"
                 >
                   Chat with Kila Kitu Technologies Team &rarr;
                 </a>
@@ -120,7 +120,7 @@ export default function Contact() {
                   placeholder="e.g. Kelvin Mwangi"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-black text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-[#0284C7] text-sm"
                 />
               </div>
 
@@ -135,7 +135,7 @@ export default function Contact() {
                     placeholder="name@company.co.ke"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-black text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-[#0284C7] text-sm"
                   />
                 </div>
                 <div>
@@ -147,7 +147,7 @@ export default function Contact() {
                     placeholder="+254 7..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-black text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-[#0284C7] text-sm"
                   />
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black focus:outline-none focus:border-black text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black focus:outline-none focus:border-[#0284C7] text-sm"
                   >
                     <option>High-Speed Web Platform</option>
                     <option>Full-Stack E-Commerce Store</option>
@@ -177,7 +177,7 @@ export default function Contact() {
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black focus:outline-none focus:border-black text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black focus:outline-none focus:border-[#0284C7] text-sm"
                   >
                     <option>KES 35,000 - 65,000</option>
                     <option>KES 65,000 - 150,000</option>
@@ -197,13 +197,13 @@ export default function Contact() {
                   placeholder="Tell us what you are building, what is currently manual or slow, and your target timeline..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-black text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-white border border-black/15 text-black placeholder-neutral-400 focus:outline-none focus:border-[#0284C7] text-sm"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-black hover:bg-neutral-800 transition duration-200 shadow-lg shadow-black/10 cursor-pointer"
+                className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-black hover:bg-[#0284C7] transition duration-200 shadow-lg shadow-black/10 cursor-pointer"
               >
                 Send Brief to WhatsApp &rarr;
               </button>

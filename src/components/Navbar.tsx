@@ -26,14 +26,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-black/10 py-4 shadow-sm"
-          : "bg-transparent py-6"
+          ? "bg-white/90 backdrop-blur-xl border-b border-black/10 py-3.5 shadow-sm"
+          : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 flex items-center justify-between">
         {/* Brand Monogram & Name */}
-        <Link href="#" className="flex items-center gap-3.5 group">
-          <div className="w-10 h-8 rounded-lg bg-neutral-100 border border-black/10 group-hover:border-black/30 flex items-center justify-center px-1 transition duration-200">
+        <Link href="#" className="flex items-center gap-3 group">
+          <div className="w-10 h-8 rounded-lg bg-neutral-50 border border-black/10 group-hover:border-[#0284C7]/50 flex items-center justify-center px-1 transition duration-200 shadow-sm">
             <svg
               className="w-full h-full"
               viewBox="0 0 255 116"
@@ -46,18 +46,18 @@ export default function Navbar() {
               />
               <path
                 d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
-                fill="#71717A"
+                fill="#0284C7"
               />
               <path
                 d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
                 fill="#09090B"
               />
-              <circle cx="242" cy="18" r="5" fill="#09090B" />
+              <circle cx="242" cy="18" r="5" fill="#38BDF8" />
             </svg>
           </div>
           <div>
             <span className="font-sans font-bold text-sm tracking-[0.16em] text-black block uppercase leading-none">
-              KILA KITU <span className="text-neutral-500">TECHNOLOGIES</span>
+              KILA KITU <span className="text-[#0284C7]">TECHNOLOGIES</span>
             </span>
             <span className="font-mono text-[9px] text-neutral-500 tracking-wider block mt-1 uppercase">
               NAIROBI &bull; STUDIO
@@ -71,7 +71,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-black transition duration-200"
+              className="hover:text-[#0284C7] transition duration-200"
             >
               {link.label}
             </a>
@@ -84,7 +84,7 @@ export default function Navbar() {
             href="tel:+254700000000"
             className="flex items-center gap-2 text-xs font-mono text-neutral-600 hover:text-black transition"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-pulse" />
             <span>+254 700 000 000</span>
           </a>
 
@@ -92,17 +92,17 @@ export default function Navbar() {
             href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I'd like to scope a project.")}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full text-xs font-bold tracking-wide text-white bg-black hover:bg-neutral-800 transition duration-200 shadow-md shadow-black/10 hover:scale-105 active:scale-95 uppercase"
+            className="px-5 py-2.5 rounded-full text-xs font-bold tracking-wide text-white bg-black hover:bg-[#0284C7] transition duration-200 shadow-md shadow-black/10 hover:scale-105 active:scale-95 uppercase cursor-pointer"
           >
             Start a Project &rarr;
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (Accessible 44px minimum touch target) */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
-          className="md:hidden w-10 h-10 rounded-xl bg-neutral-100 border border-black/10 flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+          className="md:hidden w-11 h-11 rounded-xl bg-neutral-100 border border-black/10 flex flex-col items-center justify-center gap-1.5 focus:outline-none cursor-pointer"
         >
           <span
             className={`w-5 h-0.5 bg-black transition-all duration-300 ${
@@ -124,13 +124,13 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden border-b border-black/10 px-6 py-6 mt-4 space-y-4 bg-white/98 backdrop-blur-2xl">
+        <div className="md:hidden border-b border-black/10 px-6 py-6 mt-3 space-y-4 bg-white/98 backdrop-blur-2xl shadow-xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-sm font-semibold text-neutral-800 hover:text-black uppercase tracking-wider"
+              className="block text-sm font-semibold text-neutral-800 hover:text-[#0284C7] uppercase tracking-wider py-1"
             >
               {link.label}
             </a>
@@ -138,16 +138,16 @@ export default function Navbar() {
           <div className="pt-4 border-t border-black/10 flex flex-col gap-3">
             <a
               href="tel:+254700000000"
-              className="text-xs font-mono text-neutral-600 flex items-center gap-2"
+              className="text-xs font-mono text-neutral-600 flex items-center gap-2 py-1"
             >
-              <span className="w-2 h-2 rounded-full bg-black" />
+              <span className="w-2 h-2 rounded-full bg-[#0284C7]" />
               <span>+254 700 000 000</span>
             </a>
             <a
               href={siteConfig.whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-xl text-center text-xs font-bold uppercase tracking-wider block bg-black text-white"
+              className="w-full py-3.5 rounded-xl text-center text-xs font-bold uppercase tracking-wider block bg-black hover:bg-[#0284C7] text-white transition shadow-md"
             >
               Start a Project on WhatsApp &rarr;
             </a>
