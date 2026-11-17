@@ -189,19 +189,17 @@ export default function Consultation() {
                           key={cap}
                           type="button"
                           onClick={() => toggleCapability(cap)}
-                          className={`p-3 rounded-xl border text-left transition-all duration-200 flex items-center justify-between text-xs font-semibold cursor-pointer ${
-                            isSelected
+                          className={`p-3 rounded-xl border text-left transition-all duration-200 flex items-center justify-between text-xs font-semibold cursor-pointer ${isSelected
                               ? "bg-[#0284C7] text-white border-[#0284C7] shadow-sm shadow-[#0284C7]/20"
                               : "bg-white border-black/10 text-neutral-600 hover:border-[#0284C7]/40 hover:text-black"
-                          }`}
+                            }`}
                         >
                           <span>{cap}</span>
                           <span
-                            className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${
-                              isSelected
+                            className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${isSelected
                                 ? "bg-white text-[#0284C7] font-bold"
                                 : "border border-neutral-300 text-transparent"
-                            }`}
+                              }`}
                           >
                             &check;
                           </span>
@@ -224,11 +222,10 @@ export default function Consultation() {
                           key={stage.id}
                           type="button"
                           onClick={() => setSelectedStage(stage.id)}
-                          className={`p-3 rounded-xl border text-left transition duration-200 cursor-pointer ${
-                            isSelected
+                          className={`p-3 rounded-xl border text-left transition duration-200 cursor-pointer ${isSelected
                               ? "bg-white border-[#0284C7] text-black ring-2 ring-[#0284C7]/40 shadow-sm"
                               : "bg-white border-black/10 text-neutral-500 hover:border-black/20"
-                          }`}
+                            }`}
                         >
                           <span className="font-bold text-xs block text-black">
                             {stage.label}
