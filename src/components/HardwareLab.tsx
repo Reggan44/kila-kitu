@@ -94,6 +94,22 @@ const hardwareProjects = [
     description:
       "Laboratory validation bench for protocol compliance testing, signal integrity analysis, thermal validation, and automated production flash verification.",
   },
+  {
+    title: "Ruggedized Field Telemetry Enclosure",
+    tag: "MECHANICAL ENCLOSURE",
+    image: "/hardware/hardware-enclosure-bench.jpg",
+    specs: ["Extruded Aluminum Chassis", "IP67 Silicone Gasket Seal", "SMA & M12 Glands"],
+    description:
+      "Weatherproof industrial casing with vibration dampening, engineered for Kenyan agricultural, borehole, and fleet environments where dust and moisture resilience are critical.",
+  },
+  {
+    title: "RS-485 Modbus Industrial Sensor Hub",
+    tag: "INDUSTRIAL I/O",
+    image: "/hardware/iot-sensor-interface.jpg",
+    specs: ["Opto-Isolated Modbus RTU", "4-20mA Current Loops", "Transient Voltage Suppressors"],
+    description:
+      "Multi-channel sensor acquisition unit interfacing digital flow meters, diesel fuel level probes, and solar inverters with automated cloud telemetry forwarding.",
+  },
 ];
 
 export default function HardwareLab() {
@@ -282,7 +298,7 @@ export default function HardwareLab() {
           </div>
         </div>
 
-        {/* 3. Bottom 4-Card Hardware Capabilities Grid */}
+        {/* 3. Bottom 6-Card Hardware Capabilities Grid */}
         <div className="mb-12">
           <div className="mb-8">
             <span className="font-mono text-xs text-neutral-500 tracking-widest uppercase block">
@@ -293,7 +309,7 @@ export default function HardwareLab() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {hardwareProjects.map((proj, idx) => (
               <div
                 key={idx}
@@ -306,7 +322,7 @@ export default function HardwareLab() {
                       src={proj.image}
                       alt={proj.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
@@ -318,20 +334,20 @@ export default function HardwareLab() {
                     </div>
                   </div>
 
-                  <h4 className="text-xl font-bold text-black tracking-tight mb-2 group-hover:text-neutral-700 transition duration-200">
+                  <h4 className="text-lg font-bold text-black tracking-tight mb-2 group-hover:text-neutral-700 transition duration-200">
                     {proj.title}
                   </h4>
-                  <p className="text-sm text-neutral-600 leading-relaxed mb-4 font-light">
+                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4 font-light">
                     {proj.description}
                   </p>
                 </div>
 
                 {/* Specs tags */}
-                <div className="border-t border-black/10 pt-4 flex flex-wrap gap-2">
+                <div className="border-t border-black/10 pt-4 flex flex-wrap gap-1.5">
                   {proj.specs.map((s, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 rounded-md bg-neutral-100 border border-black/5 font-mono text-[11px] text-neutral-700"
+                      className="px-2 py-0.5 rounded-md bg-neutral-100 border border-black/5 font-mono text-[10px] text-neutral-700"
                     >
                       {s}
                     </span>
