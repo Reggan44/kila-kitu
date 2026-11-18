@@ -154,22 +154,22 @@ function buildResponsiveEdgeTraces(w: number, h: number): PcbTrace[] {
 
   const laneConfigs = isMobile
     ? [
-        { yOff: -125, endOff: -54, jogRatio: 0.42, cyan: true, res: true },
-        { yOff: -72, endOff: -28, jogRatio: 0.55, cyan: false, res: false },
-        { yOff: -20, endOff: -8, jogRatio: 0.65, cyan: true, res: false },
-        { yOff: 45, endOff: 18, jogRatio: 0.58, cyan: false, res: true },
-        { yOff: 110, endOff: 48, jogRatio: 0.44, cyan: true, res: false },
-      ]
+      { yOff: -125, endOff: -54, jogRatio: 0.42, cyan: true, res: true },
+      { yOff: -72, endOff: -28, jogRatio: 0.55, cyan: false, res: false },
+      { yOff: -20, endOff: -8, jogRatio: 0.65, cyan: true, res: false },
+      { yOff: 45, endOff: 18, jogRatio: 0.58, cyan: false, res: true },
+      { yOff: 110, endOff: 48, jogRatio: 0.44, cyan: true, res: false },
+    ]
     : [
-        { yOff: -155, endOff: -68, jogRatio: 0.42, cyan: true, res: true },
-        { yOff: -110, endOff: -44, jogRatio: 0.52, cyan: false, res: false },
-        { yOff: -65, endOff: -22, jogRatio: 0.60, cyan: true, res: true },
-        { yOff: -22, endOff: -8, jogRatio: 0.68, cyan: false, res: false },
-        { yOff: 22, endOff: 8, jogRatio: 0.68, cyan: true, res: false },
-        { yOff: 65, endOff: 22, jogRatio: 0.60, cyan: false, res: true },
-        { yOff: 110, endOff: 44, jogRatio: 0.52, cyan: true, res: false },
-        { yOff: 155, endOff: 68, jogRatio: 0.42, cyan: false, res: true },
-      ];
+      { yOff: -155, endOff: -68, jogRatio: 0.42, cyan: true, res: true },
+      { yOff: -110, endOff: -44, jogRatio: 0.52, cyan: false, res: false },
+      { yOff: -65, endOff: -22, jogRatio: 0.60, cyan: true, res: true },
+      { yOff: -22, endOff: -8, jogRatio: 0.68, cyan: false, res: false },
+      { yOff: 22, endOff: 8, jogRatio: 0.68, cyan: true, res: false },
+      { yOff: 65, endOff: 22, jogRatio: 0.60, cyan: false, res: true },
+      { yOff: 110, endOff: 44, jogRatio: 0.52, cyan: true, res: false },
+      { yOff: 155, endOff: 68, jogRatio: 0.42, cyan: false, res: true },
+    ];
 
   const centerKeepout = isMobile
     ? Math.max(74, w * 0.21)
@@ -237,21 +237,10 @@ export default function IntroLoader() {
 
   const dismissIntro = useCallback(() => {
     setPhase("exiting");
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("kkt_intro_seen", "true");
-    }
     setTimeout(() => setPhase("done"), 650);
   }, []);
 
   useEffect(() => {
-    const hasSeen =
-      typeof window !== "undefined" &&
-      sessionStorage.getItem("kkt_intro_seen");
-    if (hasSeen) {
-      setPhase("done");
-      return;
-    }
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -330,9 +319,6 @@ export default function IntroLoader() {
 
     const t4 = setTimeout(() => {
       setPhase("exiting");
-      if (typeof window !== "undefined") {
-        sessionStorage.setItem("kkt_intro_seen", "true");
-      }
     }, T_EXIT * 1000);
 
     const t5 = setTimeout(() => setPhase("done"), T_DONE * 1000);
@@ -359,9 +345,8 @@ export default function IntroLoader() {
   return (
     <div
       id="kkt-pcb-loader"
-      className={`fixed inset-0 z-[9999] h-[100dvh] w-full overflow-hidden bg-[#05080F] flex flex-col items-center justify-center px-4 transition-opacity duration-[650ms] ${
-        phase === "exiting" ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
+      className={`fixed inset-0 z-[9999] h-[100dvh] w-full overflow-hidden bg-[#05080F] flex flex-col items-center justify-center px-4 transition-opacity duration-[650ms] ${phase === "exiting" ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
     >
       {/* Precision PCB Micro-Grid Texture */}
       <div
@@ -406,11 +391,10 @@ export default function IntroLoader() {
 
       {/* Center Stage */}
       <div
-        className={`relative z-20 flex flex-col items-center text-center w-full max-w-2xl px-2 transition-all duration-[750ms] ${
-          phase === "exiting"
+        className={`relative z-20 flex flex-col items-center text-center w-full max-w-2xl px-2 transition-all duration-[750ms] ${phase === "exiting"
             ? "scale-[1.14] opacity-0"
             : "scale-100 opacity-100"
-        }`}
+          }`}
         style={{ transitionTimingFunction: "cubic-bezier(0.76, 0, 0.24, 1)" }}
       >
         {/* Dual Interlocking Microchip Dies SVG with core glow */}
@@ -555,11 +539,10 @@ export default function IntroLoader() {
 
         {/* Fluid Responsive Brand Typography — staggered reveal */}
         <div
-          className={`transition-all duration-700 ease-out ${
-            wordmarkVisible
+          className={`transition-all duration-700 ease-out ${wordmarkVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-2"
-          }`}
+            }`}
         >
           <h1 className="text-[clamp(1.15rem,4.4vw,2.35rem)] tracking-[clamp(0.14em,0.55vw,0.26em)] font-extrabold text-white uppercase drop-shadow-[0_0_24px_rgba(14,165,233,0.45)] leading-tight">
             KILA KITU{" "}
@@ -571,16 +554,14 @@ export default function IntroLoader() {
 
         {/* Electric Cyan Expanding Hairline */}
         <div
-          className={`h-[1.5px] bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent mx-auto my-3 sm:my-4 transition-all duration-700 ease-out ${
-            wordmarkVisible ? "w-48 sm:w-64 opacity-100" : "w-0 opacity-0"
-          }`}
+          className={`h-[1.5px] bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent mx-auto my-3 sm:my-4 transition-all duration-700 ease-out ${wordmarkVisible ? "w-48 sm:w-64 opacity-100" : "w-0 opacity-0"
+            }`}
         />
 
         {/* Studio Subtitle */}
         <p
-          className={`font-mono text-[clamp(0.6rem,2.1vw,0.78rem)] tracking-[clamp(0.2em,0.7vw,0.36em)] text-[#BAE6FD] uppercase transition-opacity duration-700 ${
-            taglineVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`font-mono text-[clamp(0.6rem,2.1vw,0.78rem)] tracking-[clamp(0.2em,0.7vw,0.36em)] text-[#BAE6FD] uppercase transition-opacity duration-700 ${taglineVisible ? "opacity-100" : "opacity-0"
+            }`}
         >
           HARDWARE &bull; FIRMWARE &bull; SOFTWARE
         </p>

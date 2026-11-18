@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { siteConfig } from "@/config/site";
 
 interface ShowcaseProject {
@@ -123,131 +123,198 @@ const projects: ShowcaseProject[] = [
   },
 ];
 
+/* Duplicate the array for seamless infinite loop */
+const marqueeProjects = [...projects, ...projects];
+
 export default function Portfolio() {
   const [activeProject, setActiveProject] = useState<ShowcaseProject | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  /* Pause marquee on hover / touch */
+  const pauseMarquee = () => {
+    if (trackRef.current) trackRef.current.style.animationPlayState = "paused";
+  };
+  const resumeMarquee = () => {
+    if (trackRef.current) trackRef.current.style.animationPlayState = "running";
+  };
 
   return (
-    <section id="work" className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+    <section
+      id="work"
+      className="py-24 md:py-32 bg-[#FAFAFC] relative border-t border-black/10 overflow-x-hidden"
+    >
+      {/* Section Header */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#0284C7] uppercase font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7]" />
               <span>Proven Track Record</span>
             </div>
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
-              Built for real <span className="editorial-italic text-[#0284C7] font-normal">businesses.</span>
+              Built for real{" "}
+              <span className="editorial-italic text-[#0284C7] font-normal">
+                businesses.
+              </span>
             </h2>
           </div>
           <p className="text-sm md:text-base text-neutral-600 max-w-md font-light leading-relaxed">
-            We don't showcase generic Figma mockups. Every platform below is engineered, tested, and actively generating revenue on the internet right now.
+            We don&apos;t showcase generic Figma mockups. Every platform below is
+            engineered, tested, and actively generating revenue on the internet
+            right now.
           </p>
         </div>
-
-        {/* 2x2 Large Flagship Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          {projects.map((p) => (
-            <div
-              key={p.id}
-              className="studio-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group border border-black/10 bg-white hover:border-[#0284C7]/40 shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              {/* Card Header */}
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-sky-50 text-sky-700 border border-sky-200/80">
-                    {p.category}
-                  </span>
-                  
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-mono text-[#0066CC] hover:text-[#0071E3] transition group/link"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-pulse" />
-                    <span className="underline decoration-[#0066CC]/30 underline-offset-4">{p.domain}</span>
-                    <span className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform">&rarr;</span>
-                  </a>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-black tracking-tight mb-2 group-hover:text-[#0284C7] transition-colors duration-200">
-                  {p.name}
-                </h3>
-                
-                <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed mb-6">
-                  {p.headline}
-                </p>
-              </div>
-
-              {/* Large Image Preview with Browser Chrome Bar */}
-              <div className="rounded-2xl overflow-hidden bg-neutral-900 border border-black/10 mb-6 relative group-hover:border-black/20 transition duration-300">
-                {/* Browser Mockup Chrome Header */}
-                <div className="h-8 bg-neutral-100 px-3.5 flex items-center justify-between border-b border-black/10">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-neutral-300" />
-                  </div>
-                  <div className="text-[10px] font-mono text-neutral-600 truncate max-w-[200px]">
-                    https://{p.domain}
-                  </div>
-                  <div className="text-[10px] text-neutral-400 font-mono">200 OK</div>
-                </div>
-
-                {/* Platform Screenshot Container */}
-                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-neutral-900">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40" />
-                </div>
-              </div>
-
-              {/* Tags & Actions */}
-              <div>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2.5 py-1 rounded-md bg-neutral-100 border border-black/5 text-[11px] font-mono text-neutral-700"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3 pt-4 border-t border-black/10">
-                  <button
-                    onClick={() => setActiveProject(p)}
-                    className="flex-1 py-3 rounded-xl bg-neutral-100 hover:bg-neutral-200 border border-black/10 text-black font-semibold text-xs tracking-wide transition text-center uppercase cursor-pointer"
-                  >
-                    View System Blueprint &rarr;
-                  </button>
-
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-xl bg-black hover:bg-[#0284C7] text-white font-bold text-xs tracking-wide transition shadow-md shadow-black/10 flex items-center gap-1.5 uppercase cursor-pointer"
-                  >
-                    <span>Visit Live Site</span>
-                    <span>&rarr;</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          ))}
-        </div>
-
       </div>
 
-      {/* Case Study Modal */}
+      {/* ─── Infinite Marquee Track ─── */}
+      <div className="relative w-full">
+        {/* Left edge fade mask */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none bg-gradient-to-r from-[#FAFAFC] to-transparent" />
+        {/* Right edge fade mask */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none bg-gradient-to-l from-[#FAFAFC] to-transparent" />
+
+        <div className="overflow-hidden w-full">
+          <div
+            ref={trackRef}
+            className="marquee-track flex gap-6 sm:gap-8 w-max"
+            onMouseEnter={pauseMarquee}
+            onMouseLeave={resumeMarquee}
+            onTouchStart={pauseMarquee}
+            onTouchEnd={resumeMarquee}
+          >
+            {marqueeProjects.map((p, idx) => {
+              const uniqueKey = `${p.id}-${idx}`;
+              const isHovered = hoveredId === uniqueKey;
+
+              return (
+                <a
+                  key={uniqueKey}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`marquee-card group flex-shrink-0 w-[340px] sm:w-[400px] rounded-2xl sm:rounded-3xl bg-white border overflow-hidden flex flex-col transition-all duration-300 cursor-pointer select-none ${
+                    isHovered
+                      ? "border-[#0284C7]/60 shadow-[0_0_30px_rgba(2,132,199,0.15)] scale-[1.02]"
+                      : "border-black/10 shadow-sm hover:shadow-xl"
+                  }`}
+                  onMouseEnter={() => setHoveredId(uniqueKey)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onClick={(e) => {
+                    /* Allow cmd/ctrl click for new tab, prevent default for case study */
+                    if (e.metaKey || e.ctrlKey) return;
+                    /* Normal click opens in new tab via the <a> tag */
+                  }}
+                >
+                  {/* Image with Browser Chrome */}
+                  <div className="relative overflow-hidden bg-neutral-900">
+                    {/* Browser Mockup Chrome Header */}
+                    <div className="h-7 sm:h-8 bg-neutral-100 px-3 flex items-center justify-between border-b border-black/10">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-neutral-300" />
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-neutral-300" />
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-neutral-300" />
+                      </div>
+                      <div className="text-[9px] sm:text-[10px] font-mono text-neutral-500 truncate max-w-[160px] sm:max-w-[200px]">
+                        https://{p.domain}
+                      </div>
+                      <div className="text-[9px] sm:text-[10px] text-neutral-400 font-mono">
+                        200 OK
+                      </div>
+                    </div>
+
+                    {/* Screenshot */}
+                    <div className="h-48 sm:h-56 w-full relative overflow-hidden">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                        loading="lazy"
+                        draggable={false}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-30" />
+
+                      {/* "Open Project" hover overlay */}
+                      <div
+                        className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 ${
+                          isHovered ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        <span className="px-4 py-2 rounded-xl bg-white/95 text-black text-xs font-bold tracking-wide uppercase flex items-center gap-2 shadow-lg">
+                          Open Project
+                          <span className="text-[#0284C7]">↗</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="p-5 sm:p-6 flex flex-col flex-1">
+                    {/* Category Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider bg-sky-50 text-sky-700 border border-sky-200/80 truncate">
+                        {p.category}
+                      </span>
+                      <span className="flex items-center gap-1 text-[10px] font-mono text-[#0284C7]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-pulse" />
+                        LIVE
+                      </span>
+                    </div>
+
+                    {/* Title & Headline */}
+                    <h3 className="text-lg sm:text-xl font-extrabold text-black tracking-tight mb-1.5 group-hover:text-[#0284C7] transition-colors duration-200 line-clamp-1">
+                      {p.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-500 font-light leading-relaxed mb-4 line-clamp-2">
+                      {p.headline}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5 mt-auto">
+                      {p.tags.slice(0, 3).map((t) => (
+                        <span
+                          key={t}
+                          className="px-2 py-0.5 rounded-md bg-neutral-100 border border-black/5 text-[10px] font-mono text-neutral-600"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      {p.tags.length > 3 && (
+                        <span className="px-2 py-0.5 rounded-md bg-neutral-100 border border-black/5 text-[10px] font-mono text-neutral-400">
+                          +{p.tags.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Marquee CSS animation */}
+      <style jsx>{`
+        @keyframes marquee-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .marquee-track {
+          animation: marquee-scroll 40s linear infinite;
+          will-change: transform;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-track {
+            animation: none;
+          }
+        }
+      `}</style>
+
+      {/* Case Study Modal (kept intact) */}
       {activeProject && (
         <div
           role="dialog"
@@ -277,11 +344,19 @@ export default function Portfolio() {
                 {activeProject.name}
               </h3>
               <p className="text-sm text-neutral-500 mt-1 font-mono">
-                Live URL: <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="text-[#0066CC] underline">{activeProject.domain}</a>
+                Live URL:{" "}
+                <a
+                  href={activeProject.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0066CC] underline"
+                >
+                  {activeProject.domain}
+                </a>
               </p>
             </div>
 
-            {/* Problem / Solution / Outcome Cards */}
+            {/* Problem / Solution / Outcome */}
             <div className="space-y-4 mb-6">
               <div className="p-4 rounded-2xl bg-neutral-50 border border-black/10">
                 <div className="text-xs font-mono font-bold text-neutral-600 uppercase tracking-wider mb-1">
@@ -318,7 +393,10 @@ export default function Portfolio() {
               </h4>
               <ul className="space-y-2">
                 {activeProject.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 font-light">
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-700 font-light"
+                  >
                     <span className="text-[#0284C7] font-bold">&check;</span>
                     <span>{feat}</span>
                   </li>
@@ -326,7 +404,7 @@ export default function Portfolio() {
               </ul>
             </div>
 
-            {/* Modal Footer Actions */}
+            {/* Modal Footer */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-black/10">
               <a
                 href={activeProject.url}
@@ -347,7 +425,6 @@ export default function Portfolio() {
                 Scope Similar Project on WhatsApp &rarr;
               </a>
             </div>
-
           </div>
         </div>
       )}
