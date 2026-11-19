@@ -137,50 +137,7 @@ export default function HardwareLab() {
           </p>
         </div>
 
-        {/* 1. Top Split-Banner: Live Production & QA Reel Video */}
-        <div className="relative rounded-2xl overflow-hidden border border-black/10 bg-black p-1.5 mb-16 shadow-xl group">
-          <div className="relative rounded-xl overflow-hidden aspect-[16/9] md:aspect-[21/9] max-h-[460px] w-full bg-black">
-            <video
-              src="/hardware/batch-qa-loop.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
-
-            {/* Video overlay badges */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/10 font-mono text-[11px] text-black font-semibold flex items-center gap-1.5 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-ping" />
-                LIVE BENCH QA // MULTI-UNIT TELEMETRY
-              </span>
-              <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 font-mono text-[11px] text-[#38BDF8]">
-                ACTIVE STATUS LEDS &bull; SMA RF TERMINALS
-              </span>
-            </div>
-
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-[#38BDF8] mb-1">
-                  BATCH VALIDATION RUN
-                </p>
-                <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
-                  From single prototype boards to burn-in tested production batches.
-                </h3>
-              </div>
-              <a
-                href="#consultation"
-                className="self-start sm:self-auto px-5 py-2.5 rounded-lg bg-[#0284C7] hover:bg-[#0369A1] text-xs font-bold text-white transition tracking-wide uppercase whitespace-nowrap shadow-md cursor-pointer"
-              >
-                Commission Batch R&D &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* 2. Centerpiece: Interactive PCB Pinout Explorer */}
+        {/* Centerpiece: Interactive PCB Pinout Explorer */}
         <div className="mb-20">
           <div className="mb-6 flex items-center justify-between">
             <div>
