@@ -116,7 +116,7 @@ export default function HardwareLab() {
   const [activeHotspot, setActiveHotspot] = useState<PinoutHotspot>(hotspots[0]);
 
   return (
-    <section id="hardware" className="py-24 md:py-32 bg-white relative border-t border-black/10 overflow-hidden">
+    <section id="hardware" className="py-24 md:py-32 bg-white relative border-t border-black/10 overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 relative">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

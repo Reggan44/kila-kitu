@@ -42,9 +42,13 @@ export const metadata: Metadata = {
   creator: "Kila Kitu Technologies",
   publisher: "Kila Kitu Technologies",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/logo-mark.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo-mark.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/logo-mark.png",
+    apple: "/logo-mark.png",
   },
   openGraph: {
     type: "website",

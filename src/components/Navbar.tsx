@@ -25,15 +25,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-black/10 py-3.5 shadow-sm"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/98 backdrop-blur-2xl border-b border-black/10 ${
+        scrolled ? "py-3 shadow-sm" : "py-4 shadow-[0_1px_3px_rgba(0,0,0,0.03)]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 flex items-center justify-between">
         {/* Brand Logo & Name */}
-        <Link href="#" className="flex items-center gap-3.5 group">
+        <Link href="#" className="flex items-center gap-3.5 group shrink-0">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white border border-black/10 group-hover:border-[#0284C7]/50 flex items-center justify-center p-1 transition duration-200 shadow-sm">
             <Image
               src="/logo-mark.png"
@@ -55,7 +53,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wider uppercase text-neutral-600">
+        <nav className="hidden md:flex items-center gap-5 xl:gap-8 text-xs font-semibold tracking-wider uppercase text-neutral-600">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -68,7 +66,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right Action: Direct Phone & Start Project CTA */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-6 shrink-0">
           <a
             href="tel:+254700000000"
             className="flex items-center gap-2 text-xs font-mono text-neutral-600 hover:text-black transition"
