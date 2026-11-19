@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 /* ─── Timing constants (seconds) ─── */
 const T_DRAW_DUR = 1.05;    // traces draw inward over 1.05s
@@ -267,7 +268,7 @@ export default function IntroLoader() {
     resize();
     window.addEventListener("resize", resize);
 
-    /* Main animation loop — directly ported from your HTML prototype */
+    /* Main animation loop */
     const draw = (now: number) => {
       ctx.clearRect(0, 0, cW, cH);
       const elapsed = (now - start) / 1000;
@@ -299,7 +300,7 @@ export default function IntroLoader() {
 
     animId = requestAnimationFrame(draw);
 
-    /* Choreography timers — matching your HTML prototype timing */
+    /* Choreography timers */
     setProgressWidth("42%");
 
     const t1 = setTimeout(() => {
@@ -363,7 +364,7 @@ export default function IntroLoader() {
       />
 
       {/* Radial vignette centering blue glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.10)_0%,transparent_50%,#05080F_92%)] pointer-events-none z-[5]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.12)_0%,transparent_50%,#05080F_92%)] pointer-events-none z-[5]" />
 
       {/* Canvas for animated 45° beveled traces with light pulses */}
       <canvas
@@ -389,162 +390,265 @@ export default function IntroLoader() {
         </button>
       </div>
 
-      {/* Center Stage */}
+      {/* Center Stage: Silicon Carrier + Official Kila Kitu Emblem */}
       <div
         className={`relative z-20 flex flex-col items-center text-center w-full max-w-2xl px-2 transition-all duration-[750ms] ${phase === "exiting"
-            ? "scale-[1.14] opacity-0"
-            : "scale-100 opacity-100"
+          ? "scale-[1.14] opacity-0"
+          : "scale-100 opacity-100"
           }`}
         style={{ transitionTimingFunction: "cubic-bezier(0.76, 0, 0.24, 1)" }}
       >
-        {/* Dual Interlocking Microchip Dies SVG with core glow */}
-        <div className="w-32 h-32 sm:w-44 sm:h-44 mb-3 sm:mb-4 flex items-center justify-center">
+        {/* Technical Silicon Carrier Housing the Emblem */}
+        <div className="relative w-40 h-40 sm:w-52 sm:h-52 mb-3 sm:mb-4 flex items-center justify-center">
+          {/* Background Technical Silicon Carrier SVG with Connecting Bus Traces */}
           <svg
-            className="w-full h-full overflow-visible"
-            style={{
-              filter: chipsEnergized
-                ? undefined
-                : "drop-shadow(0 0 10px rgba(14, 165, 233, 0.45))",
-              animation: chipsEnergized
-                ? "coreBeacon 2.2s ease-in-out infinite"
-                : "none",
-            }}
-            viewBox="0 0 220 220"
+            className="absolute inset-0 w-full h-full overflow-visible pointer-events-none"
+            viewBox="0 0 240 240"
             preserveAspectRatio="xMidYMid meet"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
-              <linearGradient id="icBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="carrierBorder" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#FFFFFF" />
-                <stop offset="50%" stopColor="#38BDF8" />
+                <stop offset="40%" stopColor="#38BDF8" />
                 <stop offset="100%" stopColor="#0EA5E9" />
               </linearGradient>
-              <radialGradient id="icCoreRadial" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="rgba(56, 189, 248, 0.35)" />
-                <stop offset="100%" stopColor="rgba(5, 8, 15, 0.96)" />
+              <radialGradient id="carrierCore" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="rgba(56, 189, 248, 0.20)" />
+                <stop offset="70%" stopColor="rgba(10, 15, 28, 0.95)" />
+                <stop offset="100%" stopColor="rgba(5, 8, 15, 0.98)" />
               </radialGradient>
             </defs>
 
-            {/* Inter-Die Bus Traces — animated with stroke-dashoffset */}
-            <g stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {[
-                "M 96 66 L 138 66 L 138 110",
-                "M 96 76 L 128 76 L 128 110",
-                "M 96 86 L 118 86 L 118 110",
-                "M 66 96 L 66 138 L 110 138",
-                "M 76 96 L 76 128 L 110 128",
-                "M 86 96 L 86 118 L 110 118",
-              ].map((d, i) => (
-                <path
-                  key={`bus-${i}`}
-                  d={d}
-                  style={{
-                    strokeDasharray: 260,
-                    strokeDashoffset: chipsEnergized ? 0 : 260,
-                    transition: "stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1)",
-                  }}
-                />
-              ))}
+            {/* Radiating PCB Pinout Traces (Animated with stroke-dashoffset) */}
+            <g stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round">
+              {/* Top Pins */}
+              <path
+                d="M 90 40 L 90 14 L 76 6"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 120 40 L 120 10"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 150 40 L 150 14 L 164 6"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
 
-              {/* Outer Radiating Pins */}
-              {[
-                { d: "M 52 44 L 52 20 L 38 8", stroke: "#E2E8F0" },
-                { d: "M 66 44 L 66 14", stroke: "#38BDF8" },
-                { d: "M 80 44 L 80 24 L 94 12", stroke: "#E2E8F0" },
-                { d: "M 44 58 L 18 58 L 6 46", stroke: "#38BDF8" },
-                { d: "M 44 74 L 12 74", stroke: "#E2E8F0" },
-                { d: "M 166 126 L 194 126 L 208 112", stroke: "#38BDF8" },
-                { d: "M 166 142 L 204 142", stroke: "#E2E8F0" },
-                { d: "M 126 166 L 126 196 L 112 210", stroke: "#E2E8F0" },
-                { d: "M 140 166 L 140 206", stroke: "#38BDF8" },
-                { d: "M 154 166 L 154 190 L 170 206", stroke: "#E2E8F0" },
-              ].map((p, i) => (
-                <path
-                  key={`pin-${i}`}
-                  d={p.d}
-                  stroke={p.stroke}
-                  style={{
-                    strokeDasharray: 260,
-                    strokeDashoffset: chipsEnergized ? 0 : 260,
-                    transition: "stroke-dashoffset 0.95s cubic-bezier(0.22, 1, 0.36, 1)",
-                  }}
-                />
-              ))}
+              {/* Bottom Pins */}
+              <path
+                d="M 90 200 L 90 226 L 76 234"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 120 200 L 120 230"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 150 200 L 150 226 L 164 234"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+
+              {/* Left Pins */}
+              <path
+                d="M 40 90 L 14 90 L 6 76"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 40 120 L 10 120"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 40 150 L 14 150 L 6 164"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+
+              {/* Right Pins */}
+              <path
+                d="M 200 90 L 226 90 L 234 76"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 200 120 L 230 120"
+                stroke="#E2E8F0"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.85s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
+              <path
+                d="M 200 150 L 226 150 L 234 164"
+                stroke="#38BDF8"
+                style={{
+                  strokeDasharray: 120,
+                  strokeDashoffset: chipsEnergized ? 0 : 120,
+                  transition: "stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+                }}
+              />
             </g>
 
-            {/* Solder Vias & SMD Resistors */}
+            {/* Solder Vias at Outer Pin Fronts */}
             <g fill="#05080F" stroke="#F8FAFC" strokeWidth="1.4">
-              <circle cx="38" cy="8" r="2.6" />
-              <circle cx="66" cy="14" r="2.6" stroke="#38BDF8" />
-              <circle cx="94" cy="12" r="2.6" />
-              <circle cx="6" cy="46" r="2.6" stroke="#38BDF8" />
-              <circle cx="12" cy="74" r="2.6" />
-              <circle cx="208" cy="112" r="2.6" stroke="#38BDF8" />
-              <circle cx="204" cy="142" r="2.6" />
-              <circle cx="112" cy="210" r="2.6" />
-              <circle cx="140" cy="206" r="2.6" stroke="#38BDF8" />
-              <circle cx="170" cy="206" r="2.6" />
-              <rect x="134" y="80" width="8" height="14" rx="1.5" fill="#05080F" stroke="#38BDF8" />
-              <rect x="80" y="134" width="14" height="8" rx="1.5" fill="#05080F" stroke="#F8FAFC" />
+              <circle cx="76" cy="6" r="2.8" stroke="#38BDF8" />
+              <circle cx="120" cy="10" r="2.8" />
+              <circle cx="164" cy="6" r="2.8" stroke="#38BDF8" />
+
+              <circle cx="76" cy="234" r="2.8" stroke="#38BDF8" />
+              <circle cx="120" cy="230" r="2.8" />
+              <circle cx="164" cy="234" r="2.8" stroke="#38BDF8" />
+
+              <circle cx="6" cy="76" r="2.8" stroke="#38BDF8" />
+              <circle cx="10" cy="120" r="2.8" />
+              <circle cx="6" cy="164" r="2.8" stroke="#38BDF8" />
+
+              <circle cx="234" cy="76" r="2.8" stroke="#38BDF8" />
+              <circle cx="230" cy="120" r="2.8" />
+              <circle cx="234" cy="164" r="2.8" stroke="#38BDF8" />
             </g>
 
-            {/* Upper-Left Die */}
-            <g
-              style={{
-                opacity: chipsEnergized ? 1 : 0,
-                transform: chipsEnergized ? "scale(1)" : "scale(0.86)",
-                transformOrigin: "70px 70px",
-                transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-              }}
-            >
-              <rect x="44" y="44" width="52" height="52" rx="6"
-                fill="url(#icCoreRadial)" stroke="url(#icBorderGrad)" strokeWidth="2.2" />
-              <rect x="51" y="51" width="38" height="38" rx="3"
-                fill="#05080F" stroke="#38BDF8" strokeWidth="1" strokeDasharray="3 2" />
-              <text x="70" y="73" textAnchor="middle" fill="#FFFFFF"
-                fontFamily="monospace" fontSize="10" fontWeight="700" letterSpacing="1">
-                KKT
-              </text>
-              <text x="70" y="83" textAnchor="middle" fill="#38BDF8"
-                fontFamily="monospace" fontSize="6.5">
-                MCU-01
-              </text>
+            {/* Silicon Carrier Frame */}
+            <rect
+              x="40"
+              y="40"
+              width="160"
+              height="160"
+              rx="24"
+              fill="url(#carrierCore)"
+              stroke="url(#carrierBorder)"
+              strokeWidth="2"
+              className="drop-shadow-[0_0_24px_rgba(14,165,233,0.35)]"
+            />
+
+            {/* Microchip Inner Circuit Border */}
+            <rect
+              x="48"
+              y="48"
+              width="144"
+              height="144"
+              rx="18"
+              fill="none"
+              stroke="#38BDF8"
+              strokeWidth="1"
+              strokeDasharray="4 3"
+              opacity="0.6"
+            />
+
+            {/* Corner Fiducial Alignment Marks */}
+            <g stroke="#38BDF8" strokeWidth="1.2" opacity="0.7">
+              <path d="M 54 62 L 62 62 M 58 58 L 58 66" />
+              <path d="M 178 62 L 186 62 M 182 58 L 182 66" />
+              <path d="M 54 178 L 62 178 M 58 174 L 58 182" />
+              <path d="M 178 178 L 186 178 M 182 174 L 182 182" />
             </g>
 
-            {/* Lower-Right Die */}
-            <g
-              style={{
-                opacity: chipsEnergized ? 1 : 0,
-                transform: chipsEnergized ? "scale(1)" : "scale(0.86)",
-                transformOrigin: "138px 138px",
-                transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-              }}
+            {/* Micro-Telemetry Labels on Carrier */}
+            <text
+              x="120"
+              y="60"
+              textAnchor="middle"
+              fill="#94A3B8"
+              fontFamily="monospace"
+              fontSize="6"
+              letterSpacing="1.5"
             >
-              <rect x="110" y="110" width="56" height="56" rx="6"
-                fill="url(#icCoreRadial)" stroke="url(#icBorderGrad)" strokeWidth="2.2" />
-              <rect x="117" y="117" width="42" height="42" rx="3"
-                fill="#05080F" stroke="#F8FAFC" strokeWidth="1" strokeDasharray="3 2" />
-              <text x="138" y="140" textAnchor="middle" fill="#38BDF8"
-                fontFamily="monospace" fontSize="10" fontWeight="700" letterSpacing="1">
-                SYS
-              </text>
-              <text x="138" y="150" textAnchor="middle" fill="#CBD5E1"
-                fontFamily="monospace" fontSize="6.5">
-                CLOUD-02
-              </text>
-            </g>
+              SILICON // DIE REV 3.0
+            </text>
+            <text
+              x="120"
+              y="186"
+              textAnchor="middle"
+              fill="#38BDF8"
+              fontFamily="monospace"
+              fontSize="6"
+              letterSpacing="1.5"
+            >
+              NAIROBI &bull; KKT-CORE
+            </text>
           </svg>
+
+          {/* Central Kila Kitu Stylized Logo Emblem */}
+          <div
+            className="relative z-10 w-24 h-24 sm:w-32 sm:h-32 transition-all duration-700 ease-out flex items-center justify-center p-2"
+            style={{
+              opacity: chipsEnergized ? 1 : 0,
+              transform: chipsEnergized ? "scale(1)" : "scale(0.84)",
+              filter: chipsEnergized
+                ? "drop-shadow(0 0 20px rgba(56, 189, 248, 0.9)) drop-shadow(0 0 40px rgba(14, 165, 233, 0.45))"
+                : "none",
+            }}
+          >
+            <Image
+              src="/logo-mark-transparent.png"
+              alt="Kila Kitu Technologies Emblem"
+              width={130}
+              height={130}
+              className="w-full h-full object-contain select-none pointer-events-none drop-shadow-[0_0_12px_rgba(255,255,255,0.2)]"
+              priority
+            />
+          </div>
         </div>
 
         {/* Fluid Responsive Brand Typography — staggered reveal */}
         <div
           className={`transition-all duration-700 ease-out ${wordmarkVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-2"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-2"
             }`}
         >
-          <h1 className="text-[clamp(1.15rem,4.4vw,2.35rem)] tracking-[clamp(0.14em,0.55vw,0.26em)] font-extrabold text-white uppercase drop-shadow-[0_0_24px_rgba(14,165,233,0.45)] leading-tight">
+          <h1 className="text-[clamp(1.25rem,4.6vw,2.5rem)] tracking-[clamp(0.14em,0.55vw,0.26em)] font-extrabold text-white uppercase drop-shadow-[0_0_24px_rgba(14,165,233,0.45)] leading-tight">
             KILA KITU{" "}
             <span className="text-[#38BDF8] block sm:inline mt-0.5 sm:mt-0">
               TECHNOLOGIES
@@ -575,16 +679,8 @@ export default function IntroLoader() {
         />
       </div>
 
-      {/* Keyframe animations injected as style */}
+      {/* Keyframe animations */}
       <style jsx>{`
-        @keyframes coreBeacon {
-          0%, 100% {
-            filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.45));
-          }
-          50% {
-            filter: drop-shadow(0 0 24px rgba(56, 189, 248, 0.9));
-          }
-        }
         @keyframes pulse {
           0%, 100% { opacity: 0.45; transform: scale(0.95); }
           50% { opacity: 1; transform: scale(1.2); }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 const navLinks = [
@@ -31,29 +32,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 flex items-center justify-between">
-        {/* Brand Monogram & Name */}
-        <Link href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-8 rounded-lg bg-neutral-50 border border-black/10 group-hover:border-[#0284C7]/50 flex items-center justify-center px-1 transition duration-200 shadow-sm">
-            <svg
-              className="w-full h-full"
-              viewBox="0 0 255 116"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M 10 12 L 32 12 L 32 52 L 68 12 L 96 12 L 54 57 L 98 104 L 68 104 L 32 64 L 32 104 L 10 104 Z"
-                fill="#09090B"
-              />
-              <path
-                d="M 98 12 L 120 12 L 120 52 L 156 12 L 184 12 L 142 57 L 186 104 L 156 104 L 120 64 L 120 104 L 98 104 Z"
-                fill="#0284C7"
-              />
-              <path
-                d="M 176 12 L 244 12 L 234 31 L 219 31 L 219 104 L 197 104 L 197 31 L 176 31 Z"
-                fill="#09090B"
-              />
-              <circle cx="242" cy="18" r="5" fill="#38BDF8" />
-            </svg>
+        {/* Brand Logo & Name */}
+        <Link href="#" className="flex items-center gap-3.5 group">
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white border border-black/10 group-hover:border-[#0284C7]/50 flex items-center justify-center p-1 transition duration-200 shadow-sm">
+            <Image
+              src="/logo-mark.png"
+              alt="Kila Kitu Technologies Logo"
+              width={36}
+              height={36}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
           <div>
             <span className="font-sans font-bold text-sm tracking-[0.16em] text-black block uppercase leading-none">

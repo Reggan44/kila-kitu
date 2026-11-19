@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 const services = [
@@ -25,9 +26,20 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="#" className="inline-flex items-center gap-2 text-base font-black tracking-wider uppercase text-black">
-              <span>KILA KITU</span>
-              <span className="text-[#0284C7]">TECHNOLOGIES</span>
+            <Link href="#" className="inline-flex items-center gap-3 text-base font-black tracking-wider uppercase text-black group">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white border border-black/10 shadow-sm p-0.5 group-hover:border-[#0284C7]/50 transition">
+                <Image
+                  src="/logo-mark.png"
+                  alt="Kila Kitu Technologies Logo"
+                  width={30}
+                  height={30}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div>
+                <span>KILA KITU</span>{" "}
+                <span className="text-[#0284C7]">TECHNOLOGIES</span>
+              </div>
             </Link>
             <p className="mt-4 text-xs sm:text-sm leading-relaxed text-neutral-600 font-light">
               Digital Solutions Studio in Nairobi engineering high-converting web platforms, custom ERPs, and physical telemetry hardware. One roof. Zero finger-pointing.
