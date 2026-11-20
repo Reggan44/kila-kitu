@@ -118,7 +118,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${jakarta.className} bg-[#08090D] text-[#F3F4F6] antialiased`}>
+      <body className={`${inter.className} antialiased`}>
         {children}
       </body>
     </html>

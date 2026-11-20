@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "types": ["@figma/code-connect/figma-types"]
   },
   "include": [
     "next-env.d.ts",

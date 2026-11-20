@@ -1,35 +1,52 @@
+"use client";
+
+import React, { useEffect } from "react";
 import IntroLoader from "@/components/IntroLoader";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Portfolio from "@/components/Portfolio";
+import Marquee from "@/components/Marquee";
+import ProcessJourney from "@/components/ProcessJourney";
+import SelectedWork from "@/components/SelectedWork";
+import Capabilities from "@/components/Capabilities";
 import HardwareLab from "@/components/HardwareLab";
-import Services from "@/components/Services";
-import Consultation from "@/components/Consultation";
-import About from "@/components/About";
-import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
+  useEffect(() => {
+    const observers = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const revealObserver = new IntersectionObserver(
+      (entries) =>
+        entries.forEach(
+          (entry) => entry.isIntersecting && entry.target.classList.add("is-visible"),
+        ),
+      { threshold: 0.16 },
+    );
+    observers.forEach((element) => revealObserver.observe(element));
+
+    return () => revealObserver.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white text-[#09090B] selection:bg-[#0284C7] selection:text-white">
-      {/* Standalone Mobile-Responsive PCB Circuit Intro Loader */}
+    <>
+      {/* 3-Second Cinematic Intro */}
       <IntroLoader />
 
-      <Navbar />
-      <main>
+      <main id="top">
+        <Navbar />
         <Hero />
-        <Portfolio />
+        <Marquee />
+        <ProcessJourney />
+        <SelectedWork />
+        <Capabilities />
         <HardwareLab />
-        <Services />
-        <Consultation />
-        <About />
-        <CTA />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
+
+      {/* Floating Direct Line WhatsApp */}
       <WhatsAppButton />
-    </div>
+    </>
   );
 }

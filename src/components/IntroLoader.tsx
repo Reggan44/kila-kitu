@@ -11,7 +11,7 @@ const T_TAGLINE = 1.45;     // subtitle appears
 const T_RETRACT_START = 2.2; // retract begins
 const T_RETRACT_DUR = 0.6;  // retract duration
 const T_EXIT = 2.85;        // loader starts fading
-const T_DONE = 3.0;         // loader removed (3 second total)
+const T_DONE = 3.1;         // loader removed (cinematic ~3.1s total)
 
 /* ─── Polyline math ─── */
 function computeSegLengths(points: { x: number; y: number }[]) {

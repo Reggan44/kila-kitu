@@ -1,119 +1,33 @@
-import Link from "next/link";
-import Image from "next/image";
-import { siteConfig } from "@/config/site";
-
-const services = [
-  "Custom PCB & Embedded Lab",
-  "High-Speed Web Platforms",
-  "Custom Business ERPs & POS",
-  "Safaricom Daraja M-Pesa & IoT",
-];
-
-const quickLinks = [
-  { label: "Hardware Lab", href: "#hardware" },
-  { label: "Selected Work", href: "#work" },
-  { label: "Capabilities", href: "#services" },
-  { label: "Technical Consultation", href: "#consultation" },
-  { label: "Studio Philosophy", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-neutral-100 text-neutral-600">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          
-          {/* Company Info */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="#" className="inline-flex items-center gap-3 text-base font-black tracking-wider uppercase text-black group">
-              <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white border border-black/10 shadow-sm p-0.5 group-hover:border-[#0284C7]/50 transition">
-                <Image
-                  src="/logo-mark.png"
-                  alt="Kila Kitu Technologies Logo"
-                  width={30}
-                  height={30}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div>
-                <span>KILA KITU</span>{" "}
-                <span className="text-[#0284C7]">TECHNOLOGIES</span>
-              </div>
-            </Link>
-            <p className="mt-4 text-xs sm:text-sm leading-relaxed text-neutral-600 font-light">
-              Digital Solutions Studio in Nairobi engineering high-converting web platforms, custom ERPs, and physical telemetry hardware. One roof. Zero finger-pointing.
-            </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-[#0066CC] font-medium hover:underline"
-            >
-              {siteConfig.email}
-            </a>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-black">
-              Capabilities
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {services.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
-                    className="text-xs sm:text-sm text-neutral-600 transition-colors duration-200 hover:text-[#0066CC] font-light"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-black">
-              Navigation
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-xs sm:text-sm text-neutral-600 transition-colors duration-200 hover:text-[#0066CC] font-light"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Verification & Location */}
-          <div>
-            <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-black">
-              Engineering Lab
-            </h3>
-            <div className="mt-4 space-y-2 text-xs font-light text-neutral-600 leading-relaxed">
-              <p className="text-black font-medium">Nairobi, Kenya</p>
-              <p>Serving enterprise clients, institutions, and growth brands across East Africa & global markets.</p>
-              <div className="pt-2 flex items-center gap-2 font-mono text-[11px] text-[#0284C7]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] animate-pulse" />
-                <span>Nairobi Studio Active</span>
-              </div>
-            </div>
-          </div>
-
+    <footer>
+      <div className="footer-top">
+        <p>
+          INDEPENDENT THINKING.
+          <br />
+          CONNECTED ENGINEERING.
+        </p>
+        <div>
+          <a href="#work">Work</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-black/10 pt-8 text-xs sm:flex-row text-neutral-500 font-mono">
-          <p>&copy; 2026 Kila Kitu Technologies. All rights reserved.</p>
-          <p className="tracking-widest uppercase text-[10px]">
-            Engineered with Next.js &bull; Nairobi, Kenya
-          </p>
-        </div>
+        <p>
+          NAIROBI, KENYA
+          <br />
+          EAST AFRICA & BEYOND
+        </p>
+      </div>
+      <a className="footer-wordmark" href="#top">
+        kila kitu.
+      </a>
+      <div className="footer-bottom">
+        <span>© 2026 Kila Kitu Technologies</span>
+        <span>Everything, engineered together.</span>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
   );

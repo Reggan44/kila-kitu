@@ -1,83 +1,98 @@
 "use client";
 
-import { siteConfig } from "@/config/site";
+import React, { useRef, type PointerEvent as ReactPointerEvent } from "react";
+
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
 
 export default function Hero() {
+  const stageRef = useRef<HTMLDivElement>(null);
+
+  const moveStage = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!stageRef.current) return;
+    const bounds = stageRef.current.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    stageRef.current.style.setProperty("--rx", `${-y * 8}deg`);
+    stageRef.current.style.setProperty("--ry", `${x * 10}deg`);
+  };
+
+  const resetStage = () => {
+    stageRef.current?.style.setProperty("--rx", "0deg");
+    stageRef.current?.style.setProperty("--ry", "0deg");
+  };
+
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-white hero-glow">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
-        
-        {/* Top Studio Badge */}
-        <div className="flex items-center justify-start mb-6">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-sky-50/80 border border-sky-200/60 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-pulse" />
-            <span className="font-mono text-[11px] font-semibold tracking-widest text-sky-900 uppercase">
-              NAIROBI, KENYA &bull; DIGITAL &bull; HARDWARE &bull; SOFTWARE
-            </span>
-          </div>
-        </div>
-
-        {/* Primary Headline with Editorial Italic Accent */}
-        <div className="max-w-5xl space-y-6">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[82px] font-black tracking-tight text-black leading-[1.05]">
-            Everything engineered to <span className="editorial-italic text-[#0284C7] font-normal">scale.</span>
+    <section className="hero section-pad">
+      <div className="eyebrow-row">
+        <span>NAIROBI, KENYA / INDEPENDENT ENGINEERING STUDIO</span>
+        <span>WEBSITES + SYSTEMS + CONNECTED THINGS</span>
+      </div>
+      <div className="hero-grid">
+        <div className="hero-copy" data-reveal>
+          <p className="section-kicker">FROM FIRST THOUGHT TO REAL-WORLD IMPACT</p>
+          <h1>
+            Ideas you can <em>step into.</em>
           </h1>
-
-          <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 max-w-3xl leading-relaxed font-light">
-            Stop juggling five different freelancers for hardware, code, M-Pesa, and cloud hosting.
-            We engineer lightning-fast web platforms, custom ERPs, and embedded physical hardware under one roof.
-            <span className="text-black font-medium"> Zero finger-pointing.</span>
+          <p className="hero-intro">
+            We design and engineer websites, digital platforms, and connected products — as one
+            complete experience.
           </p>
-        </div>
-
-        {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-8">
-          <a
-            href={siteConfig.whatsappUrl("Hi Kila Kitu Technologies! I want to discuss a system for my business.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-4 rounded-full bg-black hover:bg-[#0284C7] text-white font-bold text-sm tracking-wide transition shadow-xl shadow-black/10 hover:scale-105 active:scale-95 text-center uppercase cursor-pointer"
-          >
-            Start a Project &rarr;
-          </a>
-
-          <a
-            href="#work"
-            className="px-8 py-4 rounded-full bg-neutral-100 hover:bg-neutral-200 border border-black/10 hover:border-black/25 text-black font-semibold text-sm tracking-wide transition text-center flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <span>See Live Deployments</span>
-            <span className="text-[#0284C7]">&darr;</span>
-          </a>
-        </div>
-
-        {/* Trust & Proof Metric Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 mt-16 border-t border-black/10">
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-black">4 Live</div>
-            <div className="text-xs text-neutral-500 font-mono uppercase tracking-wider mt-1">
-              Production Client Deployments
-            </div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-[#0284C7]">Sub-Second</div>
-            <div className="text-xs text-neutral-500 font-mono uppercase tracking-wider mt-1">
-              Global Edge CDN Latency
-            </div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-black">Daraja STK</div>
-            <div className="text-xs text-neutral-500 font-mono uppercase tracking-wider mt-1">
-              Automated M-Pesa Reconciliation
-            </div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-black text-[#0284C7]">90-Day SLA</div>
-            <div className="text-xs text-neutral-500 font-mono uppercase tracking-wider mt-1">
-              Post-Launch Engineering Warranty
-            </div>
+          <div className="action-row">
+            <a className="button button-blue" href="#process">
+              See how we build <span aria-hidden="true">↓</span>
+            </a>
+            <a className="text-link" href="#work">
+              Explore our work <Arrow />
+            </a>
           </div>
         </div>
 
+        {/* 3D Interactive System Stage */}
+        <div
+          className="system-stage"
+          ref={stageRef}
+          onPointerMove={moveStage}
+          onPointerLeave={resetStage}
+          aria-label="An interactive stack showing the layers of a digital product"
+          data-reveal
+        >
+          <div className="stage-orbit orbit-one" />
+          <div className="stage-orbit orbit-two" />
+          <div className="system-stack">
+            <div className="stack-card stack-back">
+              <span>INFRASTRUCTURE</span>
+              <i />
+            </div>
+            <div className="stack-card stack-middle">
+              <span>ENGINEERING</span>
+              <div className="code-lines">
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+            </div>
+            <div className="stack-card stack-front">
+              <img src="/assets/3613c.png" alt="A connected circuit board prototype" />
+              <div>
+                <span>EXPERIENCE</span>
+                <strong>Built as one system.</strong>
+              </div>
+            </div>
+          </div>
+          <div className="stage-label label-left">
+            <span>01</span> Think
+          </div>
+          <div className="stage-label label-right">
+            <span>04</span> Scale
+          </div>
+          <p className="stage-hint">MOVE YOUR CURSOR</p>
+        </div>
+      </div>
+      <div className="scroll-cue">
+        <span /> SCROLL TO EXPLORE
       </div>
     </section>
   );
