@@ -114,16 +114,16 @@ export default function SelectedWork() {
           <div className="project-image">
             <img
               src="/projects/myibada.jpg"
-              alt="MyIbada church management platform"
-              style={{ objectPosition: "left top" }}
+              alt="MyIbada - Run your church. Keep children safe."
+              style={{ objectPosition: "center top" }}
             />
             <span style={{ background: "var(--blue)", color: "white" }}>IN-HOUSE VENTURE ↗</span>
           </div>
           <div className="project-meta">
             <div>
-              <small>CLOUD SAAS / COMMUNITY ERP</small>
+              <small>COMMUNITY SAAS / IoT CHECK-IN</small>
               <h3>MyIbada</h3>
-              <p>Intelligent church management with integrated NFC check-in and automated M-Pesa reconciliation.</p>
+              <p>Run your church. Keep children safe. Sunday school tap check-in, attendance, and giving in one place.</p>
             </div>
             <b>
               <Arrow />
