@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -31,9 +32,11 @@ export default function SelectedWork() {
           data-reveal
         >
           <div className="project-image">
-            <img
+            <Image
               src="/projects/sofiya.jpg"
               alt="Sofiya Nzau official website and global tour platform"
+              fill
+              sizes="(max-width: 680px) calc(100vw - 48px), 45vw"
             />
             <span>LIVE PROJECT ↗</span>
           </div>
@@ -58,9 +61,11 @@ export default function SelectedWork() {
           data-reveal
         >
           <div className="project-image">
-            <img
+            <Image
               src="/projects/nzuki.jpg"
               alt="Nzuki & Company Advocates website platform"
+              fill
+              sizes="(max-width: 680px) calc(100vw - 48px), 45vw"
               style={{ objectPosition: "left top" }}
             />
             <span>LIVE PROJECT ↗</span>
@@ -87,8 +92,13 @@ export default function SelectedWork() {
           rel="noopener noreferrer"
           data-reveal
         >
-          <div className="project-image">
-            <img src="/projects/meed.jpg" alt="Meed Collections E-Commerce Storefront" />
+          <div className="project-image project-meed-image">
+            <Image
+              src="/projects/meed-updated.png"
+              alt="Updated Meed Collections fashion and accessories storefront"
+              fill
+              sizes="(max-width: 680px) calc(100vw - 48px), 45vw"
+            />
             <span>LIVE PROJECT ↗</span>
           </div>
           <div className="project-meta">
@@ -112,9 +122,11 @@ export default function SelectedWork() {
           data-reveal
         >
           <div className="project-image">
-            <img
+            <Image
               src="/projects/myibada.jpg"
               alt="MyIbada church management platform"
+              fill
+              sizes="(max-width: 680px) calc(100vw - 48px), 45vw"
               style={{ objectPosition: "left top" }}
             />
             <span style={{ background: "var(--blue)", color: "white" }}>IN-HOUSE VENTURE ↗</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, type PointerEvent as ReactPointerEvent } from "react";
+import Image from "next/image";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -75,7 +76,13 @@ export default function Hero() {
               </div>
             </div>
             <div className="stack-card stack-front">
-              <img src="/assets/3613c.png" alt="A connected circuit board prototype" />
+              <Image
+                src="/assets/3613c.png"
+                alt="A connected circuit board prototype"
+                width={1376}
+                height={768}
+                sizes="(max-width: 680px) 86vw, 42vw"
+              />
               <div>
                 <span>EXPERIENCE</span>
                 <strong>Built as one system.</strong>

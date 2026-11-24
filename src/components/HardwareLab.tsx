@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -23,9 +24,11 @@ export default function HardwareLab() {
         </a>
       </div>
       <div className="lab-image" data-reveal>
-        <img
+        <Image
           src="/assets/b64db.png"
           alt="Electronics prototyping bench with connected circuit boards"
+          fill
+          sizes="(max-width: 680px) calc(100vw - 48px), 55vw"
         />
         <div className="lab-scan" />
         <span>PROTOTYPED IN NAIROBI / 001</span>

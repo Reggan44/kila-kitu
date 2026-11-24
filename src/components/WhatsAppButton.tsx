@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
         <span className="text-xs font-semibold text-black tracking-wide">
           Chat with us
         </span>
-        <span className="text-[10px] text-neutral-500 font-mono pl-1 border-l border-neutral-300">
+        <span className="text-[10px] font-bold text-[#16A34A] font-mono pl-1 border-l border-neutral-300">
           WhatsApp
         </span>
       </a>

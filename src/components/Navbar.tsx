@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
@@ -12,7 +13,13 @@ export default function Navbar() {
   return (
     <header className="nav-shell">
       <a className="brand" href="#top" aria-label="Kila Kitu home">
-        <img src="/assets/8a070.png" alt="Kila Kitu Logo" />
+        <Image
+          src="/assets/8a070.png"
+          alt="Kila Kitu Logo"
+          width={40}
+          height={40}
+          priority
+        />
         <span>
           <strong>kila kitu</strong>
           <small>TECHNOLOGIES</small>

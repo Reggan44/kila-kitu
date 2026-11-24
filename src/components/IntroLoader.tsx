@@ -4,14 +4,14 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
 /* ─── Timing constants (seconds) ─── */
-const T_DRAW_DUR = 1.05;    // traces draw inward over 1.05s
-const T_LOCKED = 0.85;      // microchips energize at 0.85s
-const T_WORDMARK = 1.18;    // brand text appears
-const T_TAGLINE = 1.45;     // subtitle appears
-const T_RETRACT_START = 2.2; // retract begins
-const T_RETRACT_DUR = 0.6;  // retract duration
-const T_EXIT = 2.85;        // loader starts fading
-const T_DONE = 3.1;         // loader removed (cinematic ~3.1s total)
+const T_DRAW_DUR = 1.05;
+const T_LOCKED = 0.85;
+const T_WORDMARK = 1.18;
+const T_TAGLINE = 1.45;
+const T_RETRACT_START = 2.2;
+const T_RETRACT_DUR = 0.6;
+const T_EXIT = 2.85;
+const T_DONE = 3.1;
 
 /* ─── Polyline math ─── */
 function computeSegLengths(points: { x: number; y: number }[]) {
@@ -636,7 +636,6 @@ export default function IntroLoader() {
               width={130}
               height={130}
               className="w-full h-full object-contain select-none pointer-events-none drop-shadow-[0_0_12px_rgba(255,255,255,0.2)]"
-              priority
             />
           </div>
         </div>
@@ -648,12 +647,12 @@ export default function IntroLoader() {
             : "opacity-0 translate-y-2"
             }`}
         >
-          <h1 className="text-[clamp(1.25rem,4.6vw,2.5rem)] tracking-[clamp(0.14em,0.55vw,0.26em)] font-extrabold text-white uppercase drop-shadow-[0_0_24px_rgba(14,165,233,0.45)] leading-tight">
+          <p className="text-[clamp(1.25rem,4.6vw,2.5rem)] tracking-[clamp(0.14em,0.55vw,0.26em)] font-extrabold text-white uppercase drop-shadow-[0_0_24px_rgba(14,165,233,0.45)] leading-tight">
             KILA KITU{" "}
             <span className="text-[#38BDF8] block sm:inline mt-0.5 sm:mt-0">
               TECHNOLOGIES
             </span>
-          </h1>
+          </p>
         </div>
 
         {/* Electric Cyan Expanding Hairline */}

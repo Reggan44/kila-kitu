@@ -669,6 +669,15 @@ h2 em {
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+.project-meed-image {
+  height: auto;
+  aspect-ratio: 1518 / 768;
+  background: #f6f1e8;
+}
+.project-meed-image img {
+  object-fit: contain;
+  object-position: left center;
+}
 .project-card:hover img {
   transform: scale(1.035);
 }
@@ -1014,7 +1023,7 @@ footer {
   0%,
   100% {
     top: 12%;
-    opacity: 0;
+    opacity: 0.7;
   }
   15%,
   85% {
@@ -1151,23 +1160,34 @@ footer {
     font-size: 20px;
   }
   .process {
+    display: block;
     padding-top: 80px;
     padding-bottom: 80px;
   }
   .process-sticky {
-    min-height: 500px;
-    height: 74vh;
-    top: 85px;
+    min-height: 350px;
+    height: 52vh;
+    top: 76px;
+    z-index: 2;
+    padding: 14px 0 22px;
+    background: #0c1115;
   }
   .process h2 {
-    font-size: 51px;
+    font-size: clamp(38px, 12vw, 51px);
   }
   .process-visual {
-    transform: scale(0.8);
+    min-height: 145px;
+    transform: scale(0.62);
+  }
+  .process-steps {
+    z-index: 1;
   }
   .process-step {
-    min-height: 70vh;
-    padding: 15vh 0;
+    min-height: 62vh;
+    padding: 12vh 0 8vh;
+  }
+  .process-step {
+    scroll-margin-top: 48vh;
   }
   .process-step h3 {
     font-size: 44px;
@@ -1191,6 +1211,9 @@ footer {
   .project-image {
     height: 410px;
   }
+  .project-meed-image {
+    height: auto;
+  }
   .capabilities,
   .lab,
   .contact {
@@ -1206,6 +1229,14 @@ footer {
   }
   .lab-image {
     height: 380px;
+  }
+  .lab-scan {
+    height: 2px;
+    box-shadow:
+      0 0 12px 2px rgba(20, 87, 232, 0.7),
+      0 0 26px 8px rgba(20, 87, 232, 0.3);
+    animation-duration: 3.8s;
+    will-change: top, opacity;
   }
   form {
     grid-template-columns: 1fr;

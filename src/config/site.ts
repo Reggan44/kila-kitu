@@ -4,17 +4,17 @@ export const siteConfig = {
   legalName: "Kila Kitu Technologies",
   tagline: "End-to-End Software, Web Platforms & Smart Systems",
   description:
-    "We engineer high-converting web platforms, custom ERP systems, and automated M-Pesa digital infrastructure for modern African enterprises.",
+    "Kila Kitu Technologies engineers websites, business software, M-Pesa integrations, PCB designs, firmware, IoT devices, and connected hardware in Nairobi, Kenya.",
   domain: "kilakitutech.co.ke",
   url: "https://kilakitutech.co.ke",
   email: "kilakitutechnologies@gmail.com",
-  phone: "+254 700 000 000",
-  whatsappNumber: "254700000000",
+  phone: "+254 102 626 545",
+  whatsappNumber: "254102626545",
   whatsappUrl: (message?: string) => {
     const text =
       message ||
       "Hi Kila Kitu Technologies! I'm interested in building a software system for my business.";
-    return `https://wa.me/254700000000?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/254102626545?text=${encodeURIComponent(text)}`;
   },
   location: "Nairobi, Kenya",
   links: {
